@@ -53,7 +53,6 @@
  */
 
   .i-button {
-    min-width: 56px;
     height: 24px;
     line-height: 20px;
 

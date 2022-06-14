@@ -65,6 +65,8 @@
             </calc-tabs>
           )}
 
+          <calc-numeric modelValue={test.value} />
+
           {wrapper(
             "Button 按钮",
             <div class="flex  space-x-4 items-center">

@@ -109,25 +109,9 @@
                         </calc-option>
                       ))}
                     </calc-select>
-                    {(skill.TP_max as number) > 0 ? (
-                      <calc-select v-model={skills[index].tp} class="!h-20px !ml-5px !min-w-45px !w-45px">
-                        {renderList((skill.TP_max as number) + 1, item => (
-                          <calc-option value={item - 1}>
-                            <span>{item - 1}</span>
-                          </calc-option>
-                        ))}
-                      </calc-select>
-                    ) : (
-                      <div class="!h-20px !ml-5px !w-50px"></div>
-                    )}
+                    {<calc-numeric disabled={(skill.TP_max ?? 0) <= 0} min={0} max={skill.TP_max} v-model={skills[index].tp} class="!h-20px !ml-5px"></calc-numeric>}
                     {
-                      <calc-select v-model={skills[index].count} class="!h-20px !ml-5px !min-w-45px !w-45px">
-                        {renderList(100, item => (
-                          <calc-option value={item - 1}>
-                            <span>{item - 1}</span>
-                          </calc-option>
-                        ))}
-                      </calc-select>
+                      <calc-numeric v-model={skills[index].count} max={100} min={0} class="!h-20px !ml-5px"></calc-numeric>
                       // <calc-select editeable={true} v-model={skills[index].pet} class={"!w-45px !min-w-45px !h-20px !ml-5px !mr-5px"}>
                       //   {renderList(skill.level_max + 1, item => (
                       //     <calc-option value={item - 1}>
@@ -140,13 +124,7 @@
                       <calc-checkbox v-model={skills[index].direct}></calc-checkbox>
                     </div>
 
-                    <calc-select v-model={skills[index].directNumber} disabled={!skills[index].direct} class={"!w-45px !min-w-45px !h-20px !mr-5px"}>
-                      {renderList(5, item => (
-                        <calc-option value={item - 1}>
-                          <span>{item - 1}</span>
-                        </calc-option>
-                      ))}
-                    </calc-select>
+                    <calc-numeric max={5} v-model={skills[index].directNumber} disabled={!skills[index].direct} class={"!w-45px !min-w-45px !h-20px !mr-5px"}></calc-numeric>
                   </div>
                 )
             )}

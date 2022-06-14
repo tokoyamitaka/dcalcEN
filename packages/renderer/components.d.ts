@@ -13,6 +13,7 @@ declare module 'vue' {
     CalcIconselect: typeof import('./src/components/calc/iconselect/index.vue')['default']
     CalcItem: typeof import('./src/components/calc/item/index.vue')['default']
     CalcMenuMenu: typeof import('./src/components/calc/menu/menu.vue')['default']
+    CalcNumeric: typeof import('./src/components/calc/numeric/index.vue')['default']
     CalcOption: typeof import('./src/components/calc/option/index.vue')['default']
     CalcSelect: typeof import('./src/components/calc/select/index.vue')['default']
     CalcSelection: typeof import('./src/components/calc/selection/index.vue')['default']
@@ -26,6 +27,7 @@ declare module 'vue' {
     InternalEquipEqInfo: typeof import('./src/components/internal/equip/eq-info.vue')['default']
     InternalEquipEquipList: typeof import('./src/components/internal/equip/equip-list.vue')['default']
     InternalProfile: typeof import('./src/components/internal/profile.vue')['default']
+    InternalSkillNumeric: typeof import('./src/components/internal/skill-numeric.vue')['default']
     InternalSkillSkillIcon: typeof import('./src/components/internal/skill/skill-icon.vue')['default']
     InternalSkillSkillPanel: typeof import('./src/components/internal/skill/skill-panel.vue')['default']
   }
