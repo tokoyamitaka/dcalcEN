@@ -34,7 +34,7 @@ def entry_1248(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        hp_rate_num = min(55,hp_rate_num)
+        hp_rate_num = min(55, hp_rate_num)
         pass
 
 
@@ -8073,7 +8073,7 @@ def entry_1135(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.指令技攻加成(0.08,exc=[])
+        char.指令技攻加成(0.08, exc=[])
 
 
 def entry_1136(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -12169,7 +12169,7 @@ def entry_14012(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0)
     if mode == 1:
         pass
 
-# 撒旦:愤怒之王
+# 撒旦：愤怒之王
 
 
 def entry_14013(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -12343,7 +12343,7 @@ def entry_14019(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0)
         char.所有属性强化加成(24, 1)
         pass
 
-# 莱多:秩序创造者
+# 莱多：秩序创造者
 
 
 def entry_14020(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -12409,7 +12409,7 @@ def entry_14022(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0)
     if mode == 1:
         pass
 
-# 至高之炎-伊弗利特
+# 至高之炎 - 伊弗利特
 
 
 def entry_14023(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):

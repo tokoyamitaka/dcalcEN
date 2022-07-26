@@ -34,7 +34,7 @@ def entry_1248(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        hp_rate_num = min(55,hp_rate_num)
+        hp_rate_num = min(55, hp_rate_num)
         pass
 
 
@@ -2871,7 +2871,7 @@ def entry_1222(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
     if mode == 1:
         if '灼烧' in own_state_type:
-            for i in range(0,10):
+            for i in range(0, 10):
                 char.所有属性强化加成(3, mode=1)
 
 
@@ -3228,7 +3228,7 @@ def entry_1081(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 1:
         for item in range(0, 3):
             char.基础精通加成(0.15)
-            char.技能倍率加成(15, 30, 0.05,type="active")
+            char.技能倍率加成(15, 30, 0.05, type="active")
 
 
 def entry_1082(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -3366,7 +3366,7 @@ def entry_1102(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         for skill in char.技能队列:
             无色消耗 = skill["无色消耗"]
             if skill['名称'] == '炫纹发射':
-                无色消耗 = min(无色消耗,3)
+                无色消耗 = min(无色消耗, 3)
             if 无色消耗 >= 30:
                 skill["倍率"] *= 1.2
             elif 无色消耗 >= 15:
@@ -3796,7 +3796,7 @@ def entry_983(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         return ['基础精通技能攻击力增加量+30%', 'Lv15~30主动技能攻击力 +10%', '消耗无色小晶块的技能攻击力-15%']
     if mode == 0:
         char.基础精通加成(0.3)
-        char.技能倍率加成(15, 30, 0.1,type="active")
+        char.技能倍率加成(15, 30, 0.1, type="active")
         for skill in char.技能队列:
             if skill["无色消耗"] > 0:
                 skill["倍率"] *= 0.85
@@ -3809,7 +3809,7 @@ def entry_984(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         return ['基础精通技能攻击力增加量+30%', 'Lv15~30主动技能攻击力 +10%', '消耗无色小晶块的技能冷却时间+10%']
     if mode == 0:
         char.基础精通加成(0.3)
-        char.技能倍率加成(15, 30, 0.1,type="active")
+        char.技能倍率加成(15, 30, 0.1, type="active")
         for skill in char.技能队列:
             if skill["无色消耗"] > 0:
                 skill["CDR"] *= 1.1
@@ -6053,7 +6053,7 @@ def entry_1111(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.光属性强化加成(10,mode=1)
+        char.光属性强化加成(10, mode=1)
 
 
 def entry_1112(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -6062,7 +6062,7 @@ def entry_1112(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.火属性强化加成(10,mode=1)
+        char.火属性强化加成(10, mode=1)
 
 
 def entry_1113(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -6071,7 +6071,7 @@ def entry_1113(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.所有属性强化加成(8,mode=1)
+        char.所有属性强化加成(8, mode=1)
 
 
 def entry_1114(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -6103,7 +6103,7 @@ def entry_1116(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.所有属性强化加成(20,mode=1)
+        char.所有属性强化加成(20, mode=1)
 
 
 def entry_1117(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -6131,8 +6131,8 @@ def entry_1119(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        for i in range(0,5):
-            char.所有属性强化加成(3 ,mode=1)
+        for i in range(0, 5):
+            char.所有属性强化加成(3, mode=1)
 
 
 def entry_1120(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -6179,8 +6179,8 @@ def entry_113(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        for i in range(0,min(10, int(combo_num / 3))):
-            char.光属性强化加成(4,mode=1)
+        for i in range(0, min(10, int(combo_num / 3))):
+            char.光属性强化加成(4, mode=1)
 
 
 def entry_116(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -6273,8 +6273,8 @@ def entry_336(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        for i in range(0,min(10, int(combo_num / 3))):
-            char.火属性强化加成(4,mode=1)
+        for i in range(0, min(10, int(combo_num / 3))):
+            char.火属性强化加成(4, mode=1)
 
 
 def entry_337(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -6283,8 +6283,8 @@ def entry_337(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        for i in range(0,min(10, int(combo_num / 3))):
-            char.冰属性强化加成(4,mode=1)
+        for i in range(0, min(10, int(combo_num / 3))):
+            char.冰属性强化加成(4, mode=1)
 
 
 def entry_338(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -6293,8 +6293,8 @@ def entry_338(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        for i in range(0,min(10, int(combo_num / 3))):
-            char.暗属性强化加成(4,mode=1)
+        for i in range(0, min(10, int(combo_num / 3))):
+            char.暗属性强化加成(4, mode=1)
 
 
 def entry_891(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -6449,7 +6449,7 @@ def entry_267(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.火属性强化加成(25,mode=1)
+        char.火属性强化加成(25, mode=1)
 
 
 def entry_268(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -6458,7 +6458,7 @@ def entry_268(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.冰属性强化加成(25,mode=1)
+        char.冰属性强化加成(25, mode=1)
 
 
 def entry_269(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -6467,7 +6467,7 @@ def entry_269(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.光属性强化加成(25,mode=1)
+        char.光属性强化加成(25, mode=1)
 
 
 def entry_270(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -6476,7 +6476,7 @@ def entry_270(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.暗属性强化加成(25,mode=1)
+        char.暗属性强化加成(25, mode=1)
 
 
 def entry_346(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -6485,7 +6485,7 @@ def entry_346(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.火属性强化加成(25,mode=1)
+        char.火属性强化加成(25, mode=1)
 
 
 def entry_347(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -6494,7 +6494,7 @@ def entry_347(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.冰属性强化加成(25,mode=1)
+        char.冰属性强化加成(25, mode=1)
 
 
 def entry_348(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -6503,7 +6503,7 @@ def entry_348(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.光属性强化加成(25,mode=1)
+        char.光属性强化加成(25, mode=1)
 
 
 def entry_349(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -6512,7 +6512,7 @@ def entry_349(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.暗属性强化加成(25,mode=1)
+        char.暗属性强化加成(25, mode=1)
 # endregion
 
 # region 异常抗性词条
@@ -6857,8 +6857,8 @@ def entry_183(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        for i in range(0,min(10, enemy_num)):
-            char.火属性强化加成(7,mode=1)
+        for i in range(0, min(10, enemy_num)):
+            char.火属性强化加成(7, mode=1)
 
 
 def entry_184(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -6867,8 +6867,8 @@ def entry_184(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        for i in range(0,min(10, enemy_num)):
-            char.冰属性强化加成(7,mode=1)
+        for i in range(0, min(10, enemy_num)):
+            char.冰属性强化加成(7, mode=1)
 
 
 def entry_185(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -6877,8 +6877,8 @@ def entry_185(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        for i in range(0,min(10, enemy_num)):
-            char.光属性强化加成(7,mode=1)
+        for i in range(0, min(10, enemy_num)):
+            char.光属性强化加成(7, mode=1)
 
 
 def entry_186(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -6887,8 +6887,8 @@ def entry_186(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        for i in range(0,min(10, enemy_num)):
-            char.暗属性强化加成(7,mode=1)
+        for i in range(0, min(10, enemy_num)):
+            char.暗属性强化加成(7, mode=1)
 
 
 def entry_266(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -7093,7 +7093,7 @@ def entry_804(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
     if mode == 1:
         # if enemy_num > 0:
-        for i in range(0,5):
+        for i in range(0, 5):
             char.技能攻击力加成(0.02)
 
 
@@ -7570,7 +7570,7 @@ def entry_1056(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
     if mode == 1:
         for item in range(0, 10):
-            char.技能倍率加成(15, 35, 0.03,type="active")
+            char.技能倍率加成(15, 35, 0.03, type="active")
         pass
 
 
@@ -11626,7 +11626,7 @@ def entry_10101(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0)
 
 def entry_11001(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['攻击速度 +5%','移动速度 +5%','施放速度 +5%','所有属性强化 +25', '所有职业Lv1~95 全部技能+1', '物理、魔法、独立攻击力 +20%', '攻击时,附加15%伤害', '所有技能冷却时间 -5%(加算)', '攻击强化 +35%']
+        return ['攻击速度 +5%', '移动速度 +5%', '施放速度 +5%', '所有属性强化 +25', '所有职业Lv1~95 全部技能+1', '物理、魔法、独立攻击力 +20%', '攻击时,附加15%伤害', '所有技能冷却时间 -5%(加算)', '攻击强化 +35%']
     if mode == 0:
         char.所有属性强化加成(25)
         char.附加伤害加成(0.15)
@@ -11641,7 +11641,7 @@ def entry_11001(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0)
 
 def entry_11002(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['攻击速度 +5%','移动速度 +5%','施放速度 +5%','所有属性强化 +25', '所有职业Lv1~95 全部技能+1', '物理、魔法、独立攻击力 +15%', '攻击时,附加20%伤害', '所有技能冷却时间 -5%(加算)', '攻击强化 +35%']
+        return ['攻击速度 +5%', '移动速度 +5%', '施放速度 +5%', '所有属性强化 +25', '所有职业Lv1~95 全部技能+1', '物理、魔法、独立攻击力 +15%', '攻击时,附加20%伤害', '所有技能冷却时间 -5%(加算)', '攻击强化 +35%']
     if mode == 0:
         char.所有属性强化加成(25)
         char.附加伤害加成(0.20)
@@ -11656,7 +11656,7 @@ def entry_11002(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0)
 
 def entry_11003(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['攻击速度 +5%','移动速度 +5%','施放速度 +5%','所有属性强化 +25', '所有职业Lv1~95 全部技能+1', '物理、魔法、独立攻击力 +12%', '攻击时,附加10%伤害', '所有技能冷却时间 -5%(加算)', '攻击强化 +22%']
+        return ['攻击速度 +5%', '移动速度 +5%', '施放速度 +5%', '所有属性强化 +25', '所有职业Lv1~95 全部技能+1', '物理、魔法、独立攻击力 +12%', '攻击时,附加10%伤害', '所有技能冷却时间 -5%(加算)', '攻击强化 +22%']
     if mode == 0:
         char.所有属性强化加成(25)
         char.附加伤害加成(0.10)
@@ -11671,7 +11671,7 @@ def entry_11003(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0)
 
 def entry_11004(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['攻击速度 +5%','移动速度 +5%','施放速度 +5%','所有属性强化 +25', '所有职业Lv1~95 全部技能+1', '物理、魔法、独立攻击力 +10%', '攻击时,附加12%伤害', '所有技能冷却时间 -5%(加算)', '攻击强化 +22%']
+        return ['攻击速度 +5%', '移动速度 +5%', '施放速度 +5%', '所有属性强化 +25', '所有职业Lv1~95 全部技能+1', '物理、魔法、独立攻击力 +10%', '攻击时,附加12%伤害', '所有技能冷却时间 -5%(加算)', '攻击强化 +22%']
     if mode == 0:
         char.所有属性强化加成(25)
         char.附加伤害加成(0.12)
@@ -11686,7 +11686,7 @@ def entry_11004(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0)
 
 def entry_11005(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['攻击速度 +5%','移动速度 +5%','施放速度 +5%','所有属性强化 +25', '所有职业Lv1~80 全部技能+1', '暴击时,额外增加20%的伤害增加量', '力量、智力 +12%', '所有技能冷却时间 -5%(加算)', '攻击强化 +32%']
+        return ['攻击速度 +5%', '移动速度 +5%', '施放速度 +5%', '所有属性强化 +25', '所有职业Lv1~80 全部技能+1', '暴击时,额外增加20%的伤害增加量', '力量、智力 +12%', '所有技能冷却时间 -5%(加算)', '攻击强化 +32%']
     if mode == 0:
         char.所有属性强化加成(25)
         char.暴击伤害加成(0.20)
@@ -11701,7 +11701,7 @@ def entry_11005(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0)
 
 def entry_11006(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['攻击速度 +5%','移动速度 +5%','施放速度 +5%','所有属性强化 +25', '所有职业Lv1~80 全部技能+1', '物理、魔法、独立攻击力 +12%', '攻击时,附加10%伤害', '所有技能冷却时间 -5%(加算)', '攻击强化 +22%']
+        return ['攻击速度 +5%', '移动速度 +5%', '施放速度 +5%', '所有属性强化 +25', '所有职业Lv1~80 全部技能+1', '物理、魔法、独立攻击力 +12%', '攻击时,附加10%伤害', '所有技能冷却时间 -5%(加算)', '攻击强化 +22%']
     if mode == 0:
         char.所有属性强化加成(25)
         char.百分比三攻加成(0.12)
@@ -11718,7 +11718,7 @@ def entry_11006(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0)
 #  region 称号
 def entry_12001(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['攻击速度 +4%','移动速度 +4%','施放速度 +4%','所有属性强化 +25', '物理、魔法、独立攻击力 +5%', '暴击时，额外增加5%的伤害增加量', '最终伤害 +5%', '力量、智力 +5%', '攻击时，附加5%的伤害', '攻击强化 +25%', '攻击时，有3%的几率增加35点力量、智力、体力、精神，效果持续20秒(冷却时间30秒)', '施放技能时，有5%的几率增加5%的物理、魔法暴击率，效果持续20秒(冷却时间30秒)']
+        return ['攻击速度 +4%', '移动速度 +4%', '施放速度 +4%', '所有属性强化 +25', '物理、魔法、独立攻击力 +5%', '暴击时，额外增加5%的伤害增加量', '最终伤害 +5%', '力量、智力 +5%', '攻击时，附加5%的伤害', '攻击强化 +25%', '攻击时，有3%的几率增加35点力量、智力、体力、精神，效果持续20秒(冷却时间30秒)', '施放技能时，有5%的几率增加5%的物理、魔法暴击率，效果持续20秒(冷却时间30秒)']
     if mode == 0:
         char.所有属性强化加成(25)
         char.百分比三攻加成(0.05)
@@ -11736,7 +11736,7 @@ def entry_12001(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0)
 
 def entry_12002(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['攻击速度 +4%','移动速度 +4%','施放速度 +4%','所有属性强化 +22', '物理、魔法、独立攻击力 +12%', '攻击时，附加10%的伤害', '攻击强化 +22%', '攻击时，有3%的几率增加35点力量、智力、体力、精神，效果持续20秒(冷却时间30秒)', '施放技能时，有5%的几率增加5%的物理、魔法暴击率，效果持续20秒(冷却时间30秒)']
+        return ['攻击速度 +4%', '移动速度 +4%', '施放速度 +4%', '所有属性强化 +22', '物理、魔法、独立攻击力 +12%', '攻击时，附加10%的伤害', '攻击强化 +22%', '攻击时，有3%的几率增加35点力量、智力、体力、精神，效果持续20秒(冷却时间30秒)', '施放技能时，有5%的几率增加5%的物理、魔法暴击率，效果持续20秒(冷却时间30秒)']
     if mode == 0:
         char.所有属性强化加成(22)
         char.百分比三攻加成(0.12)
@@ -12046,7 +12046,7 @@ def entry_14012(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0)
     if mode == 1:
         pass
 
-# 撒旦:愤怒之王
+# 撒旦：愤怒之王
 
 
 def entry_14013(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -12220,7 +12220,7 @@ def entry_14019(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0)
         char.所有属性强化加成(24, 1)
         pass
 
-# 莱多:秩序创造者
+# 莱多：秩序创造者
 
 
 def entry_14020(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -12286,7 +12286,7 @@ def entry_14022(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0)
     if mode == 1:
         pass
 
-# 至高之炎-伊弗利特
+# 至高之炎 - 伊弗利特
 
 
 def entry_14023(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -12780,9 +12780,9 @@ def entry_14044(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0)
         char.附加伤害加成(0.03)
         if 改造lv >= 1:
             char.伤害增加加成(0.07)
-            char.技能倍率加成(50, 50, 0.3,type="active")
-            char.技能倍率加成(85, 85, 0.25,type="active")
-            char.技能倍率加成(100, 100, 0.16,type="active")
+            char.技能倍率加成(50, 50, 0.3, type="active")
+            char.技能倍率加成(85, 85, 0.25, type="active")
+            char.技能倍率加成(100, 100, 0.16, type="active")
             pass
         if 改造lv >= 5:
             char.技能攻击力加成(0.12)
