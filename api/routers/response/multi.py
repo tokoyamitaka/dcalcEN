@@ -3,6 +3,7 @@ import importlib
 import traceback
 
 from uuid import uuid1
+from core.baseClass.character import createCharcter
 from core.util.minheap import MinHeap
 
 
@@ -16,9 +17,7 @@ import itertools
 
 def calc_single_rank(alter, equipList, setInfo, lock):
     # print(set, alter, setName)
-    module_name = "core.characters." + alter
-    character: Character = importlib.import_module(
-        module_name).classChange()
+    character = createCharcter(alter)
     try:
         temp = character.calc(equipList=list(equipList), info=setInfo)
     except Exception as ex:

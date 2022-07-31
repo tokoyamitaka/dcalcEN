@@ -1,6 +1,7 @@
 import importlib
 import traceback
 from uuid import uuid1
+from core.baseClass.character import createCharcter
 from routers.response.multi import calc_multi
 import core.set as set
 from core.baseClass.character import Character
@@ -21,8 +22,7 @@ async def calc(setInfo=Body(None), setName=Body(None), state: AlterState = Depen
         alter = state.alter
         # raise Exception("无效token")
         # 配置信息
-    set.save(alter, setName, setInfo)
-
+    set.save(alter.split(".")[-1], setName, setInfo)
     return response(data=calc_multi(state, setInfo))
 
 
@@ -42,23 +42,19 @@ async def calc_single(setInfo=Body(None), setName=Body(None), state: AlterState 
     if(state is None or state.alter is None):
         raise Exception("无效token")
     else:
-        alter = state.alter.split(".")[-1]
+        alter = state.alter
         # raise Exception("无效token")
         # 配置信息
     if setName == None:
-        module_name = "core.characters." + alter
-        character: Character = importlib.import_module(
-            module_name).classChange()
+        character = createCharcter(alter)
         info = character.calc(
             equipList=setInfo['single_set'], info=setInfo, withJade=False)
 
     else:
-        set.save(alter, setName, setInfo)
+        set.save(alter.split(".")[-1], setName, setInfo)
         # 先存档配置信息，再进行计算
         # 职业
-        module_name = "core.characters." + alter
-        character: Character = importlib.import_module(
-            module_name).classChange()
+        character = createCharcter(alter)
         info = character.calc(setName, setInfo['single_set'], True)
     info['token'] = state.token
     store.set("/calc/results/"+info.get("id"), info)

@@ -158,7 +158,18 @@
       {
         "name": "spitfire_female",
         "title": "重霄·弹药专家",
-        "open": true
+        "open": true,
+        "options": [
+          {
+            "name": "default",
+            "title": "国服"
+          },
+          {
+            "name": "default",
+            "title": "前瞻",
+            "class": "TYF.spitfire_female"
+          }
+        ]
       },
       {
         "name": "sponsor",
