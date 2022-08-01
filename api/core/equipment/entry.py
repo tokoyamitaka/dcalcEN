@@ -34,6 +34,7 @@ def entry_1248(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        global hp_rate_num
         hp_rate_num = min(55, hp_rate_num)
         pass
 
@@ -2561,6 +2562,7 @@ def entry_1249(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        print(hp_rate_num)
         if hp_rate_num < 40:
             char.攻击强化加成(成长词条计算(2816, lv))
             char.技能冷却缩减(1, 100, 0.15, [50, 85, 100])
@@ -2569,11 +2571,11 @@ def entry_1249(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_1250(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['最高属性强化每增加50，技能冷却时间恢复速度 +4%(最多叠加6次)']
+        return ['最高属性强化每增加50，技能冷却时间恢复速度 +4%(最多叠加6次，觉醒技能除外)']
     if mode == 0:
         pass
     if mode == 1:
-        char.技能恢复加成(1, 100, 0.04 * 6)
+        char.技能恢复加成(1, 100, 0.04 * 6,exc=[50,85,100])
         char.条件冷却恢复加成("所有", 0.04 * 6)
 
 
