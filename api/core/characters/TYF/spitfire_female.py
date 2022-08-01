@@ -127,17 +127,21 @@ class 技能5(职业主动技能):
 
     MP = [40, 350]
 
-    形态 = ["70强化","强化","普通"]
+    形态 = ["70普","70特","特化","普通"]
 
     def 形态变更(self, 形态, char):
-        if 形态 == "70强化":
+        if 形态 == "70特":
             if char.get_skill_by_name("超真空弹：切莉").等级 >0:
                 self.power0 = 1.1
                 self.感电power0 = 1.1
             if char.get_skill_by_name("手雷精通").等级 >0:
                 self.power0 *= 1.2
                 self.感电power0 *= 1.2
-        if 形态 == "强化":
+        if 形态 == "70普":
+            if char.get_skill_by_name("超真空弹：切莉").等级 >0:
+                self.power0 = 1.1
+                self.感电power0 = 1.1
+        if 形态 == "特化":
             if char.get_skill_by_name("手雷精通").等级 >0:
                 self.power0 *= 1.2
                 self.感电power0 *=1.2
@@ -194,15 +198,18 @@ class 技能8(职业主动技能):
 
     MP = [70, 560]
 
-    形态 = ["70强化","强化","普通"]
+    形态 = ["70普","70特","特化","普通"]
 
     def 形态变更(self, 形态, char):
-        if 形态 == "70强化":
+        if 形态 == "70特":
             if char.get_skill_by_name("超真空弹：切莉").等级 >0:
                 self.power0 = 1.1
             if char.get_skill_by_name("手雷精通").等级 >0:
                 self.power0 *= 1.2
-        if 形态 == "强化":
+        if 形态 == "70普":
+            if char.get_skill_by_name("超真空弹：切莉").等级 >0:
+                self.power0 = 1.1
+        if 形态 == "特化":
             if char.get_skill_by_name("手雷精通").等级 >0:
                 self.power0 *= 1.2
     # def 等效CD(self, 武器类型, 输出类型):
@@ -569,7 +576,6 @@ class classChange(Character):
             except:
                 i = -1
         self.技能栏 = 技能列表
-        print(技能序号)
         self.技能序号 = 技能序号
         self.buff = 1.84
 

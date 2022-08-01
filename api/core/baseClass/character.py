@@ -1205,7 +1205,8 @@ class Character(CharacterProperty):
                 self.武器计算(temp)
             elif temp.部位 in ['称号', '宠物']:
                 self.__称号宠物计算(temp)
-            self.__增幅计算(temp)
+            if temp.部位 not in ['称号','宠物']:
+                self.__增幅计算(temp)
         pass
 
     def __防具精通计算(self, temp: equipment) -> float:
