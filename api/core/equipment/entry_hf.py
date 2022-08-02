@@ -733,7 +733,7 @@ def entry_1039(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.攻击速度增加(0.5)
+        char.攻击速度增加(0.05 * min(10, int(combo_num / 5)))
         pass
 
 

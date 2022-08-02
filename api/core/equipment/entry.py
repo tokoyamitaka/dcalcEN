@@ -700,6 +700,7 @@ def entry_1039(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.攻击速度增加(0.05 * min(10, int(combo_num / 5)))
         pass
 
 
@@ -2565,7 +2566,6 @@ def entry_1249(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         print(hp_rate_num)
         if hp_rate_num < 40:
             char.攻击强化加成(成长词条计算(2816, lv))
-            char.技能冷却缩减(1, 100, 0.15, [50, 85, 100])
         pass
 
 
