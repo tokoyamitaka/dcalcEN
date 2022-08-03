@@ -171,7 +171,7 @@ class Character(CharacterProperty):
         self.__条件冷却: Dict[str, float] = {}
         self.__条件冷却恢复: Dict[str, float] = {}
         self.__指令效果: Dict[str, float] = {}
-        self.__消耗品效果: float = 1.0
+        self.__消耗品效果: float = 0.0
         self.__MP消耗量: float = 1.0
 
         self.skills_passive = {}
@@ -858,7 +858,6 @@ class Character(CharacterProperty):
         self.__辟邪玉计算()
         self.护石计算()
         self.__符文计算()
-        self.__装备属性计算()
         self.skills_passive = {}
         for i in self.技能栏:
             self.skills_passive[i.名称] = {
@@ -867,7 +866,6 @@ class Character(CharacterProperty):
             }
         self.职业特殊计算()
         if self.类型 != '辅助':
-            self.__药剂计算()
             self.__CD倍率计算()
             self.__加算冷却计算()
             self.__被动倍率计算()
@@ -1046,7 +1044,11 @@ class Character(CharacterProperty):
         self.__附魔计算()
         self.__杂项计算()
         self.__徽章计算()
+        if self.类型 != '辅助':
+            self.__药剂计算()
         self.__装备词条计算()
+        if self.类型 != '辅助' and self.__消耗品效果!=0:
+            self.__药剂计算(rate=self.__消耗品效果)
 
     def __时装基础(self):
         时装品级列表 = {}
@@ -1320,11 +1322,11 @@ class Character(CharacterProperty):
     def 职业装备特殊计算(self) -> None:
         pass
 
-    def __药剂计算(self) -> None:
+    def __药剂计算(self,rate=1.0) -> None:
         from core.equipment.consumable import get_sundriesfunc_by_id
         for item in self.药剂:
             func = get_sundriesfunc_by_id(item)
-            func(self, rate=self.__消耗品效果, mode=1)
+            func(self, rate=rate, mode=1)
 
     def __装备词条计算(self):
         # 攻击强化相关计算
