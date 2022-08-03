@@ -593,7 +593,7 @@ class 技能18(主动技能):
 
     power1 = 1
 
-    def 装备护石(self,):
+    def 装备护石(self):
         self.hit0 = 0
         self.power1 *= 1+4.4+0.8
         self.感电hit0 = 1
