@@ -9517,6 +9517,7 @@ def entry_589(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name("地狱风火轮").power3 *= 1.5
         pass
 
 
