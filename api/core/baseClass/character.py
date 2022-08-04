@@ -1773,6 +1773,7 @@ class Character(CharacterProperty):
 def createCharcter(alter: str):
     character: Character = None
     module_name = 'core.characters.'+alter
+    print(module_name)
     try:
         character = importlib.import_module(module_name).classChange()
     except:
