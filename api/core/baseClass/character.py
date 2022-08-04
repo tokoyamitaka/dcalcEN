@@ -4,7 +4,7 @@ from pyclbr import Function
 from typing import Dict, List, Union
 from uuid import uuid1
 
-from core.baseClass.equipment import get_equ, equipment
+from core.baseClass.equipment import equipment, get_equ
 from core.baseClass.property import CharacterProperty
 from core.baseClass.skill import 主动技能, 技能, 被动技能
 from core.equipment.avatar import 装扮套装, 装扮套装集合, 装扮集合
@@ -595,11 +595,11 @@ class Character(CharacterProperty):
                 if i.是否有伤害 == 1:
                     i.恢复 += x
 
-    def 技能倍率加成(self, min: int, max: int, x: float, exc=[int],type="all") -> None:
+    def 技能倍率加成(self, min: int, max: int, x: float, exc=[int], type="all") -> None:
         for i in self.技能栏:
             if i.所在等级 >= min and i.所在等级 <= max and i.所在等级 not in exc:
                 if i.是否有伤害 == 1:
-                    if type =="all" or ( type=="active" and i.是否主动 == 1):
+                    if type == "all" or (type == "active" and i.是否主动 == 1):
                         i.倍率 *= (1 + x * self.技能伤害增加增幅)
 
     def 单技能加成(self, 名称: str, 倍率=1.0, CD=1.0, lv=0) -> None:
@@ -858,6 +858,7 @@ class Character(CharacterProperty):
         self.__辟邪玉计算()
         self.护石计算()
         self.__符文计算()
+        self.__装备属性计算()
         self.skills_passive = {}
         for i in self.技能栏:
             self.skills_passive[i.名称] = {
@@ -998,7 +999,7 @@ class Character(CharacterProperty):
                     temp['cd'] = k.等效CD(
                         武器类型=self.武器类型, 输出类型=self.类型, 额外CDR=i['CDR'])
                     temp['mp'] = k.MP消耗(
-                        武器类型=self.武器类型, 输出类型=self.类型, 额外倍率=self.__MP消耗量,char=self)
+                        武器类型=self.武器类型, 输出类型=self.类型, 额外倍率=self.__MP消耗量, char=self)
                     temp['atk_rate'] = k.等效百分比(武器类型=self.武器类型, char=self)
                     temp['cosume_cube_frag'] = k.无色消耗
                     temp['level'] = k.等级
@@ -1047,7 +1048,7 @@ class Character(CharacterProperty):
         if self.类型 != '辅助':
             self.__药剂计算()
         self.__装备词条计算()
-        if self.类型 != '辅助' and self.__消耗品效果!=0:
+        if self.类型 != '辅助' and self.__消耗品效果 != 0:
             self.__药剂计算(rate=self.__消耗品效果)
 
     def __时装基础(self):
@@ -1207,7 +1208,7 @@ class Character(CharacterProperty):
                 self.武器计算(temp)
             elif temp.部位 in ['称号', '宠物']:
                 self.__称号宠物计算(temp)
-            if temp.部位 not in ['称号','宠物']:
+            if temp.部位 not in ['称号', '宠物']:
                 self.__增幅计算(temp)
         pass
 
@@ -1322,7 +1323,7 @@ class Character(CharacterProperty):
     def 职业装备特殊计算(self) -> None:
         pass
 
-    def __药剂计算(self,rate=1.0) -> None:
+    def __药剂计算(self, rate=1.0) -> None:
         from core.equipment.consumable import get_sundriesfunc_by_id
         for item in self.药剂:
             func = get_sundriesfunc_by_id(item)
@@ -1753,7 +1754,7 @@ class Character(CharacterProperty):
                     'buff_attack': self.__buff固定三攻,
                     'awake_intstr_per': self.__觉醒百分比力智,
                     'awake_intstr': self.__觉醒固定力智,
-                    '攻击速度':self.__攻击速度
+                    '攻击速度': self.__攻击速度
                     # 其他老词条·····
                 }
             },
