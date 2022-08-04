@@ -74,7 +74,8 @@
       },
       {
         "name": "grappler_male",
-        "title": "归元·柔道家"
+        "title": "归元·柔道家",
+        "open": true
       },
       {
         "name": "empty",
