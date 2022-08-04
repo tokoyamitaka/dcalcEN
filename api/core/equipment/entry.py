@@ -5852,32 +5852,32 @@ def entry_295(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_300(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['每消灭一个敌人，获得1层强化(最多10层)，攻击领主敌人时消耗所有层数，每消耗1层，Lv70~75技能Lv+1，效果持续60秒']
+        return ['每消灭一个敌人，获得1层强化(最多10层)，攻击领主敌人时消耗所有层数，每消耗1层，Lv70~75主动技能Lv+1，效果持续60秒']
     if mode == 0:
         pass
     if mode == 1:
         if '领主敌人' in attack_type:
-            char.技能等级加成('所有', 70, 75, kill_num)
+            char.技能等级加成('主动', 70, 75, kill_num)
 
 
 def entry_308(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['每消灭一个敌人，获得1层强化(最多10层)，攻击领主敌人时消耗所有层数，每消耗1层，Lv35~40技能Lv+1，效果持续60秒']
+        return ['每消灭一个敌人，获得1层强化(最多10层)，攻击领主敌人时消耗所有层数，每消耗1层，Lv35~40主动技能Lv+1，效果持续60秒']
     if mode == 0:
         pass
     if mode == 1:
         if '领主敌人' in attack_type:
-            char.技能等级加成('所有', 35, 40, kill_num)
+            char.技能等级加成('主动', 35, 40, kill_num)
 
 
 def entry_322(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['每消灭一个敌人，获得1层强化(最多10层)，攻击领主敌人时消耗所有层数，每消耗1层，Lv45~60技能Lv+1，效果持续60秒']
+        return ['每消灭一个敌人，获得1层强化(最多10层)，攻击领主敌人时消耗所有层数，每消耗1层，Lv45~60主动技能Lv+1，效果持续60秒']
     if mode == 0:
         pass
     if mode == 1:
         if '领主敌人' in attack_type:
-            char.技能等级加成('所有', 45, 60, kill_num)
+            char.技能等级加成('主动', 45, 60, kill_num)
 
 
 def entry_329(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
