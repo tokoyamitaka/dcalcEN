@@ -61,7 +61,8 @@
     "children": [
       {
         "name": "nenmaster_male",
-        "title": "归元·气功师"
+        "title": "归元·气功师",
+        "open": true
       },
       {
         "name": "striker_male",
