@@ -3,28 +3,26 @@
 ### 2022.08.05.Beta
 
 #### NewFeatures
-* 同步国服体验服机械战神装备 ([0a9cf9](https://gitee.com/dcalc/dnfcalculating_110/commit/0a9cf9fe83b924831af5f2b28e1c39f36b9dc15f))
-* 校对装备名称 ([497662](https://gitee.com/dcalc/dnfcalculating_110/commit/4976623ddac4379ff93d6d7c30be3b23c5403004))
-* 添加元素爆破师 ([1e632c](https://gitee.com/dcalc/dnfcalculating_110/commit/1e632cb4c6f8bc3c9885aa470972ee14f37dd3f4))
-* 添加女柔道 ([eedb1a](https://gitee.com/dcalc/dnfcalculating_110/commit/eedb1a9cae4098e258e377eaba25cec185089c17))
-* 添加对colg的流派对接计算 ([8d3082](https://gitee.com/dcalc/dnfcalculating_110/commit/8d308261ebfa9194dee818915478951d09437acc))
-* 添加次元行者 ([c931e1](https://gitee.com/dcalc/dnfcalculating_110/commit/c931e13e4fa7fb9bcf8f46c213ecbc7a7c551e54))
-* 添加男柔道 ([491140](https://gitee.com/dcalc/dnfcalculating_110/commit/4911409ccf9282fe68d436dd96d2c108826b74ff))
-* 添加男气功 ([cb0371](https://gitee.com/dcalc/dnfcalculating_110/commit/cb03711095d3682f224dd524d2f421180e81d01c))
-* 添加风法 ([990ed2](https://gitee.com/dcalc/dnfcalculating_110/commit/990ed2e352ca38f8b7d3889966a4ca44aea391b0))
+
+- 同步国服体验服机械战神装备 ([0a9cf9](https://gitee.com/dcalc/dnfcalculating_110/commit/0a9cf9fe83b924831af5f2b28e1c39f36b9dc15f))
+- 校对装备名称 ([497662](https://gitee.com/dcalc/dnfcalculating_110/commit/4976623ddac4379ff93d6d7c30be3b23c5403004))
+- 添加对 colg 的流派对接计算 ([8d3082](https://gitee.com/dcalc/dnfcalculating_110/commit/8d308261ebfa9194dee818915478951d09437acc))
+- 添加元素爆破师 ([1e632c](https://gitee.com/dcalc/dnfcalculating_110/commit/1e632cb4c6f8bc3c9885aa470972ee14f37dd3f4))
+- 添加女柔道 ([eedb1a](https://gitee.com/dcalc/dnfcalculating_110/commit/eedb1a9cae4098e258e377eaba25cec185089c17))
+- 添加次元行者 ([c931e1](https://gitee.com/dcalc/dnfcalculating_110/commit/c931e13e4fa7fb9bcf8f46c213ecbc7a7c551e54))
+- 添加男柔道 ([491140](https://gitee.com/dcalc/dnfcalculating_110/commit/4911409ccf9282fe68d436dd96d2c108826b74ff))
+- 添加男气功 ([cb0371](https://gitee.com/dcalc/dnfcalculating_110/commit/cb03711095d3682f224dd524d2f421180e81d01c))
+- 添加风法 ([990ed2](https://gitee.com/dcalc/dnfcalculating_110/commit/990ed2e352ca38f8b7d3889966a4ca44aea391b0))
 
 #### BugFixes
-* fix bugs.<br>
-* fix bugs. ([0c1575](https://gitee.com/dcalc/dnfcalculating_110/commit/0c15759b8d06ae2eed068fa7fbd9c27c112c6c54))
-* 修复打造属性排序无效的问题<br>
-* fix:修复打造属性排序无效的问题 ([6e6057](https://gitee.com/dcalc/dnfcalculating_110/commit/6e605747683793d035594bef1a27664c27e00219))
-* 修复排行重复的情况 ([da658a](https://gitee.com/dcalc/dnfcalculating_110/commit/da658a6a47d364a8ab6b68a7dd83d39e023231e1))
-* 修复龙神问题 ([106fe5](https://gitee.com/dcalc/dnfcalculating_110/commit/106fe5b4a602f5518446c96eb030e68d9da296da))
-* 修正四维问题 ([81a2d8](https://gitee.com/dcalc/dnfcalculating_110/commit/81a2d8280bc48997c49f081fbf089efdf431009a))
-* 修正自定义词条错误 ([32c7d9](https://gitee.com/dcalc/dnfcalculating_110/commit/32c7d9a86bdcf5e9c184dff59bcb9c7a7051904f))
-* 男大枪：FM92SW刺弹炮护石无效的情况 ([650ad9](https://gitee.com/dcalc/dnfcalculating_110/commit/650ad960d049ef857001c3913b376f7f12dfbfb2))
-* 药剂结算先后问题 ([418c56](https://gitee.com/dcalc/dnfcalculating_110/commit/418c56b12ec1f54cfd637999b0ff8a01cb3eebca))
 
+- 修复打造属性排序无效的问题 ([6e6057](https://gitee.com/dcalc/dnfcalculating_110/commit/6e605747683793d035594bef1a27664c27e00219))
+- 修复排行重复的情况 ([da658a](https://gitee.com/dcalc/dnfcalculating_110/commit/da658a6a47d364a8ab6b68a7dd83d39e023231e1))
+- 修复龙神问题 ([106fe5](https://gitee.com/dcalc/dnfcalculating_110/commit/106fe5b4a602f5518446c96eb030e68d9da296da))
+- 修正四维问题 ([81a2d8](https://gitee.com/dcalc/dnfcalculating_110/commit/81a2d8280bc48997c49f081fbf089efdf431009a))
+- 修正自定义词条错误 ([32c7d9](https://gitee.com/dcalc/dnfcalculating_110/commit/32c7d9a86bdcf5e9c184dff59bcb9c7a7051904f))
+- 男大枪：FM92SW 刺弹炮护石无效的情况 ([650ad9](https://gitee.com/dcalc/dnfcalculating_110/commit/650ad960d049ef857001c3913b376f7f12dfbfb2))
+- 药剂结算先后问题 ([418c56](https://gitee.com/dcalc/dnfcalculating_110/commit/418c56b12ec1f54cfd637999b0ff8a01cb3eebca))
 
 ## History
 
