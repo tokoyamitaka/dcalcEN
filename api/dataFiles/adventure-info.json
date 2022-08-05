@@ -205,7 +205,8 @@
       },
       {
         "name": "dimension_walker",
-        "title": "知源·次元行者"
+        "title": "知源·次元行者",
+        "open": true
       }
     ]
   },

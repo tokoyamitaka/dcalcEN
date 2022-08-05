@@ -10209,6 +10209,7 @@ def entry_660(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name("次元：粒子风暴").倍率 *= 1.15
         pass
 
 
@@ -10227,8 +10228,11 @@ def entry_662(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name("乖离：魅魔之舞").CDR *= 0.9
+        char.get_skill_by_name("乖离：异界蜂群").CDR *= 0.9
+        char.get_skill_by_name("乖离：禁锢").CDR *= 0.9
+        char.get_skill_by_name("乖离：沉沦").CDR *= 0.9
         pass
-
 
 def entry_663(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
