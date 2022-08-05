@@ -201,7 +201,8 @@
       },
       {
         "name": "swift_master",
-        "title": "知源·逐风者"
+        "title": "知源·逐风者",
+        "open": true
       },
       {
         "name": "dimension_walker",

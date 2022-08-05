@@ -10263,6 +10263,7 @@ def entry_652(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name("狂风冲刺").CP武器 = True
         pass
 
 
@@ -10272,15 +10273,7 @@ def entry_653(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        pass
-
-
-def entry_654(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
-    if text:
-        return ['[游离之风]大小+10%']
-    if mode == 0:
-        pass
-    if mode == 1:
+        char.get_skill_by_name("风暴之拳").倍率 *= 1.5
         pass
 
 

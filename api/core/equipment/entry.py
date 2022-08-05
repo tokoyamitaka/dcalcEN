@@ -2574,7 +2574,7 @@ def entry_1250(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.技能恢复加成(1, 100, 0.04 * 6,exc=[50,85,100])
+        char.技能恢复加成(1, 100, 0.04 * 6, exc=[50, 85, 100])
         char.条件冷却恢复加成("所有", 0.04 * 6)
 
 
@@ -5846,7 +5846,7 @@ def entry_295(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
     if mode == 1:
         if '领主敌人' in attack_type:
-            char.技能等级加成('主动', 80, 95, kill_num,exc=[85])
+            char.技能等级加成('主动', 80, 95, kill_num, exc=[85])
 
 
 def entry_300(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -10062,8 +10062,9 @@ def entry_646(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 1:
         pass
 
+
 cp_elemental_bomber = 0
-cp_elemental_bomber_list = [0, 1,2,3,4,5]
+cp_elemental_bomber_list = [0, 1, 2, 3, 4, 5]
 
 
 def set_cp_elemental_bomber(x):
@@ -10081,6 +10082,7 @@ entry_chose.append((30647, ['CP武器-[元素之力]0层',
 multi_select[30647] = False
 variable_set[30647] = set_cp_elemental_bomber
 
+
 def entry_647(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
         return ['[元素炮]使用时，变更为前方生成深渊之球爆发攻击', '[元素炮]属性变化魔法球攻击力增加率 +50%，冷却时间 +5秒']
@@ -10088,7 +10090,7 @@ def entry_647(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
     if mode == 1:
         元素炮 = char.get_skill_by_name("元素炮")
-        元素炮.倍率 *=1.5
+        元素炮.倍率 *= 1.5
         元素炮.CD += 5
         pass
 
@@ -10109,7 +10111,7 @@ def entry_649(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
     if mode == 1:
         char.get_skill_by_name("元素炮").倍率 *= 1 + 0.1*cp_elemental_bomber
-        char.技能恢复加成(1,100,0.06*cp_elemental_bomber,exc=[50,85,100])
+        char.技能恢复加成(1, 100, 0.06*cp_elemental_bomber, exc=[50, 85, 100])
         pass
 
 
@@ -10137,6 +10139,7 @@ def entry_652(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name("狂风冲刺").CP武器 = True
         pass
 
 
@@ -10146,6 +10149,7 @@ def entry_653(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name("风暴之拳").倍率 *= 1.5
         pass
 
 
@@ -10233,6 +10237,7 @@ def entry_662(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         char.get_skill_by_name("乖离：禁锢").CDR *= 0.9
         char.get_skill_by_name("乖离：沉沦").CDR *= 0.9
         pass
+
 
 def entry_663(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
