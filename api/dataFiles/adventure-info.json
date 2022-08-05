@@ -187,7 +187,8 @@
     "children": [
       {
         "name": "elemental_bomber",
-        "title": "知源·元素爆破师"
+        "title": "知源·元素爆破师",
+        "open": true
       },
       {
         "name": "glacial_master",
