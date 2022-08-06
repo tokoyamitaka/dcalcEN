@@ -10190,12 +10190,12 @@ def entry_646(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 
 cp_elemental_bomber = 0
-cp_elemental_bomber_list = [0,1,2,3,4,5]
+cp_elemental_bomber_list = [0, 1, 2, 3, 4, 5]
 
 
 def set_cp_elemental_bomber(x):
     global cp_elemental_bomber
-    cp_elemental_bomber = cp_elemental_bomber[x[0]]
+    cp_elemental_bomber = cp_elemental_bomber_list[x[0]]
 
 
 entry_chose.append((30647, ['CP武器-[元素之力]0层',
@@ -10208,6 +10208,7 @@ entry_chose.append((30647, ['CP武器-[元素之力]0层',
 multi_select[30647] = False
 variable_set[30647] = set_cp_elemental_bomber
 
+
 def entry_647(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
         return ['[元素炮]使用时，变更为前方生成深渊之球爆发攻击', '[元素炮]属性变化魔法球攻击力增加率 +50%，冷却时间 +5秒']
@@ -10215,7 +10216,7 @@ def entry_647(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
     if mode == 1:
         元素炮 = char.get_skill_by_name("元素炮")
-        元素炮.倍率 *=1.5
+        元素炮.倍率 *= 1.5
         元素炮.CD += 5
         pass
 
@@ -10236,7 +10237,7 @@ def entry_649(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
     if mode == 1:
         char.get_skill_by_name("元素炮").倍率 *= 1 + 0.1*cp_elemental_bomber
-        char.技能恢复加成(1,100,0.06*cp_elemental_bomber,exc=[50,85,100])
+        char.技能恢复加成(1, 100, 0.06*cp_elemental_bomber, exc=[50, 85, 100])
         pass
 
 
@@ -10247,6 +10248,7 @@ def entry_650(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
     if mode == 1:
         pass
+
 
 def entry_651(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:

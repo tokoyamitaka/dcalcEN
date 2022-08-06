@@ -10069,7 +10069,7 @@ cp_elemental_bomber_list = [0, 1, 2, 3, 4, 5]
 
 def set_cp_elemental_bomber(x):
     global cp_elemental_bomber
-    cp_elemental_bomber = cp_elemental_bomber[x[0]]
+    cp_elemental_bomber = cp_elemental_bomber_list[x[0]]
 
 
 entry_chose.append((30647, ['CP武器-[元素之力]0层',
