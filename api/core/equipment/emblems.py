@@ -107,6 +107,16 @@ def emblems_25011(char: CharacterProperty = {}, text=False):
     char.基础属性加成(三攻=10)
 
 
+def emblems_25012(char: CharacterProperty = {}, text=False):
+    if text:
+        return (0, '上衣,下装,皮肤,光环', '绿色', '灿烂', '体精+15')
+    char.基础属性加成(体精=15)
+
+def emblems_25013(char: CharacterProperty = {}, text=False):
+    if text:
+        return (0, '上衣,下装,皮肤,光环', '绿色', '华丽', '体精+10')
+    char.基础属性加成(体精=10)
+
 # 徽章效果id范围 25001~25999
 for i in range(25001, 25030):
     try:

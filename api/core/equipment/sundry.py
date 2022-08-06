@@ -638,7 +638,7 @@ def sundries_27059(char: CharacterProperty = {}, mode=0, text=False, *args):
 
 def sundries_27060(char: CharacterProperty = {}, mode=0, text=False, *args):
     if text:
-        return "(0, '勋章', '力智(48)|三攻(30)')"
+        return "(0, '勋章', '四维(48)|三攻(30)')"
     if mode == 0:
         char.基础属性加成(四维=48, 三攻=30)
         try:
