@@ -858,7 +858,7 @@ class Character(CharacterProperty):
         self.__辟邪玉计算()
         self.护石计算()
         self.__符文计算()
-        self.__装备属性计算()
+        self.装备属性计算()
         self.skills_passive = {}
         for i in self.技能栏:
             self.skills_passive[i.名称] = {
@@ -1039,8 +1039,8 @@ class Character(CharacterProperty):
         data['无色消耗'] = 无色消耗
         return data
 
-    def __装备属性计算(self):
-        self.__装备基础()
+    def 装备属性计算(self):
+        self.装备基础()
         self.__时装基础()
         self.__附魔计算()
         self.__杂项计算()
@@ -1195,7 +1195,7 @@ class Character(CharacterProperty):
             # 打印相关函数和效果
             # print('{}: {}: {}'.format(i, func, func(self, text=TRUE)))
 
-    def __装备基础(self):
+    def 装备基础(self):
         for id in self.装备栏:
             temp = get_equ().get_equ_by_id(id)
             if '甲' in temp.类型:

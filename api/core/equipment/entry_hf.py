@@ -10608,6 +10608,8 @@ def entry_688(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name("无双击").CP武器 = True
+        char.get_skill_by_name("落雷符").倍率 *= 1.2
         pass
 
 
@@ -10626,6 +10628,9 @@ def entry_690(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        狂乱锤击 = char.get_skill_by_name("狂乱锤击")
+        狂乱锤击.倍率 *= 2
+        狂乱锤击.CDR *= 0.8
         pass
 
 
