@@ -54,12 +54,13 @@ equ_ids_skycity = {
 
 
 @openRouter.get("/skycity/recommend")
-async def get_recommend(page: int = 1, size: int = 7, keyword: str = "",state: AlterState = Depends(authorize)):
+async def get_recommend(page: int = 1, size: int = 7, keyword: str = "", state: AlterState = Depends(authorize)):
     if(state is None or state.alter is None):
         raise Exception("无效token")
     alter = state.alter
     if alter == 'crusader_male_carry':
         alter = 'crusader_male'
+    alter = alter.replace("TYF.", "")
     try:
         data = requests.get(
             "https://www.skycity.top:8017/api/DCalc/LoadRecommendPage?page={}&size={}&keyword={}&alter={}".format(
@@ -77,17 +78,18 @@ async def get_recommend(page: int = 1, size: int = 7, keyword: str = "",state: A
 
 
 @openRouter.get("/colg/recommend")
-async def get_recommend(page: int = 1, size: int = 7, keyword: str = "",state: AlterState = Depends(authorize)):
+async def get_recommend(page: int = 1, size: int = 7, keyword: str = "", state: AlterState = Depends(authorize)):
     data = {}
     if(state is None or state.alter is None):
         raise Exception("无效token")
     alter = state.alter
+    alter = alter.replace("TYF.", "")
     try:
         data = requests.get(
-                "https://bbs.colg.cn/colg_activity_new-simulator.html/getRecommendList?page={}&size={}&keyword={}&alter={}".format(
-                    page, size, keyword, alter),
-                timeout=10).json()
-        data=data.get("data", {})
+            "https://bbs.colg.cn/colg_activity_new-simulator.html/getRecommendList?page={}&size={}&keyword={}&alter={}".format(
+                page, size, keyword, alter),
+            timeout=10).json()
+        data = data.get("data", {})
     except:
         raise Exception("请稍后重试")
     return RecommentClass(code=200, message="", data=data.get("data", {}), totalCount=data.get("totalCount", 0))
