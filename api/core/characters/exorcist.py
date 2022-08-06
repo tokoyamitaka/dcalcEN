@@ -9,6 +9,7 @@ class 主动技能(主动技能):
     def 武器CD系数(self, 武器类型, 输出类型):
         return 1.0
 
+
 class 技能0(被动技能):  # 基础精通
     名称 = '基础精通'
     倍率 = 1.0
@@ -54,7 +55,7 @@ class 技能1(主动技能):
         潜龙 = char.get_skill_by_name("潜龙")
         self.power3 = 潜龙.获取倍率("基本攻击")/100 + 1
 
-        self.power4 = [0, 潜龙.获取倍率("基本攻击冲击波")]/100
+        self.power4 = 潜龙.获取倍率("基本攻击冲击波")/100
         return super().等效百分比(**argv)
 
 

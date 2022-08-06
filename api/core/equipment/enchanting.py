@@ -1184,7 +1184,8 @@ def enchanting_20130(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(0.3%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.003 * rate)
+        # # char.基础属性加成(攻击速度=0.003 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -1193,7 +1194,8 @@ def enchanting_20131(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(0.4%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.004 * rate)
+        # # char.基础属性加成(攻击速度=0.004 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -1202,7 +1204,8 @@ def enchanting_20132(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(0.5%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.005 * rate)
+        # # char.基础属性加成(攻击速度=0.005 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -1211,7 +1214,8 @@ def enchanting_20133(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(0.6%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.006 * rate)
+        # # char.基础属性加成(攻击速度=0.006 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -1220,7 +1224,8 @@ def enchanting_20134(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(0.7%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.007 * rate)
+        # # char.基础属性加成(攻击速度=0.007 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -1229,7 +1234,8 @@ def enchanting_20135(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(0.8%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.008 * rate)
+        # # char.基础属性加成(攻击速度=0.008 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -1382,7 +1388,8 @@ def enchanting_20152(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(0.9%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.009 * rate)
+        # # char.基础属性加成(攻击速度=0.009 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -1391,7 +1398,8 @@ def enchanting_20153(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(1.0%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.01 * rate)
+        # # char.基础属性加成(攻击速度=0.01 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -1400,7 +1408,8 @@ def enchanting_20154(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(1.1%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.011 * rate)
+        # # char.基础属性加成(攻击速度=0.011 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -1705,7 +1714,8 @@ def enchanting_20187(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(4.0%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.04 * rate)
+        # # char.基础属性加成(攻击速度=0.04 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -3347,7 +3357,8 @@ def enchanting_20367(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(6.0%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.06 * rate)
+        # # char.基础属性加成(攻击速度=0.06 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -3356,7 +3367,8 @@ def enchanting_20368(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(8.0%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.08 * rate)
+        # # char.基础属性加成(攻击速度=0.08 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -3375,7 +3387,7 @@ def enchanting_20370(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
         return (69, '武器', '物攻(25)|攻击速度(3.0%)')
     if mode == 0:
         char.基础属性加成(物理攻击力=25 * rate)
-        char.基础属性加成(攻击速度=0.03 * rate)
+        # # char.基础属性加成(攻击速度=0.03 * rate)
     if mode == 1:
         pass
 
@@ -3385,7 +3397,7 @@ def enchanting_20371(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
         return (69, '武器', '物攻(30)|攻击速度(5.0%)')
     if mode == 0:
         char.基础属性加成(物理攻击力=30 * rate)
-        char.基础属性加成(攻击速度=0.05 * rate)
+        # # char.基础属性加成(攻击速度=0.05 * rate)
     if mode == 1:
         pass
 
@@ -3543,7 +3555,7 @@ def enchanting_20388(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
         return (69, '武器', '物攻(25)|攻击速度(3.0%)')
     if mode == 0:
         char.基础属性加成(物理攻击力=25 * rate)
-        char.基础属性加成(攻击速度=0.03 * rate)
+        # # char.基础属性加成(攻击速度=0.03 * rate)
     if mode == 1:
         pass
 
@@ -6268,7 +6280,8 @@ def enchanting_20683(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(10.0%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.1 * rate)
+        # # char.基础属性加成(攻击速度=0.1 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -6560,7 +6573,8 @@ def enchanting_20715(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(2.0%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.02 * rate)
+        # # char.基础属性加成(攻击速度=0.02 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -6569,7 +6583,8 @@ def enchanting_20716(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(3.0%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.03 * rate)
+        # # char.基础属性加成(攻击速度=0.03 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -9217,7 +9232,8 @@ def enchanting_20993(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(8.0%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.08 * rate)
+        # char.基础属性加成(攻击速度=0.08 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -9226,7 +9242,8 @@ def enchanting_20994(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(10.0%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.1 * rate)
+        # char.基础属性加成(攻击速度=0.1 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -10741,7 +10758,7 @@ def enchanting_21152(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
         char.所有属性强化加成(15 * rate)
         char.基础属性加成(物理攻击力=30 * rate)
         char.基础属性加成(独立攻击力=30 * rate)
-        char.基础属性加成(攻击速度=0.05 * rate)
+        # char.基础属性加成(攻击速度=0.05 * rate)
     if mode == 1:
         pass
 
@@ -11941,7 +11958,7 @@ def enchanting_21280(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
         char.基础属性加成(独立攻击力=15 * rate)
         char.基础属性加成(力量=25 * rate)
         char.基础属性加成(物理暴击率=0.01 * rate)
-        char.基础属性加成(攻击速度=0.005 * rate)
+        # char.基础属性加成(攻击速度=0.005 * rate)
         char.基础属性加成(施放速度=0.005 * rate)
     if mode == 1:
         pass
@@ -12154,7 +12171,7 @@ def enchanting_21303(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
         char.属性攻击('火')
         char.基础属性加成(物理攻击力=20 * rate)
         char.基础属性加成(魔法攻击力=20 * rate)
-        char.基础属性加成(攻击速度=0.03 * rate)
+        # char.基础属性加成(攻击速度=0.03 * rate)
         char.基础属性加成(施放速度=0.03 * rate)
     if mode == 1:
         pass
@@ -12176,7 +12193,7 @@ def enchanting_21305(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
         return (86, '武器', '物攻(40)|攻击速度(3.0%)')
     if mode == 0:
         char.基础属性加成(物理攻击力=40 * rate)
-        char.基础属性加成(攻击速度=0.03 * rate)
+        # char.基础属性加成(攻击速度=0.03 * rate)
     if mode == 1:
         pass
 
@@ -12206,7 +12223,7 @@ def enchanting_21308(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
         char.属性攻击('冰')
         char.基础属性加成(物理攻击力=20 * rate)
         char.基础属性加成(魔法攻击力=20 * rate)
-        char.基础属性加成(攻击速度=0.03 * rate)
+        # char.基础属性加成(攻击速度=0.03 * rate)
         char.基础属性加成(施放速度=0.03 * rate)
     if mode == 1:
         pass
@@ -12219,7 +12236,7 @@ def enchanting_21309(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
         char.属性攻击('光')
         char.基础属性加成(物理攻击力=20 * rate)
         char.基础属性加成(魔法攻击力=20 * rate)
-        char.基础属性加成(攻击速度=0.03 * rate)
+        # char.基础属性加成(攻击速度=0.03 * rate)
         char.基础属性加成(施放速度=0.03 * rate)
     if mode == 1:
         pass
@@ -12251,7 +12268,7 @@ def enchanting_21312(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
         char.属性攻击('暗')
         char.基础属性加成(物理攻击力=20 * rate)
         char.基础属性加成(魔法攻击力=20 * rate)
-        char.基础属性加成(攻击速度=0.03 * rate)
+        # char.基础属性加成(攻击速度=0.03 * rate)
         char.基础属性加成(施放速度=0.03 * rate)
     if mode == 1:
         pass
@@ -12578,7 +12595,8 @@ def enchanting_21348(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(2.1%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.021 * rate)
+        # char.基础属性加成(攻击速度=0.021 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -12587,7 +12605,8 @@ def enchanting_21349(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(2.2%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.022 * rate)
+        # char.基础属性加成(攻击速度=0.022 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -12596,7 +12615,8 @@ def enchanting_21350(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(2.3%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.023 * rate)
+        # char.基础属性加成(攻击速度=0.023 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -12605,7 +12625,8 @@ def enchanting_21351(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(2.4%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.024 * rate)
+        # char.基础属性加成(攻击速度=0.024 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -12614,7 +12635,8 @@ def enchanting_21352(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(2.5%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.025 * rate)
+        # char.基础属性加成(攻击速度=0.025 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -12623,7 +12645,8 @@ def enchanting_21353(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(2.6%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.026 * rate)
+        # char.基础属性加成(攻击速度=0.026 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -12632,7 +12655,8 @@ def enchanting_21354(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(2.7%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.027 * rate)
+        # char.基础属性加成(攻击速度=0.027 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -12686,7 +12710,8 @@ def enchanting_21360(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(1.2%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.012 * rate)
+        # char.基础属性加成(攻击速度=0.012 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -12695,7 +12720,8 @@ def enchanting_21361(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(1.3%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.013 * rate)
+        # char.基础属性加成(攻击速度=0.013 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -12704,7 +12730,8 @@ def enchanting_21362(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(1.4%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.014 * rate)
+        # char.基础属性加成(攻击速度=0.014 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -13013,7 +13040,8 @@ def enchanting_21396(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(2.8%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.028 * rate)
+        # char.基础属性加成(攻击速度=0.028 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -13022,7 +13050,8 @@ def enchanting_21397(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(1.5%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.015 * rate)
+        # char.基础属性加成(攻击速度=0.015 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -13031,7 +13060,8 @@ def enchanting_21398(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(1.6%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.016 * rate)
+        # char.基础属性加成(攻击速度=0.016 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -13040,7 +13070,8 @@ def enchanting_21399(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(1.7%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.017 * rate)
+        # char.基础属性加成(攻击速度=0.017 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -13049,7 +13080,8 @@ def enchanting_21400(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(1.8%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.018 * rate)
+        # char.基础属性加成(攻击速度=0.018 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -13058,7 +13090,8 @@ def enchanting_21401(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(1.9%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.019 * rate)
+        # char.基础属性加成(攻击速度=0.019 * rate)
+        pass
     if mode == 1:
         pass
 
@@ -13253,7 +13286,7 @@ def enchanting_21422(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if text:
         return (56, '武器', '攻击速度(0.6%)|施放速度(1.2%)')
     if mode == 0:
-        char.基础属性加成(攻击速度=0.006 * rate)
+        # char.基础属性加成(攻击速度=0.006 * rate)
         char.基础属性加成(施放速度=0.012 * rate)
     if mode == 1:
         pass
