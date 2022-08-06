@@ -197,7 +197,8 @@
       },
       {
         "name": "blood_mage",
-        "title": "知源·血法师"
+        "title": "知源·血法师",
+        "open": true
       },
       {
         "name": "swift_master",

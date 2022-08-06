@@ -1703,6 +1703,26 @@ class Character(CharacterProperty):
                     "type": "物理攻击力",
                     "info": [round((倍率-1)*100), '所有', '']
                 })
+            倍率 = i.独立攻击力倍率进图(self.武器类型)
+            if i.名称 not in self.skills_passive:
+                continue
+            if 倍率 != 1:
+                self.skills_passive[i.名称]['info'].append({
+                    "type": "独立攻击力[进图]",
+                    "info": [round((倍率-1)*100), '所有', '']
+                })
+            倍率 = i.魔法攻击力倍率进图(self.武器类型)
+            if 倍率 != 1:
+                self.skills_passive[i.名称]['info'].append({
+                    "type": "魔法攻击力[进图]",
+                    "info": [round((倍率-1)*100), '所有', '']
+                })
+            倍率 = i.物理攻击力倍率进图(self.武器类型)
+            if 倍率 != 1:
+                self.skills_passive[i.名称]['info'].append({
+                    "type": "物理攻击力[进图]",
+                    "info": [round((倍率-1)*100), '所有', '']
+                })
         buff = self.get_skill_by_name('BUFF')
         awake = self.get_skill_by_name('一次觉醒')
         result = {

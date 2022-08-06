@@ -10168,6 +10168,7 @@ def entry_655(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name("狱血之噬").CDR *= 0.9
         pass
 
 
@@ -10186,6 +10187,7 @@ def entry_657(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name("血腥狩猎").倍率 *= 1.5
         pass
 
 
@@ -10195,6 +10197,7 @@ def entry_658(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name("血腥炼狱").倍率 *= 1.5
         pass
 
 
