@@ -5,26 +5,9 @@ from core.baseClass.skill import 主动技能, 被动技能
 
 
 class 主动技能(主动技能):
-    def 等效CD(self, **argv):
-        # 武器类型 输出类型 额外CDR 手搓收益 恢复
-        武器类型 = argv.get('武器类型', '')
-        输出类型 = argv.get('输出类型', '')
-        额外CDR = argv.get('额外CDR', 1.0)
-        手搓收益 = argv.get('手搓收益', 1.0)
-        恢复 = argv.get('恢复', True)
 
-        cdr = 1
-        if self.手搓:
-            if self.所在等级 >= 15 and self.所在等级 <= 30:
-                cdr = 0.99
-            if self.所在等级 >= 35 and self.所在等级 <= 70:
-                cdr = 0.98
-            if self.所在等级 >= 75 and self.所在等级 <= 100:
-                cdr = 0.95
-            if self.所在等级 in [50, 100]:
-                cdr = 0.95
-        return round(max(self.CD * cdr * 手搓收益 * self.CDR * 额外CDR / (self.恢复 if 恢复 else 1), self.CD * 0.3, 1), 1)
-
+    def 武器CD系数(self, 武器类型, 输出类型):
+        return 1.0
 
 class 技能0(被动技能):  # 基础精通
     名称 = '基础精通'
@@ -71,8 +54,7 @@ class 技能1(主动技能):
         潜龙 = char.get_skill_by_name("潜龙")
         self.power3 = 潜龙.获取倍率("基本攻击")/100 + 1
 
-        self.data5 = [0, 潜龙.获取倍率("基本攻击冲击波")]
-        self.hit5 = 1
+        self.power4 = [0, 潜龙.获取倍率("基本攻击冲击波")]/100
         return super().等效百分比(**argv)
 
 
@@ -105,14 +87,14 @@ class 技能2(主动技能):
         if 形态 == '' and len(self.形态) > 0:
             形态 = self.形态[0]
         潜龙 = char.get_skill_by_name("潜龙")
+        self.power0 = 1 + (潜龙.获取倍率("空斩打") / 100)
+        self.power1 = 潜龙.获取倍率("空斩打剑气") / 100
+        self.power2 = 潜龙.获取倍率("空斩打冲击波") / 100
         if 形态 == "普通":
-            self.power0 = self.power1 = self.power2 = 1 + \
-                (潜龙.获取倍率("空斩打剑气") / 100)
+            self.hit2 = 0
             pass
         if 形态 == "反身":
-            self.power0 = self.power1 = self.power2 = 1 + \
-                2*(潜龙.获取倍率("空斩打剑气") / 100)
-            pass
+            self.hit2 = 1
         pass
 
 

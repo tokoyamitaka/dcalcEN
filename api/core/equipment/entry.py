@@ -10523,6 +10523,17 @@ def entry_691(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        觉醒 = char.get_skill_by_name("制裁：怒火疾风")
+        觉醒.CD = 40
+        觉醒.无色消耗 = 5
+        觉醒.power0 = 2
+        觉醒.hit0 = 10
+        觉醒.hit1 = 0
+        觉醒.hit2 = 0
+        觉醒.MP = [int(i*0.7) for i in 觉醒.MP]
+        for skill in char.技能队列:
+            if skill["名称"] == "制裁：怒火疾风":
+                skill["无色消耗"] -=5
         pass
 
 

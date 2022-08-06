@@ -261,7 +261,8 @@
       },
       {
         "name": "infighter",
-        "title": "神启·蓝拳圣使"
+        "title": "神启·蓝拳圣使",
+        "open": true
       },
       {
         "name": "exorcist",
