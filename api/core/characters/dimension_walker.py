@@ -551,8 +551,8 @@ class 技能20(主动技能):
             self.hit0 = 0
             self.hit1 = 0
             self.hit2 = 10
-            self.hit3 = 0
-            self.hit4 = 0
+            self.hit3 = 17
+            self.hit4 = 1
         if 形态 == '强化简':
             self.hit0 = 0
             self.hit1 = 0
