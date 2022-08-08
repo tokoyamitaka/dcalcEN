@@ -520,7 +520,7 @@ class 技能22(职业主动技能):
 
     CD = 60.0
 
-    data0 = [0] + [int(i*126.63+1121.53) for i in range(1, 60)]
+    data0 = [0] + [int(i*12663+112153) for i in range(1, 60)]
 
     # 不同形态下的技能数值，每个形态都要有对应的判断和修改，没有进行拷贝，可能会出错
     # def 形态变更(self, 形态, char:Character):

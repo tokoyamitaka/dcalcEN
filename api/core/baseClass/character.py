@@ -166,6 +166,7 @@ class Character(CharacterProperty):
             '直伤': 1.0, '中毒': 0.0, '灼烧': 0.0, '感电': 0.0, '出血': 0.0}
         self.伤害系数: Dict[str, float] = {
             '中毒': 1.0, '灼烧': 1.0, '感电': 1.0, '出血': 1.0}
+        self.特效 = []
         self.__异常抗性: Dict[str, float] = {}
         self.__条件技攻: Dict[str, float] = {}
         self.__条件冷却: Dict[str, float] = {}
