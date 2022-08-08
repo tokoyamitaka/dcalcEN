@@ -414,14 +414,14 @@ class 技能16(主动技能):
             self.hit1 = 15
             self.hit2 = 15
             self.hit3 = 1
+            if self.CP武器:
+                self.hit1 += 30
+                self.hit2 += 30
         if 形态 == "枪身":
             self.hit0 = 15
             self.hit1 = 0
             self.hit2 = 0
             self.hit3 = 1
-        if self.CP武器:
-            self.hit1 += 30
-            self.hit2 += 30
 
     def 装备护石(self):
         self.power3 = 1.86
