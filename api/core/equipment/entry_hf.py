@@ -11583,7 +11583,7 @@ def entry_758(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_759(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['特定技能攻击时获得极限点穴层数(最多30层，使用行云诀攻击时不获得)', '- 双龙流云灭: 10层', '- 无双突刺: 5层', '- 无畏波动枪: 4层', '- 双重刺击: 2层', '- 刺击: 1层', '夺命雷霆枪攻击速度 +10%']
+        return ['特定技能攻击时获得极限点穴层数(最多30层，使用行云诀攻击时不获得)', '- 双龙流云灭: 10层', '- 无双突刺: 5层', '- 无畏波动枪: 4层', '- 双重刺击: 2层', '- 刺击: 1层', '[夺命雷霆枪]攻击速度 +10%']
     if mode == 0:
         pass
     if mode == 1:
@@ -11596,15 +11596,17 @@ def entry_760(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name("夺命雷霆枪").恢复 += 0.3
         pass
 
 
 def entry_761(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['夺命雷霆枪攻击时，消耗所有极限点穴层数，每层极限点穴层数都会适用于积累的创伤效果数量']
+        return ['[夺命雷霆枪]攻击时，消耗所有极限点穴层数，每层极限点穴层数都会适用于积累的创伤效果数量']
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name("夺命雷霆枪").CP武器 = True
         pass
 
 # endregion

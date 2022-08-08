@@ -399,6 +399,7 @@ class 技能16(主动技能):
     TP成长 = 0.1
     TP上限 = 5
     是否有护石 = 1
+    CP武器 = False
 
     MP = [375, 3200]
     无色消耗 = 2
@@ -418,6 +419,9 @@ class 技能16(主动技能):
             self.hit1 = 0
             self.hit2 = 0
             self.hit3 = 1
+        if self.CP武器:
+            self.hit1 += 30
+            self.hit2 += 30
 
     def 装备护石(self):
         self.power3 = 1.86

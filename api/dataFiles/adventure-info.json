@@ -368,7 +368,8 @@
       },
       {
         "name": "skirmisher",
-        "title": "千魂·决战者"
+        "title": "千魂·决战者",
+        "open": true
       },
       {
         "name": "dragoon",
