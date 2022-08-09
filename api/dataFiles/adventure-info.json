@@ -396,7 +396,8 @@
       },
       {
         "name": "agent",
-        "title": "苍暮·特工"
+        "title": "苍暮·特工",
+        "open": true
       },
       {
         "name": "trouble_shooter",

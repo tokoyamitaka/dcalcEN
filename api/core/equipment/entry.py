@@ -11232,6 +11232,8 @@ def entry_763(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name("精准射击").CDR *= 0.85
+        char.get_skill_by_name("锁定射击").CDR *= 0.85
         pass
 
 
@@ -11241,6 +11243,8 @@ def entry_764(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name("双弦斩").CDR *= 0.85
+        char.get_skill_by_name("月影秘步").CDR *= 0.85
         pass
 
 
@@ -11250,6 +11254,8 @@ def entry_765(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name("月相轮舞").倍率 *= 1.24
+        char.get_skill_by_name("毁灭狂欢").倍率 *= 1.24
         pass
 
 
@@ -11259,6 +11265,7 @@ def entry_766(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name("月光镇魂曲").倍率 *= 1.48
         pass
 
 

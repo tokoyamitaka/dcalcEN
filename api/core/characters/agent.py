@@ -238,10 +238,10 @@ class 技能12(主动技能):
     MP = [881, 7403]
     无色消耗 = 5
 
-    def 等效百分比(self, 武器类型):
+    def 等效百分比(self, **argv):
         if self.等级 >= 9:
-            self.power0 = 1.1
-        return super().等效百分比(武器类型)
+            return super().等效百分比(**argv) * 1.1
+        return super().等效百分比(**argv)
 
 
 class 技能13(主动技能):
@@ -468,22 +468,18 @@ class classChange(Character):
 
         super().__init__()
 
-    def 结果计算(self):
-        装备锁定护石 = 0
-        毁灭狂欢次数 = 0
-        锁定射击次数 = 0
-        加成倍率 = 0
-        for item in self.护石栏:
-            if item == '锁定射击':
-                装备锁定护石 = 1
-        for skill in self.技能队列:
-            if skill['名称'] == '毁灭狂欢':
-                毁灭狂欢次数 += 1
-            if skill['名称'] == '锁定射击':
-                锁定射击次数 += 1
-        if 装备锁定护石 == 1 and 锁定射击次数 != 0:
-            加成倍率 = 1+毁灭狂欢次数*0.5/锁定射击次数
-            for skill in self.技能队列:
-                if skill['名称'] == '锁定射击':
-                    skill['倍率'] *= 加成倍率*1.14
-        return self.伤害计算()
+    def 伤害计算(self):
+        data =  super().伤害计算()
+        if '锁定射击' in self.护石栏:
+            skill_dict = data['skills']
+            毁灭狂欢 = skill_dict.get("毁灭狂欢",{})
+            锁定射击 = skill_dict.get("锁定射击",{})
+            毁灭狂欢次数 = 毁灭狂欢.get("count",0)
+            锁定射击次数 = 锁定射击.get("count",0)
+            锁定射击伤害 = 锁定射击.get("damage",0)
+            if 锁定射击 != {}:
+                data['skills']['锁定射击']['count'] += 毁灭狂欢次数/2
+                data['skills']['锁定射击']['damage'] += 毁灭狂欢次数/2 * 锁定射击伤害/锁定射击次数
+                data['total_data'] += 毁灭狂欢次数/2 * 锁定射击伤害/锁定射击次数
+        return data
+
