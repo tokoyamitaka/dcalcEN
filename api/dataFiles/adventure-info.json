@@ -378,7 +378,8 @@
       },
       {
         "name": "impaler",
-        "title": "千魂·暗枪士"
+        "title": "千魂·暗枪士",
+        "open": true
       },
       {
         "name": "empty",
