@@ -20,12 +20,12 @@ class 技能0(主动技能):
 
     CP武器 = False
 
-    def 等效百分比(self, **argv):
-        游离 = 0
-        if self.CP武器:
-            char = argv.get('char', {})
-            游离 = char.get_skill_by_name("游离之风").等效百分比(**argv)*0.5
-        return super().等效百分比(**argv) + 游离
+    # def 等效百分比(self, **argv):
+    #     游离 = 0
+    #     if self.CP武器:
+    #         char = argv.get('char', {})
+    #         游离 = char.get_skill_by_name("游离之风").等效百分比(**argv)*0.5
+    #     return super().等效百分比(**argv) + 游离
 
 
 class 技能1(主动技能):
@@ -546,3 +546,20 @@ class classChange(Character):
         self.buff = 2.11
 
         super().__init__()
+
+
+    def 伤害计算(self):
+        data =  super().伤害计算()
+        狂风冲刺 = self.get_skill_by_name("狂风冲刺")
+        if 狂风冲刺.CP武器:
+            skill_dict = data['skills']
+            游离之风 = skill_dict.get("游离之风",{})
+            狂风冲刺 = skill_dict.get("狂风冲刺",{})
+            狂风冲刺次数 = 狂风冲刺.get("count",0)
+            游离之风次数 = 游离之风.get("count",0)
+            游离之风伤害 = 游离之风.get("damage",0)
+            if 狂风冲刺 != {}:
+                data['skills']['游离之风']['count'] += 3 * 狂风冲刺次数/2
+                data['skills']['游离之风']['damage'] += 3 * 狂风冲刺次数/2 * 游离之风伤害/游离之风次数
+                data['total_data'] += 3 * 狂风冲刺次数/2 * 游离之风伤害/游离之风次数
+        return data
