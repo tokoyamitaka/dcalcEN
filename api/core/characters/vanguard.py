@@ -1,6 +1,6 @@
-from core.baseClass.skill import 技能
-from core.baseClass.character import Character
-from core.baseClass.skill import 主动技能, 被动技能
+from core.basic.skill import 技能
+from core.basic.character import Character
+from core.basic.skill import 主动技能, 被动技能
 
 
 class 技能0(被动技能):#基础精通
@@ -28,7 +28,7 @@ class 技能1(主动技能):
     等级上限 = 1
     学习间隔 = 2
     等级精通 = 1
-    MP = [3, 35]    
+    MP = [3, 35]
     # 接平x第一下
     data0 = [(i) for i in [0, 289.33]]
     hit0 = 1
@@ -70,7 +70,7 @@ class 技能2(被动技能):
         if self.等级 == 0:
             return 1.0
         else:
-            return round(1.1 + 0.02 * self.等级, 5)            
+            return round(1.1 + 0.02 * self.等级, 5)
 
 
 class 技能3(主动技能):

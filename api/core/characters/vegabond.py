@@ -1,7 +1,7 @@
 
-from core.baseClass.skill import 技能
-from core.baseClass.character import Character
-from core.baseClass.skill import 主动技能, 被动技能
+from core.basic.skill import 技能
+from core.basic.character import Character
+from core.basic.skill import 主动技能, 被动技能
 
 
 class 技能0(被动技能):
@@ -571,7 +571,7 @@ class classChange(Character):
 
     def 职业特殊计算(self):
         # 默认105光剑
-        from core.baseClass.equipment import get_equ
+        from core.basic.equipment import get_equ
         from core.equipment.property import 武器强化计算
         temp = get_equ().get_equ_by_id(98)
         物理攻击力 = 武器强化计算(temp.等级, temp.品质, self.打造详情.get("副武器", {"cursed_number": 0}).get('cursed_number', 0), temp.类型,

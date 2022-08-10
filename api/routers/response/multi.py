@@ -3,11 +3,11 @@ import importlib
 import traceback
 
 from uuid import uuid1
-from core.baseClass.character import createCharcter
+from core.basic.character import createCharcter
 from core.util.minheap import MinHeap
 
 
-from core.baseClass.character import Character
+from core.basic.character import Character
 from core.store import store
 
 from concurrent.futures import ProcessPoolExecutor

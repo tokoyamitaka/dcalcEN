@@ -2,7 +2,7 @@ import json
 from typing import List, Tuple
 
 import core.set as set
-from core.baseClass.equipment import get_equ
+from core.basic.equipment import get_equ
 from core.equipment.avatar import 装扮, 装扮集合
 from core.equipment.emblems import get_emblems_setinfo
 from core.equipment.enchanting import get_enchanting_setinfo

@@ -1,6 +1,6 @@
 from typing import Tuple
 
-from core.baseClass.property import CharacterProperty
+from core.basic.property import CharacterProperty
 
 装扮选项属性 = {
     "神器": {

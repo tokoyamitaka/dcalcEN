@@ -1,4 +1,4 @@
-from core.baseClass.property import CharacterProperty
+from core.basic.property import CharacterProperty
 from core.equipment.property import 成长词条计算
 
 entry_func_list = {}  # id : enteyfunc 词条函数(数组)列表

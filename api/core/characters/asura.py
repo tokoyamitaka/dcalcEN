@@ -1,7 +1,7 @@
 
-from core.baseClass.skill import 技能
-from core.baseClass.character import Character
-from core.baseClass.skill import 主动技能, 被动技能
+from core.basic.skill import 技能
+from core.basic.character import Character
+from core.basic.skill import 主动技能, 被动技能
 
 
 class 技能0(主动技能):

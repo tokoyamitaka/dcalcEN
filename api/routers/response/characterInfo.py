@@ -2,7 +2,7 @@ import importlib
 from typing import List
 
 import core.set as set
-from core.baseClass.character import createCharcter
+from core.basic.character import createCharcter
 
 
 def has_set(alter: str):

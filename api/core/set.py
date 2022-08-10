@@ -2,10 +2,10 @@ import importlib
 import json
 import os
 from math import fabs
-from core.baseClass.equipment import refresh_equ
+from core.basic.equipment import refresh_equ
 
-from core.baseClass.character import Character, createCharcter
-from core.baseClass.equipment import get_equ
+from core.basic.character import Character, createCharcter
+from core.basic.equipment import get_equ
 from core.equipment.emblems import get_emblems_setinfo
 from core.equipment.enchanting import get_enchanting_setinfo
 from core.store import store
@@ -169,7 +169,7 @@ def get_global():
 def set_global(setInfo):
     with open('./sets/global.json', "w", encoding='utf-8') as fp:
         json.dump(setInfo, fp, ensure_ascii=False, indent=2)
-    from core.baseClass.equipment import refresh_equ
+    from core.basic.equipment import refresh_equ
     refresh_equ()
     return setInfo
     # store.set('/global', setInfo)

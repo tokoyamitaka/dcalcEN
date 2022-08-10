@@ -7,8 +7,8 @@ from cProfile import label
 from typing import Dict, List, Text
 
 import requests
-from core.baseClass.character import createCharcter
-from core.baseClass.equipment import get_equ, equipment
+from core.basic.character import createCharcter
+from core.basic.equipment import get_equ, equipment
 from core.equipment.emblems import get_emblems_setinfo
 from core.equipment.enchanting import get_enchanting_setinfo
 from core.equipment.jade import get_jade_setinfo

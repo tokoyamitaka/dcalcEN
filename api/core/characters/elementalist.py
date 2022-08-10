@@ -1,8 +1,8 @@
 
 from copy import deepcopy
 
-from core.baseClass.character import Character
-from core.baseClass.skill import 主动技能, 被动技能
+from core.basic.character import Character
+from core.basic.skill import 主动技能, 被动技能
 
 # class 主动技能(主动技能):
 # def 等效CD(self, 武器类型):

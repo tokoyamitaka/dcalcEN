@@ -1,4 +1,4 @@
-from core.baseClass.property import CharacterProperty
+from core.basic.property import CharacterProperty
 
 jade_func_list = {}
 

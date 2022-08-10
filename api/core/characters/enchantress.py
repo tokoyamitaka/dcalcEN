@@ -2,8 +2,8 @@
 from copy import deepcopy
 from typing import List
 
-from core.baseClass.buffer.property import *
-from core.baseClass.character import Character
+from core.basic.buffer.property import *
+from core.basic.character import Character
 
 
 class 小魔女护石0:

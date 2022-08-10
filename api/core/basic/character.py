@@ -4,9 +4,9 @@ from pyclbr import Function
 from typing import Dict, List, Union
 from uuid import uuid1
 
-from core.baseClass.equipment import equipment, get_equ
-from core.baseClass.property import CharacterProperty
-from core.baseClass.skill import 主动技能, 技能, 被动技能
+from core.basic.equipment import equipment, get_equ
+from core.basic.property import CharacterProperty
+from core.basic.skill import 主动技能, 技能, 被动技能
 from core.equipment.avatar import 装扮套装, 装扮套装集合, 装扮集合
 from core.equipment.emblems import get_emblems_setinfo
 from core.equipment.enchanting import get_enchanting_setinfo
@@ -16,9 +16,9 @@ from core.equipment.property import (增幅计算, 奶成长词条计算, 左右
 from core.equipment.sundry import get_sundries_setinfo
 from core.store import store
 
-# from core.baseClass.enchanting import get_encfunc_by_id
-# from core.baseClass.emblems import get_embfunc_by_id
-# from core.baseClass.jade import get_jadefunc_by_id
+# from core.basic.enchanting import get_encfunc_by_id
+# from core.basic.emblems import get_embfunc_by_id
+# from core.basic.jade import get_jadefunc_by_id
 
 
 class Character(CharacterProperty):

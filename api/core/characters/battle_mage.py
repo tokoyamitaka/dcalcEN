@@ -1,5 +1,5 @@
-from core.baseClass.character import Character, equipment, 武器强化计算, 锻造计算
-from core.baseClass.skill import 主动技能, 被动技能
+from core.basic.character import Character, equipment, 武器强化计算, 锻造计算
+from core.basic.skill import 主动技能, 被动技能
 # class 主动技能(主动技能):
 #     def 等效CD(self, 武器类型, 输出类型):
 #         if 武器类型 == '矛':

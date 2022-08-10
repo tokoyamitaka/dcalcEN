@@ -3,7 +3,7 @@ import hmac
 import time
 from typing import Optional
 
-from core.baseClass.character import Character, createCharcter
+from core.basic.character import Character, createCharcter
 from core.store import store
 from fastapi import Body, Header
 

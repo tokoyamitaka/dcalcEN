@@ -1,7 +1,7 @@
 
-from core.baseClass.skill import 技能
-from core.baseClass.character import Character
-from core.baseClass.skill import 主动技能, 被动技能
+from core.basic.skill import 技能
+from core.basic.character import Character
+from core.basic.skill import 主动技能, 被动技能
 class 主动技能(主动技能):
     不加成冰枪技能倍率 = 1
 

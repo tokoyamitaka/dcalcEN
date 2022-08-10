@@ -1,6 +1,6 @@
 from typing import Union
 
-from core.baseClass.skill import 主动技能, 技能, 被动技能
+from core.basic.skill import 主动技能, 技能, 被动技能
 
 
 class CharacterProperty:
