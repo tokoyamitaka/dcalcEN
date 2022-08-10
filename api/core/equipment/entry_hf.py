@@ -9299,7 +9299,7 @@ def entry_1269(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
     if mode == 1:
         key = max(char.伤害系数, key=char.伤害系数.get)
-        if char.伤害系数.get(key, 1.0) > 1.55:
+        if char.伤害系数.get(key, 1.0) >= 1.55:
             char.技能攻击力加成(0.13)
         pass
 
@@ -11923,7 +11923,7 @@ def entry_790(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 
 # 目前成长词条范围
-for i in range(1260):
+for i in range(2000):
     try:
         entry_func_list[i] = eval('entry_{}'.format(i))
     except:
