@@ -1,5 +1,15 @@
 ## Newest
 
+### 2022.08.11.Beta
+
+#### BugFixes
+* 修复武器类型对CD的影响 ([bbe71b](https://gitee.com/dcalc/dnfcalculating_110/commit/bbe71bd3384a74d6728e4aaa061d569effdbc40f))
+* 修正军团词条未生效的情况 ([5c7900](https://gitee.com/dcalc/dnfcalculating_110/commit/5c79003e88ef48d3a36205597c605a5b166f0e9f))
+* 修正自定义词条80加成错误 ([123b6c](https://gitee.com/dcalc/dnfcalculating_110/commit/123b6c42968a40b233eaea9962c9cd7530c846d8))
+* 修正被动缺失的情况 ([629dad](https://gitee.com/dcalc/dnfcalculating_110/commit/629dadac95ba6f6b6adb3db8d244222dee567307))
+* 决战者：无双突刺佩戴护石异常的情况 ([86694f](https://gitee.com/dcalc/dnfcalculating_110/commit/86694f7a6c2ec4079e53e7b11d1bdd2fa1ad7753))
+* 蓝拳圣使：添加意念驱动 ([1fe193](https://gitee.com/dcalc/dnfcalculating_110/commit/1fe193752a245dee7e88d60823afa83e1d1ea253))
+
 ### 2022.08.10.Beta
 
 #### NewFeatures
@@ -43,6 +53,7 @@
 - 修正自定义词条错误 ([32c7d9](https://gitee.com/dcalc/dnfcalculating_110/commit/32c7d9a86bdcf5e9c184dff59bcb9c7a7051904f))
 - 男大枪：FM92SW 刺弹炮护石无效的情况 ([650ad9](https://gitee.com/dcalc/dnfcalculating_110/commit/650ad960d049ef857001c3913b376f7f12dfbfb2))
 - 药剂结算先后问题 ([418c56](https://gitee.com/dcalc/dnfcalculating_110/commit/418c56b12ec1f54cfd637999b0ff8a01cb3eebca))
+
 
 
 ## History
