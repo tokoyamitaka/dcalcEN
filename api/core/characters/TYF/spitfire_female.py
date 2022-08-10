@@ -135,8 +135,8 @@ class 技能5(职业主动技能):
                 self.power0 = 1.1
                 self.感电power0 = 1.1
             if char.get_skill_by_name("手雷精通").等级 > 0:
-                self.power0 *= 1.2
-                self.感电power0 *= 1.2
+                self.power0 = 1.2
+                self.感电power0 = 1.2
         if 形态 == "70普":
             if char.get_skill_by_name("超真空弹：切莉").等级 > 0:
                 self.power0 = 1.1
@@ -208,7 +208,7 @@ class 技能8(职业主动技能):
             if char.get_skill_by_name("超真空弹：切莉").等级 > 0:
                 self.power0 = 1.1
             if char.get_skill_by_name("手雷精通").等级 > 0:
-                self.power0 *= 1.2
+                self.power0 = 1.2
         if 形态 == "70普":
             if char.get_skill_by_name("超真空弹：切莉").等级 > 0:
                 self.power0 = 1.1

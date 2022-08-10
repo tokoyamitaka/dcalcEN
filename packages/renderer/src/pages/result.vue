@@ -10,6 +10,7 @@
 
   interface ISkillResult {
     cd?: number
+    cd_o?: number
     count: number
     damage: string[]
     avg: string[]
@@ -63,7 +64,7 @@
             <div class="name">
               {skill} Lv {delearSkills.level}
             </div>
-            <div class=" info">冷却时间:{delearSkills.cd}秒</div>
+            <div class="info">冷却时间:{delearSkills.cd}秒</div>
             <div class="info">MP消耗:{delearSkills.mp?.toFixed(0)}</div>
             <div class="info">无色消耗:{delearSkills.cosume_cube_frag}</div>
             <div class="info">百分比:{delearSkills.atk_rate?.toFixed(0) + "%"}</div>
@@ -160,6 +161,7 @@
           temp.push({
             name: skill,
             cd: res.skills[skill].cd,
+            cd_o: res.skills[skill].cd_o,
             count: res.skills[skill].count,
             damage: display_damage,
             avg: avg,
@@ -191,16 +193,17 @@
                 }}
               </calc-tooltip>
             </td>
-            <td width="12%" class="h-7 text-center leading-7">
-              {skill.cd}s
+            <td width="18%" class="h-7 text-center leading-7 flex w-100%">
+              <div class="w-60%">{skill.cd}s</div>{" "}
+              <div class={"text-hex-" + (skill.cd < skill.cd_o ? "3ea74e" : "ff0000") + " w-40%"}>{skill.cd == skill.cd_o ? "" : `${((1 - skill.cd / skill.cd_o) * 100).toFixed(1)}%`}</div>
             </td>
             <td width="12%" class="h-7 text-center leading-7">
               {skill.count}
             </td>
-            <td width="24%" class="h-7  leading-7" style={"color:" + skill.damage[1]}>
+            <td width="22%" class="h-7  leading-7" style={"color:" + skill.damage[1]}>
               {skill.damage[0]}
             </td>
-            <td width="24%" class="h-7  leading-7" style={"color:" + skill.avg[1]}>
+            <td width="22%" class="h-7  leading-7" style={"color:" + skill.avg[1]}>
               {skill.avg[0]}
             </td>
             <td width="14%" class="h-7  pr-2 leading-7">
@@ -228,16 +231,16 @@
             <td width="12%" class="h-5 leading-5">
               总和
             </td>
-            <td width="12%" class="h-5 text-center">
+            <td width="18%" class="h-5 text-center">
               -
             </td>
             <td width="12%" class="h-5 text-center">
               -
             </td>
-            <td width="24%" class="h-5">
+            <td width="22%" class="h-5">
               {transformNum(res.total_data[0])}
             </td>
-            <td width="24%" class="h-5">
+            <td width="22%" class="h-5">
               -
             </td>
             <td width="14%" class="h-5  pr-2">
@@ -273,7 +276,7 @@
             },
             {
               title: "CD",
-              width: "12%"
+              width: "18%"
             },
             {
               title: "次数",
@@ -281,11 +284,11 @@
             },
             {
               title: "总伤害",
-              width: "24%"
+              width: "22%"
             },
             {
               title: "平均伤害",
-              width: "24%"
+              width: "22%"
             },
             {
               title: "伤害占比",

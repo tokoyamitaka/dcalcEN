@@ -54,6 +54,7 @@ export interface IDelearSkillInfo {
   name: string
   level: number
   cd: number
+  cd_o: number
   rate: number
   mp: number
   cosume_cube_frag: number
