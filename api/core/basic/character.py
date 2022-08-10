@@ -1007,12 +1007,12 @@ class Character(CharacterProperty):
                 temp = skill_dict.get(k.名称, {})
                 if k.名称 not in data.keys():
                     temp['rate'] = k.被动倍率
-                    if temp.get("cd",0) > 0:
+                    if temp.get("cd", 0) > 0:
                         temp['cd'] = (k.等效CD(
-                        武器类型=self.武器类型, 输出类型=self.类型, 额外CDR=i['CDR']) + temp['cd']) / 2
+                            武器类型=self.武器类型, 输出类型=self.类型, 额外CDR=i['CDR']) + temp['cd']) / 2
                     else:
                         temp['cd'] = k.等效CD(
-                        武器类型=self.武器类型, 输出类型=self.类型, 额外CDR=i['CDR'])
+                            武器类型=self.武器类型, 输出类型=self.类型, 额外CDR=i['CDR'])
                     temp['mp'] = k.MP消耗(
                         武器类型=self.武器类型, 输出类型=self.类型, 额外倍率=self.__MP消耗量, char=self)
                     temp['atk_rate'] = k.等效百分比(武器类型=self.武器类型, char=self)
@@ -1384,7 +1384,7 @@ class Character(CharacterProperty):
             i.被动倍率 = 1
         for i in self.技能栏:
             for index in range(0, 4):
-                index = "" if index == 0 else str(index+1)
+                index = "" if index == 0 else str(index)
                 关联技能 = getattr(i, "关联技能"+index, ["无"])
                 非关联技能 = getattr(i, "非关联技能"+index, ["无"])
                 try:
@@ -1479,7 +1479,7 @@ class Character(CharacterProperty):
     def __CD倍率计算(self):
         for i in self.技能栏:
             for index in range(0, 4):
-                index = "" if index == 0 else str(index+1)
+                index = "" if index == 0 else str(index)
                 关联技能 = getattr(i, "冷却关联技能"+index, ["无"])
                 非关联技能 = getattr(i, "非冷却关联技能"+index, ["无"])
                 try:
@@ -1635,7 +1635,7 @@ class Character(CharacterProperty):
         # 获取打造数据
         self.__打造设置(info['forge_set'])
         self.__技能队列设置(info['skill_que'])
-        self.__怪物信息设置(info.get("monster",0))
+        self.__怪物信息设置(info.get("monster", 0))
         # 设置职业信息
         self.__set_char(info)
         # 自定义词条部分

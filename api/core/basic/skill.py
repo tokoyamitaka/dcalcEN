@@ -82,6 +82,12 @@ class 技能:
     def 加成描述(self, 武器类型):
         return [round((self.加成倍率(武器类型) - 1)*100), ",".join(self.关联技能), ",".join(self.非关联技能)]
 
+    def 加成倍率1(self, 武器类型):
+        return 1.0
+
+    def 加成描述1(self, 武器类型):
+        return [round((self.加成倍率1(武器类型) - 1)*100), ",".join(self.关联技能2), ",".join(self.非关联技能2)]
+
     def 加成倍率2(self, 武器类型):
         return 1.0
 
@@ -99,6 +105,12 @@ class 技能:
 
     def CD缩减描述(self, 武器类型):
         return [round((1-self.CD缩减倍率(武器类型))*100), ",".join(self.冷却关联技能), ",".join(self.非冷却关联技能)]
+
+    def CD缩减倍率(self, 武器类型):
+        return 1.0
+
+    def CD缩减描述1(self, 武器类型):
+        return [round((1-self.CD缩减倍率1(武器类型))*100), ",".join(self.冷却关联技能), ",".join(self.非冷却关联技能)]
 
     def CD缩减倍率2(self, 武器类型):
         return 1.0
@@ -177,7 +189,6 @@ class 主动技能(技能):
                 power = getattr(self, '{}power{}'.format(name, i), 1)
                 百分比 += data[等级] * hit * power
         return 百分比
-
 
     def 等效百分比(self, **argv):
         # 武器类型 额外等级 额外倍率 伤害类型 形态
