@@ -7927,7 +7927,7 @@ def entry_237(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         char.技能冷却缩减(80, 80, -0.3)
         char.条件冷却加成("Lv80", -0.3)
-        char.技能倍率加成(95, 95, 0.2)
+        char.技能倍率加成(80, 80, 0.2)
     if mode == 1:
         pass
 
