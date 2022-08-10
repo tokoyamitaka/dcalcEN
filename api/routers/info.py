@@ -3,11 +3,6 @@ from typing import List, Tuple
 
 import core.set as set
 from core.basic.equipment import get_equ
-from core.equipment.avatar import 装扮, 装扮集合
-from core.equipment.emblems import get_emblems_setinfo
-from core.equipment.enchanting import get_enchanting_setinfo
-from core.equipment.jade import get_jade_setinfo
-from core.equipment.sundry import get_sundries_setinfo
 from fastapi import APIRouter, Body, Depends
 from pydantic import BaseModel
 from utils.apiTools import Return, response
@@ -21,16 +16,6 @@ infoRouter = APIRouter()
 class adventureinfo(BaseModel):
     name: str
     alters: List[str]
-
-
-@infoRouter.get('/adventure')
-async def get_adventure_info():
-    adventure_info = {}
-    with open("./dataFiles/adventure-info.json", encoding='utf-8') as fp:
-        adventure_info = json.load(fp)
-    return response(data=adventure_info)
-
-
 class notice(BaseModel):
     time: str
     info: str
@@ -44,6 +29,20 @@ class characterSkillInfo(BaseModel):
     # 护石及符文信息
     # 药剂等相关信息设置
 
+@infoRouter.get('/adventure')
+async def get_adventure_info():
+    adventure_info = {}
+    with open("./dataFiles/adventure-info.json", encoding='utf-8') as fp:
+        adventure_info = json.load(fp)
+    return response(data=adventure_info)
+
+@infoRouter.get('/monster')
+async def get_monster_info():
+    monster = []
+    from core.basic.monster import data
+    for i in data.keys():
+        monster.append(data[i])
+    return response(data=data)
 
 @infoRouter.get('/character')
 async def get_character_info(state: AlterState = Depends(authorize)):

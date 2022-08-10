@@ -3,6 +3,11 @@ export interface IAdventureInfo {
   children: IAlterInfo[]
 }
 
+export interface IMonster {
+  id: string
+  name: string
+}
+
 export interface IAlterOption {
   name: string
   title: string
@@ -180,6 +185,8 @@ export interface ICharacterSet {
   buff_ratio: number
 
   hotkey_set: string[]
+
+  monster: number
 }
 
 export interface IRecommendRequest {

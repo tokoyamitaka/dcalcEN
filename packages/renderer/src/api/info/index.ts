@@ -1,10 +1,13 @@
 import { defineRequest } from "../common"
-import { Dress, IAdventureInfo, IDetailsInfo, IEnchantingInfo, IEquipmentList, IJadeInfo, IRecommendInfo, IRecommendRequest, ITrigger } from "./type"
+import { Dress, IAdventureInfo, IDetailsInfo, IEnchantingInfo, IEquipmentList, IJadeInfo, IMonster, IRecommendInfo, IRecommendRequest, ITrigger } from "./type"
 
 export default defineRequest(request => {
   return {
     adventures() {
       return request.get<IAdventureInfo[]>("/adventure")
+    },
+    monsters() {
+      return request.get<IMonster[]>("/monster")
     },
     equips() {
       return request.get<IEquipmentList>(`/equips`)

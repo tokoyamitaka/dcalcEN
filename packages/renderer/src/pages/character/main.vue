@@ -3,10 +3,11 @@
   // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
   import { useDialog } from "@/components/hooks/dialog"
   import { useOpenWindow } from "@/hooks/open"
-  import { useCharacterStore, useConfigStore } from "@/store"
+  import { useBasicInfoStore, useCharacterStore, useConfigStore } from "@/store"
   import { useAppStore } from "@/store/app"
   import { defineComponent, h, onMounted, ref, renderList } from "vue"
   import { useRoute } from "vue-router"
+  import { IMonster } from "@/api/info/type"
 
   // import Character from "@/pages/character/character/character.vue"
   // import Customize from "@/pages/character/customize/customize.vue"
@@ -23,6 +24,7 @@
     const appStore = useAppStore()
     const configStore = useConfigStore()
     const characterStore = useCharacterStore()
+    const basicStore = useBasicInfoStore()
     const canClick = ref(true)
 
     onMounted(window.removeLoading)
@@ -122,6 +124,14 @@
                 <calc-select onChange={characterStore.calc} v-model={configStore.carry_type} class="!h-22px">
                   {renderList(characterStore.carry_type_list, (item, index) => (
                     <calc-option value={item}>{item}</calc-option>
+                  ))}
+                </calc-select>
+              </div>
+
+              <div class="flex col-4 justify-center">
+                <calc-select onChange={characterStore.calc} v-model={configStore.monster} class="!h-22px">
+                  {renderList(basicStore.monster_list as IMonster[], (item, index) => (
+                    <calc-option value={item.id}>{item.name}</calc-option>
                   ))}
                 </calc-select>
               </div>

@@ -39,7 +39,8 @@ export const useConfigStore = defineStore("config", {
       rune_set: [],
       talisman_set: [],
       buff_ratio: 0,
-      hotkey_set: []
+      hotkey_set: [],
+      monster: 0
     }
   },
   getters: {
@@ -87,7 +88,8 @@ export const useConfigStore = defineStore("config", {
         rune_set: state.rune_set,
         talisman_set: state.talisman_set,
         buff_ratio: Number(state.buff_ratio),
-        hotkey_set: state.hotkey_set
+        hotkey_set: state.hotkey_set,
+        monster: state.monster
       }
     }
   },

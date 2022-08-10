@@ -1,6 +1,6 @@
 import api from "@/api"
 import { defineStore } from "pinia"
-import { Dress, IDetailsInfo, IEnchantingInfo, IEquipmentInfo, IEquipmentList, IJadeInfo, ITrigger } from "../api/info/type"
+import { Dress, IDetailsInfo, IEnchantingInfo, IEquipmentInfo, IEquipmentList, IJadeInfo, IMonster, ITrigger } from "../api/info/type"
 import { useCharacterStore } from "./character"
 
 interface BasicInfoState {
@@ -27,6 +27,7 @@ interface BasicInfoState {
   _entries: Record<string, { attack: number; buff: number; props: string[] }> | undefined
   _dresses?: Record<string, Dress[]>
   _details: IDetailsInfo | undefined
+  _monsters: IMonster[] | undefined
 }
 
 export const useBasicInfoStore = defineStore("basicInfo", {
@@ -43,7 +44,8 @@ export const useBasicInfoStore = defineStore("basicInfo", {
     _entries: undefined,
     _sundriesInfo: undefined,
     _dresses: undefined,
-    _details: undefined
+    _details: undefined,
+    _monsters: undefined
   }),
   getters: {
     equipment_info(state) {
@@ -95,6 +97,12 @@ export const useBasicInfoStore = defineStore("basicInfo", {
     details(state) {
       const { platinum, jade, dress, sundries, emblem, enchanting } = useCharacterStore()
       return { jade, sundries, dress, emblem, enchanting, platinum }
+    },
+    monster_list(state) {
+      if (!state._monsters) {
+        api.monsters().then(res => (state._monsters = res.data))
+      }
+      return state._monsters
     }
   },
   actions: {

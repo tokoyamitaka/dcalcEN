@@ -809,6 +809,16 @@ class Character(CharacterProperty):
     def __药剂设置(self, setinfo):
         self.药剂 = setinfo
 
+    def __怪物信息设置(self, id):
+        from core.basic.monster import get_monster_data
+        data = get_monster_data(str(id))
+        self.防御输入 = data["防御"]
+        self.火抗输入 = data["火抗"]
+        self.冰抗输入 = data["冰抗"]
+        self.光抗输入 = data["光抗"]
+        self.暗抗输入 = data["暗抗"]
+        pass
+
     # 设置技能相关参数
     def __skill_set(self, setinfo):
         for i in setinfo:
@@ -1619,6 +1629,7 @@ class Character(CharacterProperty):
         # 获取打造数据
         self.__打造设置(info['forge_set'])
         self.__技能队列设置(info['skill_que'])
+        self.__怪物信息设置(info.get("monster",0))
         # 设置职业信息
         self.__set_char(info)
         # 自定义词条部分

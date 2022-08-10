@@ -138,7 +138,7 @@ def get(alter: str, setName: str):
             "rune_set": ['']*9,
             "buff_ratio": round((buff-1)*100, 1),
             "hotkey_set": ['']*14,
-            "carry_type": info["carry_type_list"][0], "dress_set": dress_set}
+            "carry_type": info["carry_type_list"][0], "dress_set": dress_set,"monster":0}
 
     else:
         with open('./sets/{}/{}/store.json'.format(alter, setName), "r", encoding='utf-8') as fp:
