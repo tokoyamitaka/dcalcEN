@@ -280,26 +280,26 @@ class 技能12(主动技能):
     TP成长 = 0.1
     TP上限 = 7
 
-    形态 = ["不可抓取", "可抓取(地面)", "可抓取(墙壁)"]
+    形态 = ["非抓", "抓地", "抓墙"]
 
     def 形态变更(self, 形态, char:Character):
         if 形态 == '' and len(self.形态) > 0:
             形态 = self.形态[0]
-        if 形态 == "不可抓取":
+        if 形态 == "非抓":
             self.hit0 = 1
             self.hit1 = 1
             self.hit2 = 0
             self.hit3 = 0
             self.hit4 = 0
             self.hit5 = 0
-        if 形态 == "可抓取(地面)":
+        if 形态 == "抓地":
             self.hit0 = 0
             self.hit1 = 0
             self.hit2 = 1
             self.hit3 = 1
             self.hit4 = 1
             self.hit5 = 0
-        if 形态 == "可抓取(墙壁)":
+        if 形态 == "抓墙":
             self.hit0 = 0
             self.hit1 = 0
             self.hit2 = 1
@@ -590,7 +590,7 @@ class 技能21(主动技能):
             self.hit2 = 0
 
     def 装备护石(self):
-        self.hit0 = 0
+        self.power0 = 0
         self.power1 = 1.45
         self.power2 = 1.45
         self.CDR *= 0.9
