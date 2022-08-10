@@ -1312,6 +1312,7 @@ class Character(CharacterProperty):
 
     def 武器计算(self, temp: equipment) -> None:
         self.基础属性加成(**temp.__dict__)
+        self.武器类型 = temp.类型
         if temp.等级 == 105 and self.类型 == '辅助':
             self.技能等级加成('主动', 30, 30, 3)
             self.技能等级加成('主动', 50, 50, 2)
