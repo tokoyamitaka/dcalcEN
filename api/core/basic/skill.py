@@ -86,7 +86,7 @@ class 技能:
         return 1.0
 
     def 加成描述1(self, 武器类型):
-        return [round((self.加成倍率1(武器类型) - 1)*100), ",".join(self.关联技能2), ",".join(self.非关联技能2)]
+        return [round((self.加成倍率1(武器类型) - 1)*100), ",".join(self.关联技能1), ",".join(self.非关联技能1)]
 
     def 加成倍率2(self, 武器类型):
         return 1.0
@@ -110,7 +110,7 @@ class 技能:
         return 1.0
 
     def CD缩减描述1(self, 武器类型):
-        return [round((1-self.CD缩减倍率1(武器类型))*100), ",".join(self.冷却关联技能), ",".join(self.非冷却关联技能)]
+        return [round((1-self.CD缩减倍率1(武器类型))*100), ",".join(self.冷却关联技能1), ",".join(self.非冷却关联技能1)]
 
     def CD缩减倍率2(self, 武器类型):
         return 1.0

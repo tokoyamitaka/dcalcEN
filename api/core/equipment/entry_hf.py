@@ -2624,9 +2624,11 @@ def entry_1237(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
         return ['', '该装备的成长属性等级之和达到240，增加1%的技能攻击力', ' - 该装备的成长属性等级之和每增加40级，额外增加1%的技能攻击力', ' - 穿戴100级以下装备时不适用该效果']
     if mode == 0:
+        if char.穿戴低于105():
+            return
         x = sum(char.词条等级.get(part, [0]))
-        if x >= 240:
-            char.技能攻击力加成(0.01 * int((x - 200) / 40))
+        if x >= 241:
+            char.技能攻击力加成(0.01 * int((x - 201) / 40))
     if mode == 1:
         pass
 
@@ -11939,8 +11941,8 @@ def entry_10001(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0)
         if char.穿戴低于105():
             return
         x = sum(char.词条等级.get(part, [0]))
-        if x >= 240:
-            char.技能攻击力加成(0.01 * int((x - 200) / 40))
+        if x >= 241:
+            char.技能攻击力加成(0.01 * int((x - 201) / 40))
     if mode == 1:
         pass
 
