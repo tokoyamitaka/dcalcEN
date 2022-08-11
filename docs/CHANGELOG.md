@@ -2,33 +2,31 @@
 
 ### 2022.08.11.Beta
 
-#### BugFixes
-* 修复武器类型对CD的影响 ([bbe71b](https://gitee.com/dcalc/dnfcalculating_110/commit/bbe71bd3384a74d6728e4aaa061d569effdbc40f))
-* 修正军团词条未生效的情况 ([5c7900](https://gitee.com/dcalc/dnfcalculating_110/commit/5c79003e88ef48d3a36205597c605a5b166f0e9f))
-* 修正自定义词条80加成错误 ([123b6c](https://gitee.com/dcalc/dnfcalculating_110/commit/123b6c42968a40b233eaea9962c9cd7530c846d8))
-* 修正被动缺失的情况 ([629dad](https://gitee.com/dcalc/dnfcalculating_110/commit/629dadac95ba6f6b6adb3db8d244222dee567307))
-* 决战者：无双突刺佩戴护石异常的情况 ([86694f](https://gitee.com/dcalc/dnfcalculating_110/commit/86694f7a6c2ec4079e53e7b11d1bdd2fa1ad7753))
-* 蓝拳圣使：添加意念驱动 ([1fe193](https://gitee.com/dcalc/dnfcalculating_110/commit/1fe193752a245dee7e88d60823afa83e1d1ea253))
-
-### 2022.08.10.Beta
-
 #### NewFeatures
-* 添加军团副本装备,手镯睡眠相关暂未实现(军团装备仅在装备版本切换到韩服版本才会计算) ([11b699](https://gitee.com/dcalc/dnfcalculating_110/commit/11b69915c8c84f5cd99e958d046916b66e14866a))
-* 添加决战者 ([db3357](https://gitee.com/dcalc/dnfcalculating_110/commit/db3357e4298fac5b46f58b6e6e95bbf8c13a3a46))
-* 添加怪物选择(后续测试完会加其他怪物) ([5b5677](https://gitee.com/dcalc/dnfcalculating_110/commit/5b56776bdf1e5e77d0967d7732bcc7b7bb035b8b))
-* 添加暗枪 ([7ea4a2](https://gitee.com/dcalc/dnfcalculating_110/commit/7ea4a24140db9c3b87c8e10b1eff4852ae19ce5c))
-* 添加特工 ([259f3c](https://gitee.com/dcalc/dnfcalculating_110/commit/259f3c2300e9581bcc3ad33f1805f3c95ab4e8cc))
-* 添加蓝拳 ([872771](https://gitee.com/dcalc/dnfcalculating_110/commit/872771063aa51a463cf08aa7d3af7e6108fe669b))
-* 添加血法 ([78c86f](https://gitee.com/dcalc/dnfcalculating_110/commit/78c86f9488592350f79db831828d46e014c9924d))
-* 添加驱魔 ([eabaf2](https://gitee.com/dcalc/dnfcalculating_110/commit/eabaf20e00a2034d28637a2357cca827c0280a77))
-* 详情界面添加技能CDR显示(包含技能CDR、装备CDR、护石符文CDR、技能冷却恢复，不包括剩余时间减少) ([293f41](https://gitee.com/dcalc/dnfcalculating_110/commit/293f41b7d391a96da0d7d98ccfe94a8a4b5ff9d9))
-* 逐风者：优化CP武器伤害显示 ([8ff3e4](https://gitee.com/dcalc/dnfcalculating_110/commit/8ff3e45645bc2d22f48857f399800910f519f74f))
+
+- 添加军团副本装备,手镯睡眠相关暂未实现(军团装备仅在装备版本切换到韩服版本才会计算) ([11b699](https://gitee.com/dcalc/dnfcalculating_110/commit/11b69915c8c84f5cd99e958d046916b66e14866a))
+- 添加决战者 ([db3357](https://gitee.com/dcalc/dnfcalculating_110/commit/db3357e4298fac5b46f58b6e6e95bbf8c13a3a46))
+- 添加怪物选择(后续测试完会加其他怪物) ([5b5677](https://gitee.com/dcalc/dnfcalculating_110/commit/5b56776bdf1e5e77d0967d7732bcc7b7bb035b8b))
+- 添加暗枪 ([7ea4a2](https://gitee.com/dcalc/dnfcalculating_110/commit/7ea4a24140db9c3b87c8e10b1eff4852ae19ce5c))
+- 添加特工 ([259f3c](https://gitee.com/dcalc/dnfcalculating_110/commit/259f3c2300e9581bcc3ad33f1805f3c95ab4e8cc))
+- 添加蓝拳 ([872771](https://gitee.com/dcalc/dnfcalculating_110/commit/872771063aa51a463cf08aa7d3af7e6108fe669b))
+- 添加血法 ([78c86f](https://gitee.com/dcalc/dnfcalculating_110/commit/78c86f9488592350f79db831828d46e014c9924d))
+- 添加驱魔 ([eabaf2](https://gitee.com/dcalc/dnfcalculating_110/commit/eabaf20e00a2034d28637a2357cca827c0280a77))
+- 详情界面添加技能 CDR 显示(包含技能 CDR、装备 CDR、护石符文 CDR、技能冷却恢复，不包括剩余时间减少) ([293f41](https://gitee.com/dcalc/dnfcalculating_110/commit/293f41b7d391a96da0d7d98ccfe94a8a4b5ff9d9))
+- 逐风者：优化 CP 武器伤害显示 ([8ff3e4](https://gitee.com/dcalc/dnfcalculating_110/commit/8ff3e45645bc2d22f48857f399800910f519f74f))
 
 #### BugFixes
-* 修正词条问题 ([947787](https://gitee.com/dcalc/dnfcalculating_110/commit/9477873d58b211f781227ffe6c064269bb66de7b))
-* 元素爆破师：修复计算问题 ([8a724f](https://gitee.com/dcalc/dnfcalculating_110/commit/8a724f087353db2be2e6d01bd5986bf257dfa356))
-* 柔道家(女)：修复螺旋彗星落MP及无色消耗 ([9cf813](https://gitee.com/dcalc/dnfcalculating_110/commit/9cf813e5f91f68bb16805e8e924a3d9f0621b51b))
-* 次元行者：修复二觉数据问题 ([9d4bb6](https://gitee.com/dcalc/dnfcalculating_110/commit/9d4bb673d49e6ca4e6fa203a3f7ac9c15284cfa9))
+
+- 修复武器类型对 CD 的影响 ([bbe71b](https://gitee.com/dcalc/dnfcalculating_110/commit/bbe71bd3384a74d6728e4aaa061d569effdbc40f))
+- 修正军团词条未生效的情况 ([5c7900](https://gitee.com/dcalc/dnfcalculating_110/commit/5c79003e88ef48d3a36205597c605a5b166f0e9f))
+- 修正自定义词条 80 加成错误 ([123b6c](https://gitee.com/dcalc/dnfcalculating_110/commit/123b6c42968a40b233eaea9962c9cd7530c846d8))
+- 修正被动缺失的情况 ([629dad](https://gitee.com/dcalc/dnfcalculating_110/commit/629dadac95ba6f6b6adb3db8d244222dee567307))
+- 决战者：无双突刺佩戴护石异常的情况 ([86694f](https://gitee.com/dcalc/dnfcalculating_110/commit/86694f7a6c2ec4079e53e7b11d1bdd2fa1ad7753))
+- 蓝拳圣使：添加意念驱动 ([1fe193](https://gitee.com/dcalc/dnfcalculating_110/commit/1fe193752a245dee7e88d60823afa83e1d1ea253))
+- 修正词条问题 ([947787](https://gitee.com/dcalc/dnfcalculating_110/commit/9477873d58b211f781227ffe6c064269bb66de7b))
+- 元素爆破师：修复计算问题 ([8a724f](https://gitee.com/dcalc/dnfcalculating_110/commit/8a724f087353db2be2e6d01bd5986bf257dfa356))
+- 柔道家(女)：修复螺旋彗星落 MP 及无色消耗 ([9cf813](https://gitee.com/dcalc/dnfcalculating_110/commit/9cf813e5f91f68bb16805e8e924a3d9f0621b51b))
+- 次元行者：修复二觉数据问题 ([9d4bb6](https://gitee.com/dcalc/dnfcalculating_110/commit/9d4bb673d49e6ca4e6fa203a3f7ac9c15284cfa9))
 
 ### 2022.08.05.Beta
 
@@ -53,8 +51,6 @@
 - 修正自定义词条错误 ([32c7d9](https://gitee.com/dcalc/dnfcalculating_110/commit/32c7d9a86bdcf5e9c184dff59bcb9c7a7051904f))
 - 男大枪：FM92SW 刺弹炮护石无效的情况 ([650ad9](https://gitee.com/dcalc/dnfcalculating_110/commit/650ad960d049ef857001c3913b376f7f12dfbfb2))
 - 药剂结算先后问题 ([418c56](https://gitee.com/dcalc/dnfcalculating_110/commit/418c56b12ec1f54cfd637999b0ff8a01cb3eebca))
-
-
 
 ## History
 
