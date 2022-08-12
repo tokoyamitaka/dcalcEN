@@ -528,6 +528,9 @@ class Character(CharacterProperty):
     def 攻击速度增加(self, x: float) -> None:
         self.__攻击速度 += x
 
+    def 攻击速度(self) ->float:
+        return self.__攻击速度
+
     def 移动速度增加(self, x: float) -> None:
         self.__移动速度 += x
 

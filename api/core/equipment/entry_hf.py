@@ -2687,7 +2687,8 @@ def entry_1246(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
         return ['装备提供的攻击速度增加量总和超过140%以上时，技能攻击力 +30%', '- 包括防具、首饰、特殊装备、时装、徽章、宠物、守护珠、称号']
     if mode == 0:
-        char.技能攻击力加成(0.3)
+        if char.攻击速度() > 1.4:
+            char.技能攻击力加成(0.3)
     if mode == 1:
         pass
 

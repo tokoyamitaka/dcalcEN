@@ -14079,9 +14079,9 @@ def enchanting_24451(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
 
 def enchanting_24501(char: CharacterProperty = {}, mode=0, text=False, rate=1.0):
     if text:
-        return (0, '宠物装备-蓝', '三攻(30)')
+        return (0, '宠物装备-蓝', '三攻(30)|三速(4%)')
     if mode == 0:
-        char.基础属性加成(三攻=30)
+        char.基础属性加成(三攻=30,三速 = 0.04)
         pass
     if mode == 1:
         pass
@@ -14089,13 +14089,21 @@ def enchanting_24501(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
 
 def enchanting_24551(char: CharacterProperty = {}, mode=0, text=False, rate=1.0):
     if text:
-        return (0, '宠物装备-蓝', '四维(25)')
+        return (0, '宠物装备-蓝', '四维(25)|三速(4%)')
     if mode == 0:
-        char.基础属性加成(四维=30)
+        char.基础属性加成(四维=25,三速 = 0.04)
         pass
     if mode == 1:
         pass
 
+def enchanting_24552(char: CharacterProperty = {}, mode=0, text=False, rate=1.0):
+    if text:
+        return (0, '宠物装备-蓝', '四维(20)|三速(4%)')
+    if mode == 0:
+        char.基础属性加成(四维=20,三速 = 0.04)
+        pass
+    if mode == 1:
+        pass
 # endregion
 
 # region 快捷装备 24601~24699

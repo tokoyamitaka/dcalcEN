@@ -246,6 +246,9 @@ class CharacterProperty:
     def 攻击速度增加(self, x: float) -> None:
         pass
 
+    def 攻击速度(self) ->float:
+        pass
+
     def 移动速度增加(self, x: float) -> None:
         pass
 

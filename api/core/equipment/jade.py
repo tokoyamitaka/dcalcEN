@@ -175,8 +175,12 @@ def jade_26206(char=CharacterProperty, text=False, value=0):
         return "(76, -5, 5, '%', 1, 'Lv50 主动技能力智增加%')"
     char.辅助属性加成(觉醒百分比力智=value/100, 百分比buff量=value / 200)
 
+def jade_26207(char={}, text=False, value=0):
+    if text:
+        return "(55, -5, 5, '%', 0.1, '攻击、移动、施放速度')"
+    char.攻击速度增加(value/100)
 
-for i in range(26201, 26207):
+for i in range(26201, 26210):
     try:
         if i not in jade_func_list.keys():
             jade_func_list[i] = eval('jade_{}'.format(i))
