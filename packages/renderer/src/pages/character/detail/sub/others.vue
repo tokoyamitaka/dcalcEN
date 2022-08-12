@@ -74,6 +74,8 @@
       const XZ_SHZ = currentInfo("XZ_SHZ")
       // 勋章强化
       const XZ_QH = currentInfo("XZ_QH")
+      // 勋章攻速
+      const XZ_GS = currentInfo("XZ_GS")
       // 名称装扮卡
       const MCZBK = currentInfo("MCZBK")
       const MCZBK_list = currentOptions("名称装扮卡")
@@ -179,12 +181,17 @@
                 <calc-option value={item.id}>{item.props}</calc-option>
               ))}
             </calc-select>
-            <calc-select v-model={XZ_SHZ.value} class="flex-1 !h-20px">
+            <calc-select v-model={XZ_SHZ.value} emptyLabel="属强" class="flex-1 !h-20px">
               <calc-option value={0}>无</calc-option>
               <calc-option value={5}>属强 +5</calc-option>
               <calc-option value={7}>属强 +7</calc-option>
             </calc-select>
-            <calc-select v-model={XZ_QH.value} class="flex-1 !h-20px">
+            <calc-select v-model={XZ_GS.value} emptyLabel="攻速" class="flex-1 !h-20px">
+              <calc-option value={0}>无</calc-option>
+              <calc-option value={2.4}>攻速 +2.4%</calc-option>
+              <calc-option value={3}>攻速 +3%</calc-option>
+            </calc-select>
+            <calc-select v-model={XZ_QH.value} emptyLabel="强化" class="flex-1 !h-20px">
               {renderList(21, i => (
                 <calc-option value={i - 1}>强化: {i - 1}</calc-option>
               ))}
@@ -220,7 +227,7 @@
 
 <style lang="scss" scoped>
   .row-name {
-    flex: 0 0 80px !important;
+    flex: 0 0 60px !important;
     text-align: center;
   }
 </style>

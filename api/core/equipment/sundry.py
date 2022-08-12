@@ -650,6 +650,10 @@ def sundries_27060(char: CharacterProperty = {}, mode=0, text=False, *args):
             char.基础属性加成(四维=勋章计算(50, '传说', args[1]))
         except:
             pass
+        try:
+            char.攻击速度增加(args[2]/100)
+        except:
+            pass
         pass
     if mode == 1:
         pass

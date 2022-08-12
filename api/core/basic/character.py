@@ -1162,7 +1162,7 @@ class Character(CharacterProperty):
         try:
             from core.equipment.sundry import get_sundriesfunc_by_id
             func = get_sundriesfunc_by_id(setinfo['XZ_TYPE'])
-            func(self, 0, False, setinfo['XZ_SHZ'], setinfo['XZ_QH'])
+            func(self, 0, False, setinfo.get("XZ_SHZ",0), setinfo.get("XZ_QH",0), setinfo.get("XZ_GS",0))
         except:
             pass
         for i in setinfo.keys():
