@@ -2577,7 +2577,8 @@ def entry_1250(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.技能恢复加成(1, 100, 0.04 * 6, exc=[50, 85, 100])
+        属强 = max(char.火属性强化(), char.光属性强化(), char.暗属性强化(), char.冰属性强化())
+        char.技能恢复加成(1, 100, 0.04 * min(int(属强/50),6), exc=[50, 85, 100])
         char.条件冷却恢复加成("所有", 0.04 * 6)
 
 
@@ -2587,7 +2588,8 @@ def entry_1251(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.所有速度增加(0.03 * 5)
+        属强 = max(char.火属性强化(), char.光属性强化(), char.暗属性强化(), char.冰属性强化())
+        char.所有速度增加(0.03 * min(int(属强/50),5))
 
 
 def entry_1252(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
