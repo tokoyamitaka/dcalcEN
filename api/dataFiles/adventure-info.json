@@ -364,7 +364,8 @@
     "children": [
       {
         "name": "vanguard",
-        "title": "千魂·征战者"
+        "title": "千魂·征战者",
+        "open": true
       },
       {
         "name": "skirmisher",
