@@ -1,5 +1,15 @@
 ## Newest
 
+### 2022.08.15.Beta
+
+#### NewFeatures
+* 根据攻速计算装备属性 ([b4f868](https://gitee.com/dcalc/dnfcalculating_110/commit/b4f868a5c915fdc16cc0a2a1784f0b6564a719ef))
+* 添加剑宗 ([98e621](https://gitee.com/dcalc/dnfcalculating_110/commit/98e6212ccc8990794571353c8e13a41aa3dcad15))
+* 添加勋章攻速 ([649a8c](https://gitee.com/dcalc/dnfcalculating_110/commit/649a8c20be61a9a7cfb14bb4eac07a1f3e32e0d3))
+* 添加合金战士 ([4a1130](https://gitee.com/dcalc/dnfcalculating_110/commit/4a1130bd26b17639f4b11beea7d8c268b1a64b49))
+* 添加征战者 ([ac0d6d](https://gitee.com/dcalc/dnfcalculating_110/commit/ac0d6d4888af231c86b2e95ebd2acefab916b35a))
+* 添加散打(女) ([7a2e41](https://gitee.com/dcalc/dnfcalculating_110/commit/7a2e410e78d6532c95d2954931d99808b36333d9))
+
 ### 2022.08.11.Beta
 
 #### NewFeatures
@@ -51,6 +61,7 @@
 - 修正自定义词条错误 ([32c7d9](https://gitee.com/dcalc/dnfcalculating_110/commit/32c7d9a86bdcf5e9c184dff59bcb9c7a7051904f))
 - 男大枪：FM92SW 刺弹炮护石无效的情况 ([650ad9](https://gitee.com/dcalc/dnfcalculating_110/commit/650ad960d049ef857001c3913b376f7f12dfbfb2))
 - 药剂结算先后问题 ([418c56](https://gitee.com/dcalc/dnfcalculating_110/commit/418c56b12ec1f54cfd637999b0ff8a01cb3eebca))
+
 
 ## History
 
