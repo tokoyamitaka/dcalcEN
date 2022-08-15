@@ -137,7 +137,8 @@
       },
       {
         "name": "assault",
-        "title": "重霄·合金战士"
+        "title": "重霄·合金战士",
+        "open": true
       }
     ]
   },

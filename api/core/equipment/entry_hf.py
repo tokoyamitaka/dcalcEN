@@ -2627,8 +2627,8 @@ def entry_1237(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         if char.穿戴低于105():
             return
         x = sum(char.词条等级.get(part, [0]))
-        if x >= 241:
-            char.技能攻击力加成(0.01 * int((x - 201) / 40))
+        if x >= 240:
+            char.技能攻击力加成(0.01 * int((x - 200) / 40))
     if mode == 1:
         pass
 
@@ -11903,6 +11903,7 @@ def entry_788(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.单技能加成('炎神攻城炮',1.5)
         pass
 
 
@@ -11921,6 +11922,7 @@ def entry_790(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.单技能加成('超频：电流闪踢',1.5)
         pass
 # endregion
 
@@ -11945,8 +11947,8 @@ def entry_10001(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0)
         if char.穿戴低于105():
             return
         x = sum(char.词条等级.get(part, [0]))
-        if x >= 241:
-            char.技能攻击力加成(0.01 * int((x - 201) / 40))
+        if x >= 240:
+            char.技能攻击力加成(0.01 * int((x - 200) / 40))
     if mode == 1:
         pass
 
