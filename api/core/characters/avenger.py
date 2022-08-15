@@ -822,7 +822,7 @@ class classChange(Character):
         self.输出类型选项 = ['魔法百分比']
         self.防具精通属性 = ['智力']
         self.类型 = '魔法百分比'
-        self.武器类型 = ['镰刀']
+        self.武器类型 = '镰刀'
         self.防具类型 = '重甲'
         技能列表 = []
         技能序号 = {}
