@@ -32,7 +32,8 @@
     "children": [
       {
         "name": "sword_master",
-        "title": "极诣·驭剑士"
+        "title": "极诣·驭剑士",
+        "open": true
       },
       {
         "name": "dark_templar",

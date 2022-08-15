@@ -9649,6 +9649,9 @@ def entry_559(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        恶即斩 = char.get_skill_by_name("恶即斩")
+        恶即斩.CP武器 = True
+        恶即斩.倍率 *= 0.85
         pass
 
 
@@ -9667,6 +9670,7 @@ def entry_561(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name("恶即斩").CDR *= 0.9
         pass
 
 
@@ -9676,6 +9680,7 @@ def entry_562(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name("恶即斩").CDR *= 0.9
         pass
 
 
