@@ -157,7 +157,7 @@ class 技能8(主动技能):
     MP = [180, 1512]
     无色消耗 = 1
 
-    def 装备护石(self, x):
+    def 装备护石(self):
         self.hit0 += 2
         self.倍率 = 0.99
         self.CDR *= 0.85

@@ -10012,6 +10012,11 @@ def entry_595(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        闪电之舞 = char.get_skill_by_name("闪电之舞")
+        if '闪电之舞' in char.护石栏:
+            闪电之舞.hit0 = 13
+        else:
+            闪电之舞.hit0 = 9
         pass
 
 
@@ -10021,6 +10026,8 @@ def entry_596(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        闪电之舞 = char.get_skill_by_name("闪电之舞")
+        闪电之舞.倍率 *= 0.85
         pass
 
 
@@ -10039,6 +10046,8 @@ def entry_598(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        if '感电' not in state_type:
+            state_type.append('感电')
         pass
 
 

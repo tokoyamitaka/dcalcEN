@@ -96,7 +96,8 @@
       },
       {
         "name": "striker_female",
-        "title": "归元·散打"
+        "title": "归元·散打",
+        "open": true
       },
       {
         "name": "brawler_female",
