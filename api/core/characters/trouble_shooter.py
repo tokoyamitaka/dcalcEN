@@ -273,12 +273,9 @@ class 技能12(主动技能):
     MP = [980, 8232]
     无色消耗 = 5
 
-    # Lv3：[G型烬灭榴弹]攻击力增加10%
-    def 等效百分比(self, 武器类型):
-        if self.等级 >= 3:
-            self.倍率 = 1.1
-        return super().等效百分比(武器类型)
-
+    def 等效百分比(self, **argv):
+        # Lv3：[G型烬灭榴弹]攻击力增加10%
+        return super().等效百分比(**argv) *(1.1 if self.等级 >=3 else 1)
 
 class 技能13(主动技能):
     名称 = '完美击球'

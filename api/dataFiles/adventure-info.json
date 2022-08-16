@@ -406,7 +406,8 @@
       },
       {
         "name": "trouble_shooter",
-        "title": "苍暮·战线佣兵"
+        "title": "苍暮·战线佣兵",
+        "open": true
       },
       {
         "name": "specialist",

@@ -11735,6 +11735,7 @@ def entry_769(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.技能倍率加成(1,100,0.2,exc=[50,85,100])
         pass
 
 
@@ -11744,6 +11745,7 @@ def entry_770(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name("爆裂斩").CDR *= 0.65
         pass
 
 
