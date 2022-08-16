@@ -26,16 +26,16 @@ class 技能1(主动技能):
     基础等级 = 1
     MP = [6, 140]
     # 巨剑 180.53+205.90+127.83
-    data0 = [int(i) for i in [514.25]]
+    data0 = [int(i) for i in [0,514.25]]
     hit0 = 1
     # 太刀 122.81+170.41+195.72
-    data1 = [int(i) for i in [486.67]]
+    data1 = [int(i) for i in [0,486.67]]
     hit1 = 1
     # 短剑 (69.16+74.22+80.97+86.03)*2
-    data2 = [int(i) for i in [310.37]]
+    data2 = [int(i) for i in [0,310.37]]
     hit2 = 2
     # 钝器 102.14+153.95+179.12+76.98
-    data3 = [int(i) for i in [512.19]]
+    data3 = [int(i) for i in [0,512.19]]
     hit3 = 1
     CD = 1.0 #实际没有
     TP成长 = 0.10
@@ -1018,3 +1018,7 @@ class classChange(Character):
         self.buff = 1.71
 
         super().__init__()
+
+    def set_skill_info(self, info, rune_except=[], clothes_pants=[]):
+        super().set_skill_info(info, rune_except=[
+            '魔剑奥义'])

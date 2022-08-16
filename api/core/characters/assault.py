@@ -102,15 +102,15 @@ class 技能6(主动技能):
     TP成长 = 0.1
     TP上限 = 7
 
-    形态 = ["常规", "步行"]
+    # 形态 = ["常规", "步行"]
 
-    def 形态变更(self, 形态, char:Character):
-        if 形态 == '' and len(self.形态) > 0:
-            形态 = self.形态[0]
-        if 形态 == "常规":
-            self.CDR = 1.0
-        if 形态 == "步行":
-            self.CDR = 0.7
+    # def 形态变更(self, 形态, char:Character):
+    #     if 形态 == '' and len(self.形态) > 0:
+    #         形态 = self.形态[0]
+    #     if 形态 == "常规":
+    #         self.CDR = 1.0
+    #     if 形态 == "步行":
+    #         self.CDR = 0.7
 
 
 class 技能7(被动技能):
@@ -169,15 +169,15 @@ class 技能10(主动技能):
     TP成长 = 0.1
     TP上限 = 7
 
-    形态 = ["常规", "步行"]
+    # 形态 = ["常规", "步行"]
 
-    def 形态变更(self, 形态, char:Character):
-        if 形态 == '' and len(self.形态) > 0:
-            形态 = self.形态[0]
-        if 形态 == "常规":
-            self.CDR = 1.0
-        if 形态 == "步行":
-            self.CDR = 0.7
+    # def 形态变更(self, 形态, char:Character):
+    #     if 形态 == '' and len(self.形态) > 0:
+    #         形态 = self.形态[0]
+    #     if 形态 == "常规":
+    #         self.CDR = 1.0
+    #     if 形态 == "步行":
+    #         self.CDR = 0.7
 
 
 class 技能11(主动技能):
@@ -198,15 +198,15 @@ class 技能11(主动技能):
     TP成长 = 0.1
     TP上限 = 7
 
-    形态 = ["常规", "步行"]
+    # 形态 = ["常规", "步行"]
 
-    def 形态变更(self, 形态, char:Character):
-        if 形态 == '' and len(self.形态) > 0:
-            形态 = self.形态[0]
-        if 形态 == "常规":
-            self.CDR = 1.0
-        if 形态 == "步行":
-            self.CDR = 0.7
+    # def 形态变更(self, 形态, char:Character):
+    #     if 形态 == '' and len(self.形态) > 0:
+    #         形态 = self.形态[0]
+    #     if 形态 == "常规":
+    #         self.CDR = 1.0
+    #     if 形态 == "步行":
+    #         self.CDR = 0.7
 
 
 class 技能12(主动技能):
@@ -228,15 +228,15 @@ class 技能12(主动技能):
     MP = [122, 1024]
     无色消耗 = 1
 
-    形态 = ["常规", "步行"]
+    # 形态 = ["常规", "步行"]
 
-    def 形态变更(self, 形态, char:Character):
-        if 形态 == '' and len(self.形态) > 0:
-            形态 = self.形态[0]
-        if 形态 == "常规":
-            self.CDR = 1.0
-        if 形态 == "步行":
-            self.CDR = 0.7
+    # def 形态变更(self, 形态, char:Character):
+    #     if 形态 == '' and len(self.形态) > 0:
+    #         形态 = self.形态[0]
+    #     if 形态 == "常规":
+    #         self.CDR = 1.0
+    #     if 形态 == "步行":
+    #         self.CDR = 0.7
 
 
 class 技能13(主动技能):
@@ -314,21 +314,21 @@ class 技能15(主动技能):
     MP = [285, 2394]
     无色消耗 = 2
 
-    形态 = ["常规", "步行"]
+    # 形态 = ["常规", "步行"]
 
-    def 形态变更(self, 形态, char:Character):
-        if 形态 == '' and len(self.形态) > 0:
-            形态 = self.形态[0]
-        if 形态 == "常规":
-            self.CDR = 1.0
-            if '雷达扫射' in char.护石栏:
-                self.倍率 = 1.31
-                self.CDR = 0.95
-        if 形态 == "步行":
-            self.CDR = 0.7
-            if '雷达扫射' in char.护石栏:
-                self.倍率 = 1.31
-                self.CDR = 0.7*0.95
+    # def 形态变更(self, 形态, char:Character):
+    #     if 形态 == '' and len(self.形态) > 0:
+    #         形态 = self.形态[0]
+    #     if 形态 == "常规":
+    #         self.CDR = 1.0
+    #         if '雷达扫射' in char.护石栏:
+    #             self.power0 = 1.31
+    #             self.CDR = 0.95
+    #     if 形态 == "步行":
+    #         self.CDR = 0.7
+    #         if '雷达扫射' in char.护石栏:
+    #             self.power0 = 1.31
+    #             self.CDR = 0.7*0.95
 
     def 装备护石(self):
         self.倍率 = 1.31
@@ -455,7 +455,7 @@ class 技能21(主动技能):
     def 形态变更(self, 形态, char:Character):
         if 形态 == '' and len(self.形态) > 0:
             形态 = self.形态[0]
-        if 形态 == "自动跟随":
+        if 形态 == "自动":
             self.hit0 = 28*4
             self.hit0 = 0
             if 'AT-SO步行者' in char.护石栏:

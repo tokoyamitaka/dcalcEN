@@ -67,7 +67,7 @@ class 技能2(被动技能):
     等级上限 = 20
     基础等级 = 10
 
-    def 物理攻击力倍率进图(self):
+    def 物理攻击力倍率进图(self,武器类型):
         if self.等级 == 0:
             return 1.0
         else:
