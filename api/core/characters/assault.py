@@ -2,6 +2,31 @@ from core.basic.skill import 技能
 from core.basic.character import Character
 from core.basic.skill import 主动技能, 被动技能
 
+class 主动技能(主动技能):
+
+    上车CDR = 1.0
+
+    def 等效CD(self, **argv):
+        # 武器类型 输出类型 额外CDR 手搓收益 恢复
+        武器类型 = argv.get('武器类型', '')
+        输出类型 = argv.get('输出类型', '')
+        额外CDR = argv.get('额外CDR', 1.0)
+        手搓收益 = argv.get('手搓收益', 1.0)
+        恢复 = argv.get('恢复', True)
+
+        cdr = 1
+        if self.手搓:
+            if self.所在等级 >= 15 and self.所在等级 <= 30:
+                cdr = 0.99
+            if self.所在等级 >= 35 and self.所在等级 <= 70:
+                cdr = 0.98
+            if self.所在等级 >= 75 and self.所在等级 <= 100:
+                cdr = 0.95
+            if self.所在等级 in [50, 100]:
+                cdr = 0.95
+        return round(max(self.CD * cdr * 手搓收益 * self.CDR * 额外CDR * self.上车CDR / (self.恢复 if 恢复 else 1) * self.武器CD系数(武器类型, 输出类型), self.CD * 0.3, 1), 1)
+
+
 
 class 技能0(被动技能):
     名称 = '基础精通'
@@ -102,16 +127,15 @@ class 技能6(主动技能):
     TP成长 = 0.1
     TP上限 = 7
 
-    # 形态 = ["常规", "步行"]
+    形态 = ["常规", "步行"]
 
-    # def 形态变更(self, 形态, char:Character):
-    #     if 形态 == '' and len(self.形态) > 0:
-    #         形态 = self.形态[0]
-    #     if 形态 == "常规":
-    #         self.CDR = 1.0
-    #     if 形态 == "步行":
-    #         self.CDR = 0.7
-
+    def 形态变更(self, 形态, char:Character):
+        if 形态 == '' and len(self.形态) > 0:
+            形态 = self.形态[0]
+        if 形态 == "常规":
+            self.上车CDR = 1.0
+        if 形态 == "步行":
+            self.上车CDR = 0.7
 
 class 技能7(被动技能):
     名称 = '弱点扫描'
@@ -169,15 +193,15 @@ class 技能10(主动技能):
     TP成长 = 0.1
     TP上限 = 7
 
-    # 形态 = ["常规", "步行"]
+    形态 = ["常规", "步行"]
 
-    # def 形态变更(self, 形态, char:Character):
-    #     if 形态 == '' and len(self.形态) > 0:
-    #         形态 = self.形态[0]
-    #     if 形态 == "常规":
-    #         self.CDR = 1.0
-    #     if 形态 == "步行":
-    #         self.CDR = 0.7
+    def 形态变更(self, 形态, char:Character):
+        if 形态 == '' and len(self.形态) > 0:
+            形态 = self.形态[0]
+        if 形态 == "常规":
+            self.上车CDR = 1.0
+        if 形态 == "步行":
+            self.上车CDR = 0.7
 
 
 class 技能11(主动技能):
@@ -198,15 +222,15 @@ class 技能11(主动技能):
     TP成长 = 0.1
     TP上限 = 7
 
-    # 形态 = ["常规", "步行"]
+    形态 = ["常规", "步行"]
 
-    # def 形态变更(self, 形态, char:Character):
-    #     if 形态 == '' and len(self.形态) > 0:
-    #         形态 = self.形态[0]
-    #     if 形态 == "常规":
-    #         self.CDR = 1.0
-    #     if 形态 == "步行":
-    #         self.CDR = 0.7
+    def 形态变更(self, 形态, char:Character):
+        if 形态 == '' and len(self.形态) > 0:
+            形态 = self.形态[0]
+        if 形态 == "常规":
+            self.上车CDR = 1.0
+        if 形态 == "步行":
+            self.上车CDR = 0.7
 
 
 class 技能12(主动技能):
@@ -228,15 +252,15 @@ class 技能12(主动技能):
     MP = [122, 1024]
     无色消耗 = 1
 
-    # 形态 = ["常规", "步行"]
+    形态 = ["常规", "步行"]
 
-    # def 形态变更(self, 形态, char:Character):
-    #     if 形态 == '' and len(self.形态) > 0:
-    #         形态 = self.形态[0]
-    #     if 形态 == "常规":
-    #         self.CDR = 1.0
-    #     if 形态 == "步行":
-    #         self.CDR = 0.7
+    def 形态变更(self, 形态, char:Character):
+        if 形态 == '' and len(self.形态) > 0:
+            形态 = self.形态[0]
+        if 形态 == "常规":
+            self.上车CDR = 1.0
+        if 形态 == "步行":
+            self.上车CDR = 0.7
 
 
 class 技能13(主动技能):
@@ -314,21 +338,15 @@ class 技能15(主动技能):
     MP = [285, 2394]
     无色消耗 = 2
 
-    # 形态 = ["常规", "步行"]
+    形态 = ["常规", "步行"]
 
-    # def 形态变更(self, 形态, char:Character):
-    #     if 形态 == '' and len(self.形态) > 0:
-    #         形态 = self.形态[0]
-    #     if 形态 == "常规":
-    #         self.CDR = 1.0
-    #         if '雷达扫射' in char.护石栏:
-    #             self.power0 = 1.31
-    #             self.CDR = 0.95
-    #     if 形态 == "步行":
-    #         self.CDR = 0.7
-    #         if '雷达扫射' in char.护石栏:
-    #             self.power0 = 1.31
-    #             self.CDR = 0.7*0.95
+    def 形态变更(self, 形态, char:Character):
+        if 形态 == '' and len(self.形态) > 0:
+            形态 = self.形态[0]
+        if 形态 == "常规":
+            self.上车CDR = 1.0
+        if 形态 == "步行":
+            self.上车CDR = 0.7
 
     def 装备护石(self):
         self.倍率 = 1.31

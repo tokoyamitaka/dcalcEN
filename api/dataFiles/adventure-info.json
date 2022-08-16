@@ -411,7 +411,8 @@
       },
       {
         "name": "specialist",
-        "title": "苍暮·源能专家"
+        "title": "苍暮·源能专家",
+        "open": true
       },
       {
         "name": "empty",
