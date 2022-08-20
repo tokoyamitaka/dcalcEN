@@ -168,17 +168,17 @@ class 技能8(被动技能):
         else:
             return round(1.10 + 0.015 * (self.等级 - 10), 5)
 
-    def 加成倍率(self, 武器类型):
+    def 加成倍率1(self, 武器类型):
         if self.等级 == 0:
             return 1.0
         else:
             return round(1.10, 5)
 
-    def 加成倍率1(self, 武器类型):
-        if self.等级 == 0:
-            return 1.0
-        else:
-            return round(1.03, 5)
+    # def 加成倍率1(self, 武器类型):
+    #     if self.等级 == 0:
+    #         return 1.0
+    #     else:
+    #         return round(1.03, 5)
 
     # def 加成倍率4(self, 武器类型):
     #     if self.等级 == 0:
