@@ -538,16 +538,17 @@ class classChange(Character):
     def set_skill_info(self, info, rune_except=[], clothes_pants=[]):
         super().set_skill_info(info, clothes_pants=['远古记忆'])
 
-    def 技能倍率加成(self, min: int, max: int, x: float, exc=[int]) -> None:
-        if min <= 75 and max >= 75:
-            self.get_skill_by_name('冰之技艺').额外冰枪倍率 *= (1 + x * self.技能伤害增加增幅)
+    def 技能倍率加成(self, min: int, max: int, x: float, exc=[int], type="all") -> None:
         for i in self.技能栏:
             if i.所在等级 >= min and i.所在等级 <= max and i.所在等级 not in exc:
                 if i.是否有伤害 == 1:
-                    if i.名称 in self.get_skill_by_name('冰之技艺').冰枪关联技能 and i.所在等级 != 75:
-                        i.不加成冰枪技能倍率 *= (1 + x * self.技能伤害增加增幅)
-                    else:
-                        i.倍率 *= (1 + x * self.技能伤害增加增幅)
+                    if type == "all" or (type == "active" and i.是否主动 == 1):
+                        if i.名称 in self.get_skill_by_name('冰之技艺').冰枪关联技能:
+                            i.不加成冰枪技能倍率 *= (1 + x * self.技能伤害增加增幅)
+                        else:
+                            i.倍率 *= (1 + x * self.技能伤害增加增幅)
+                if i.名称 == "冰之技艺" and i.所在等级 >= min and i.所在等级 <= max and type == "all":
+                    i.额外冰枪倍率 *= (1 + x * self.技能伤害增加增幅)
 
     def 伤害指数计算(self):
 
