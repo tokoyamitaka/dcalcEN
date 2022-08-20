@@ -162,7 +162,7 @@ class Character(CharacterProperty):
         self.__buff量: int = 0
         self.__百分比buff量: float = 0.0
         self.__基础精通倍率: float = 1.0
-        self.__伤害比例: Dict[str, float] = {
+        self.伤害比例: Dict[str, float] = {
             '直伤': 1.0, '中毒': 0.0, '灼烧': 0.0, '感电': 0.0, '出血': 0.0}
         self.伤害系数: Dict[str, float] = {
             '中毒': 1.0, '灼烧': 1.0, '感电': 1.0, '出血': 1.0}
@@ -354,8 +354,8 @@ class Character(CharacterProperty):
 
     def 伤害类型转化(self, 类型1: str, 类型2: str, x: float) -> None:
         # 直伤 中毒 灼烧 感电 出血
-        self.__伤害比例[类型1] = self.__伤害比例.get(类型1, 0.0) - x
-        self.__伤害比例[类型2] = self.__伤害比例.get(类型2, 0.0) + x
+        self.伤害比例[类型1] = self.伤害比例.get(类型1, 0.0) - x
+        self.伤害比例[类型2] = self.伤害比例.get(类型2, 0.0) + x
 
     def 异常增伤(self, 类型: str, x: float) -> None:
         # 中毒 灼烧 感电 出血
@@ -528,7 +528,7 @@ class Character(CharacterProperty):
     def 攻击速度增加(self, x: float) -> None:
         self.__攻击速度 += x
 
-    def 攻击速度(self) ->float:
+    def 攻击速度(self) -> float:
         return self.__攻击速度
 
     def 移动速度增加(self, x: float) -> None:
@@ -797,7 +797,7 @@ class Character(CharacterProperty):
             id = setinfo.get(i, {}).get('enchanting', 0)
             self.部位附魔[i] = get_encfunc_by_id(id)
 
-    def __技能队列设置(self, setinfo):
+    def 技能队列设置(self, setinfo):
         self.技能队列 = []
         for item in setinfo:
             self.技能队列.append({
@@ -1027,7 +1027,7 @@ class Character(CharacterProperty):
 
                 # 直伤处理：直伤伤害*比例*系数
                 damage = 直伤 * self.伤害指数 * k.被动倍率 * \
-                    (self.__伤害比例.get("直伤", 0.0)) / 100
+                    (self.伤害比例.get("直伤", 0.0)) / 100
                 for item in ['中毒', '灼烧', '感电', '出血']:
                     系数 = self.伤害系数.get(item, 0.0)
                     # 出血 叠层 1层1%出血伤害 满10%
@@ -1035,7 +1035,7 @@ class Character(CharacterProperty):
                         系数 *= 1.1
                     # 直伤转换的异常处理：直伤伤害*异常比例*异常系数
                     damage += 直伤 * self.伤害指数 * k.被动倍率 * \
-                        (self.__伤害比例.get(item, 0.0) * 系数) / 100
+                        (self.伤害比例.get(item, 0.0) * 系数) / 100
                     # 异常伤害处理：异常伤害*异常系数
                     damage += k.等效百分比(
                         武器类型=self.武器类型,  额外等级=i['等级变化'], 额外倍率=i['倍率'], 伤害类型=item, 形态=i['形态'], char=self) * self.伤害指数 * k.被动倍率*系数 / 100
@@ -1165,7 +1165,8 @@ class Character(CharacterProperty):
         try:
             from core.equipment.sundry import get_sundriesfunc_by_id
             func = get_sundriesfunc_by_id(setinfo['XZ_TYPE'])
-            func(self, 0, False, setinfo.get("XZ_SHZ",0), setinfo.get("XZ_QH",0), setinfo.get("XZ_GS",0))
+            func(self, 0, False, setinfo.get("XZ_SHZ", 0),
+                 setinfo.get("XZ_QH", 0), setinfo.get("XZ_GS", 0))
         except:
             pass
         for i in setinfo.keys():
@@ -1637,7 +1638,7 @@ class Character(CharacterProperty):
     def calc_init(self, info, equipList: List[int] = []):
         # 获取打造数据
         self.__打造设置(info['forge_set'])
-        self.__技能队列设置(info['skill_que'])
+        self.技能队列设置(info['skill_que'])
         self.__怪物信息设置(info.get("monster", 0))
         # 设置职业信息
         self.__set_char(info)
@@ -1779,7 +1780,7 @@ class Character(CharacterProperty):
                     '技能攻击力': round(100*(self.__技能攻击力-1), 2),
                     '百分比攻击强化': round(self.__百分比攻击强化*100, 1),
                     'MP消耗量': round(self.__MP消耗量*100-100, 2),
-                    '伤害比例': [self.__伤害比例.get('直伤', 1), self.__伤害比例.get('中毒', 0), self.__伤害比例.get('灼烧', 0), self.__伤害比例.get('感电', 0), self.__伤害比例.get('出血', 0)],
+                    '伤害比例': [self.伤害比例.get('直伤', 1), self.伤害比例.get('中毒', 0), self.伤害比例.get('灼烧', 0), self.伤害比例.get('感电', 0), self.伤害比例.get('出血', 0)],
                     '伤害系数': [self.伤害系数.get('直伤', 1), self.伤害系数.get('中毒', 1)-1, self.伤害系数.get('灼烧', 1)-1, self.伤害系数.get('感电',  1)-1, self.伤害系数.get('出血',  1)-1],
                     '无色消耗': temp['无色消耗'],
                     '条件冷却': self.__条件冷却,
