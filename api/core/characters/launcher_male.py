@@ -18,6 +18,11 @@ class 主动技能(主动技能):
             if self.所在等级 not in [50, 85, 100] and self.是否主动 == 1:
                 self.基础等级 = min(self.基础等级 + 1, self.等级上限)
 
+    def MP消耗(self, **argv):
+        char = argv.get("char", {})
+        k = char.get_skill_by_name('重火器精通').MP消耗量比率()
+        return super().MP消耗(**argv) * k
+
 
 class 技能0(主动技能):
     名称 = 'M137格林机枪'
@@ -538,8 +543,8 @@ class classChange(Character):
 
         super().__init__()
 
-    def 职业特殊计算(self):
-        k = self.get_skill_by_name('重火器精通').MP消耗量比率()
-        for i in self.技能栏:
-            if i.是否主动 == 1:
-                i.MP = [int(i.MP[0] * k), int(i.MP[1] * k)]
+    # def 职业特殊计算(self):
+    #     k = self.get_skill_by_name('重火器精通').MP消耗量比率()
+    #     for i in self.技能栏:
+    #         if i.是否主动 == 1:
+    #             i.MP = [int(i.MP[0] * k), int(i.MP[1] * k)]
