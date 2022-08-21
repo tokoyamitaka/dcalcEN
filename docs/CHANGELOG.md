@@ -1,5 +1,25 @@
 ## Newest
 
+### 2022.08.21.Beta
+
+#### NewFeatures
+* 新增日志弹出 ([e4fc9c](https://gitee.com/dcalc/dnfcalculating_110/commit/e4fc9c1a13670a6fbbeb1307a90baf5ec56db5f3))
+* 极诣·剑影：鬼连斩、鬼连斩：极拆分显示 ([09a798](https://gitee.com/dcalc/dnfcalculating_110/commit/09a798213e5e44293fb4d0a0095a6d503cac3935))
+* 添加战线佣兵 ([7aada1](https://gitee.com/dcalc/dnfcalculating_110/commit/7aada109a0f35d3a9d2cea956654897023fb2a8d))
+* 添加源能专家 ([7cd33c](https://gitee.com/dcalc/dnfcalculating_110/commit/7cd33c1cb6737c1d89e5d1e3959e2103d948ad33))
+
+#### BugFixes
+* 修定冰结装备增加75级技能攻击力时碎冰破加成不正常的问题 ([0164d6](https://gitee.com/dcalc/dnfcalculating_110/commit/0164d65967316ff2c929f395d51839b0825107cd))
+* 修正自定义词条加成技能等级问题 ([bdeea0](https://gitee.com/dcalc/dnfcalculating_110/commit/bdeea0237641cd7115724e515a749533e444fbf2))
+* 归元·散打(女)：修复虎啸神拳hit问题 ([46fd0e](https://gitee.com/dcalc/dnfcalculating_110/commit/46fd0ed9fb83be9607cdad87b7bedb079066d1b8))
+* 极诣·驭剑士：修正魔剑降临问题 ([f1bebd](https://gitee.com/dcalc/dnfcalculating_110/commit/f1bebd64df5f7f4201debbc7cf8dc75f392ae1f8))
+* 皓曦·龙骑士：修复征战无双问题 ([0d9eca](https://gitee.com/dcalc/dnfcalculating_110/commit/0d9ecab412685e7208c1d94ba04f8e8d2435ee3f))
+* 神启·蓝拳圣使：修复技巧精通加成问题 ([db16b0](https://gitee.com/dcalc/dnfcalculating_110/commit/db16b0302e0b7fd2b45f720a53c1810e3f277ce3))
+* 职业bug修复 ([411e7c](https://gitee.com/dcalc/dnfcalculating_110/commit/411e7cd1bcc28ae9d7a392870d924caf0eb4bad2))
+* 苍暮·源能专家：修正护石缺失 ([886124](https://gitee.com/dcalc/dnfcalculating_110/commit/88612447dc65467d09d08c36d287367453f146e1))
+* 重霄·合金战士：修复雷达扫射数据问题 ([ad9c80](https://gitee.com/dcalc/dnfcalculating_110/commit/ad9c80ac89791946ff2e4f25b5c0fb6d249a916e))
+* 重霄·枪炮师：修正MP消耗判断问题 ([19f454](https://gitee.com/dcalc/dnfcalculating_110/commit/19f45450540441930e706ed2740d0c71549cc74a))
+
 ### 2022.08.15.Beta
 
 #### NewFeatures
@@ -61,6 +81,7 @@
 - 修正自定义词条错误 ([32c7d9](https://gitee.com/dcalc/dnfcalculating_110/commit/32c7d9a86bdcf5e9c184dff59bcb9c7a7051904f))
 - 男大枪：FM92SW 刺弹炮护石无效的情况 ([650ad9](https://gitee.com/dcalc/dnfcalculating_110/commit/650ad960d049ef857001c3913b376f7f12dfbfb2))
 - 药剂结算先后问题 ([418c56](https://gitee.com/dcalc/dnfcalculating_110/commit/418c56b12ec1f54cfd637999b0ff8a01cb3eebca))
+
 
 
 ## History
