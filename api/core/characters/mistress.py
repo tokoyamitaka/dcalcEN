@@ -1,7 +1,7 @@
 from core.basic.skill import 技能
 from core.basic.character import Character
 from core.basic.skill import 主动技能, 被动技能
- 
+
 
 class 技能0(主动技能):
     名称 = '罪业加身'
@@ -98,7 +98,7 @@ class 技能6(主动技能):
     等级上限 = 30
     基础等级 = 30
     关联技能 = ['欲望之手', '傲慢之堕', '怠惰之息', '贪婪之刺', '愤怒之袭', '嫉妒之吻', '暴食之噬']
-    
+
     # 部分技能依照消耗罪业层数获得额外加成
     def 加成倍率(self, 武器类型):
         return 1.0
@@ -169,7 +169,7 @@ class 技能10(主动技能):
     CD = 15.0
     TP成长 = 0.10
     TP上限 = 5
-        
+
     MP = [105, 882]
     无色消耗 = 1
 
@@ -239,7 +239,7 @@ class 技能13(主动技能):
     无色消耗 = 2
 
     def 装备护石(self):
-        self.倍率 = 1.31        
+        self.倍率 = 1.31
 
 
 class 技能14(被动技能):
@@ -292,12 +292,12 @@ class 技能16(主动技能):
     无色消耗 = 7
 
     def 装备护石(self):
-        self.倍率 = 1.28        
+        self.倍率 = 1.28
 
 
 class 技能17(主动技能):
     名称 = '暴食之噬'
-    备注 = '4层'    
+    备注 = '4层'
     所在等级 = 70
     等级上限 = 50
     学习间隔 = 2
@@ -357,7 +357,7 @@ class 技能19(主动技能):
     CD = 2.0
 
 
-    def 等效CD(self, 武器类型, 输出类型):
+    def 等效CD(self, **argv):
         return 2.0
 
     def 加成倍率(self, 武器类型):
@@ -468,7 +468,7 @@ class classChange(Character):
         self.防具精通属性 = ['智力']
         self.类型 = '魔法百分比'
         self.武器类型 = ['镰刀']
-        self.防具类型 = '重甲' 
+        self.防具类型 = '重甲'
         技能列表 = []
         技能序号 = {}
         i = 0
