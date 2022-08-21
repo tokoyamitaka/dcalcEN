@@ -2578,7 +2578,7 @@ def entry_1250(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
     if mode == 1:
         属强 = max(char.火属性强化(), char.光属性强化(), char.暗属性强化(), char.冰属性强化())
-        char.技能恢复加成(1, 100, 0.04 * min(int(属强/50),6), exc=[50, 85, 100])
+        char.技能恢复加成(1, 100, 0.04 * min(int(属强/50), 6), exc=[50, 85, 100])
         char.条件冷却恢复加成("所有", 0.04 * 6)
 
 
@@ -2589,7 +2589,7 @@ def entry_1251(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
     if mode == 1:
         属强 = max(char.火属性强化(), char.光属性强化(), char.暗属性强化(), char.冰属性强化())
-        char.所有速度增加(0.03 * min(int(属强/50),5))
+        char.所有速度增加(0.03 * min(int(属强/50), 5))
 
 
 def entry_1252(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -8215,72 +8215,72 @@ def entry_333(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_275(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['所有职业Lv45技能Lv+1']
+        return ['所有职业Lv45主动技能Lv+1']
     if mode == 0:
-        char.技能等级加成('所有', 45, 45, 1)
+        char.技能等级加成('z', 45, 45, 1)
     if mode == 1:
         pass
 
 
 def entry_276(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['所有职业Lv35技能Lv+1']
+        return ['所有职业Lv35主动技能Lv+1']
     if mode == 0:
-        char.技能等级加成('所有', 35, 35, 1)
+        char.技能等级加成('主动', 35, 35, 1)
     if mode == 1:
         pass
 
 
 def entry_281(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['所有职业Lv40技能Lv+1']
+        return ['所有职业Lv40主动技能Lv+1']
     if mode == 0:
-        char.技能等级加成('所有', 40, 40, 1)
+        char.技能等级加成('主动', 40, 40, 1)
     if mode == 1:
         pass
 
 
 def entry_316(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['所有职业Lv60技能Lv+1']
+        return ['所有职业Lv60主动技能Lv+1']
     if mode == 0:
-        char.技能等级加成('所有', 60, 60, 1)
+        char.技能等级加成('主动', 60, 60, 1)
     if mode == 1:
         pass
 
 
 def entry_317(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['所有职业Lv70技能Lv+1']
+        return ['所有职业Lv70主动技能Lv+1']
     if mode == 0:
-        char.技能等级加成('所有', 70, 70, 1)
+        char.技能等级加成('主动', 70, 70, 1)
     if mode == 1:
         pass
 
 
 def entry_328(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['所有职业Lv95技能Lv+1']
+        return ['所有职业Lv95主动技能Lv+1']
     if mode == 0:
-        char.技能等级加成('所有', 95, 95, 1)
+        char.技能等级加成('主动', 95, 95, 1)
     if mode == 1:
         pass
 
 
 def entry_334(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['所有职业Lv75技能Lv+1']
+        return ['所有职业Lv75主动技能Lv+1']
     if mode == 0:
-        char.技能等级加成('所有', 75, 75, 1)
+        char.技能等级加成('主动', 75, 75, 1)
     if mode == 1:
         pass
 
 
 def entry_335(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['所有职业Lv80技能Lv+1']
+        return ['所有职业Lv80主动技能Lv+1']
     if mode == 0:
-        char.技能等级加成('所有', 80, 80, 1)
+        char.技能等级加成('主动', 80, 80, 1)
     if mode == 1:
         pass
 
@@ -9252,6 +9252,7 @@ def entry_562(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         char.get_skill_by_name("恶即斩").CDR *= 0.9
         pass
 
+
 def entry_563(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
         return ['[腹剑:破]更变为最大3次的堆栈型技能', '- 不会自动填充', '- [蛇腹剑:破]以外的转职技能攻击时填充1次']
@@ -9617,6 +9618,7 @@ def entry_598(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         if '感电' not in state_type:
             state_type.append('感电')
         pass
+
 
 def entry_599(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
@@ -11180,7 +11182,7 @@ def entry_756(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.技能冷却缩减(1,100,0.2,[50,85,100])
+        char.技能冷却缩减(1, 100, 0.2, [50, 85, 100])
         pass
 
 
@@ -11312,7 +11314,7 @@ def entry_769(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.技能倍率加成(1,100,0.2,exc=[50,85,100])
+        char.技能倍率加成(1, 100, 0.2, exc=[50, 85, 100])
         pass
 
 
@@ -11324,6 +11326,7 @@ def entry_770(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 1:
         char.get_skill_by_name("爆裂斩").CDR *= 0.65
         pass
+
 
 def entry_771(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
@@ -11340,7 +11343,7 @@ def entry_772(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.get_skill_by_name("CEAB-2超能爆发").倍率 *=1.4
+        char.get_skill_by_name("CEAB-2超能爆发").倍率 *= 1.4
         pass
 
 
@@ -11359,7 +11362,7 @@ def entry_774(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.技能冷却缩减(1,100,0.2,exc=[50,85,100])
+        char.技能冷却缩减(1, 100, 0.2, exc=[50, 85, 100])
         pass
 
 
@@ -11497,7 +11500,7 @@ def entry_788(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.单技能加成('炎神攻城炮',1.5)
+        char.单技能加成('炎神攻城炮', 1.5)
         pass
 
 
@@ -11516,7 +11519,7 @@ def entry_790(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.单技能加成('超频：电流闪踢',1.5)
+        char.单技能加成('超频：电流闪踢', 1.5)
         pass
 # endregion
 
