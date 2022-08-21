@@ -1,5 +1,6 @@
 - **指南**
 - [使用说明](USERMANUAL.md)
+- [职业开发进度](SCHEDULE.md)
 - [更新日志](CHANGELOG.md)
 - **维护**
 - [Git Code](README.md)

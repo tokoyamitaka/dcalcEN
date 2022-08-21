@@ -23,6 +23,11 @@ def check_update(version: str):
         os.system('RMDIR /Q /S "{}"'.format('./__ZFJtemp'))
         safeRm("./elevate.exe.del")
         safeRm("./dnfcalc-api.exe.del")
+        try:
+            os.system(
+                "start https://dcalc.gitee.io/dnfcalculating_110/#/CHANGELOG")
+        except:
+            pass
     if os.path.exists("./app/renderer.del"):
         os.system('RMDIR /Q /S "{}"'.format('./app/renderer.del'))
     folder_info = lzy.get_folder_info_by_url(
