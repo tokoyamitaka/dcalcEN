@@ -6,7 +6,7 @@
 
   import EquipTips from "@/components/internal/equip/eq-icon-tips.vue"
   import EquipList from "@/components/internal/equip/equip-list.vue"
-
+  import EquipFusion from "@/components/internal/equip/equip-fusion.vue"
   export default defineComponent({
     components: { EquipTips, EquipList },
     async setup() {
@@ -36,6 +36,7 @@
       const pets = computed(() => basicStore.equipment_info?.pet ?? [])
       const titles = computed(() => basicStore.equipment_info?.title ?? [])
       const consumable = computed(() => basicStore.equipment_info?.consumable ?? [])
+      const fusion = computed(() => basicStore.equipment_info?.fusion ?? [])
 
       const selected_110 = computed({
         get() {
@@ -143,6 +144,7 @@
             <EquipList class="equ-else-sort" v-model:selected={selected_pet.value} list={pets.value} title="宠物" />
           </div>
           <div class="w-390px ml-5px flex flex-col">
+            <EquipFusion class="equ-fusion-sort" v-model:selected={selected_pet.value} list={fusion.value} title="融合" />
             <EquipList class="consumable-sort" list={consumable.value} v-model:selected={selected_consumable.value} showTips={false} title="药剂" />
             <div class="equ-trigger !w-390px">
               {trigger_list.value &&
@@ -223,6 +225,24 @@
       // &:nth-child(7n + 1) {
       //   margin-left: 0px;
       // }
+    }
+  }
+
+  .equ-fusion-sort {
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    .item {
+      width: 30px;
+      height: 34px;
+      margin-left: 5px;
+
+      &:nth-child(3n + 3) {
+        margin-right: 270px;
+      }
     }
   }
 

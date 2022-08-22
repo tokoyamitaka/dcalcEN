@@ -6,6 +6,11 @@ entry_chose = []  # (20000 + id, [chose1, 2, 3...]) 额外选项设置，参考2
 multi_select = {}  # id : True/False 设置选项是否支持多选
 variable_set = {}  # id : setfunc  参数返回设置函数
 
+# region 贴膜
+
+# endregion
+
+
 # region 无效果词条
 
 
