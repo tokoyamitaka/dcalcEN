@@ -205,11 +205,11 @@ def set_zl(x):
 
 
 entry_chose.append((31289,
-                    ['黑龙：魔力燃烧Debuff 1层',
-                     '黑龙：魔力燃烧Debuff 2层',
-                     '黑龙：魔力燃烧Debuff 3层',
-                     '黑龙：魔力燃烧Debuff 4层',
-                     '黑龙：魔力燃烧Debuff 5层',
+                    ['黑龙魔力燃烧Debuff：1层',
+                     '黑龙魔力燃烧Debuff：2层',
+                     '黑龙魔力燃烧Debuff：3层',
+                     '黑龙魔力燃烧Debuff：4层',
+                     '黑龙魔力燃烧Debuff：5层',
                      ], ""))
 multi_select[31289] = False
 variable_set[31289] = set_zl
