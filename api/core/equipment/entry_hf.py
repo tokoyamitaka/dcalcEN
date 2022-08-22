@@ -8,6 +8,337 @@ variable_set = {}  # id : setfunc  参数返回设置函数
 
 # region 贴膜
 
+hl = 0
+hl_list = [0, 1, 2]
+
+
+def set_hl(x):
+    global hl
+    hl = hl_list[x[0]]
+
+
+entry_chose.append((31283,
+                    ['选择火龙融合状态',
+                     '火龙buff',
+                     '火龙的气息：44层',
+                     ], ""))
+multi_select[31283] = True
+variable_set[31283] = set_hl
+
+
+def entry_1283(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
+    if text:
+        return ["攻击时，获得2层火龙的气息(冷却时间1秒，火龙的气息最多叠加44层)",
+                "火龙的气息达到44层时，消耗所有火龙的气息，技能冷却时间-12%，效果持续7秒(最多叠加1次，觉醒技能除外，火龙的愤怒buff发动时解除)"]
+    if mode == 0:
+        pass
+    if mode == 1:
+        if 2 in hl and 1 not in hl:
+            char.技能冷却缩减(1, 100, 0.12, [50, 85, 100])
+        pass
+
+
+def entry_1284(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
+    if text:
+        return ["攻击时，获得5层火龙的气息(冷却时间1秒，火龙的气息最多叠加44层)",
+                "获得火龙的气息时，攻击强化+6252，效果持续10秒(最多叠加1次)"]
+    if mode == 0:
+        pass
+    if mode == 1:
+        char.攻击强化加成(6252)
+        pass
+
+
+def entry_1285(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
+    if text:
+        return ["攻击时，获得4层火龙的气息(冷却时间1秒，火龙的气息最多叠加44层)",
+                "输入指令(←→+[装备属性指令键])时，发动火龙的愤怒buff，适用以下效果(冷却时间10秒)",
+                "- 获得火龙的气息时，获得愤怒的火龙气息",
+                "- 技能冷却时间 +25%",
+                "- 愤怒的火龙气息达到44层时，施放消耗无色小晶块的技能发动暴走buff，技能攻击力 +10%，效果持续7秒",
+                "- 再输入指令时解除火龙的愤怒buff",
+                "(和其他拥有[装备属性指令键]的装备同时输入指令键时，优先适用其他装备的效果)"]
+    if mode == 0:
+        pass
+    if mode == 1:
+        if 1 in hl:
+            char.技能冷却缩减(1, 100, -0.25)
+            if 2 in hl:
+                char.技能攻击力加成(0.1)
+        pass
+
+
+jl_1 = 1
+jl_2 = 1
+jl_3 = 1
+jl_list = [1, 3, 5, -1]
+
+
+def set_jl_1(x):
+    global jl_1
+    jl_1 = hl_list[x[0]]
+
+
+def set_jl_2(x):
+    global jl_2
+    jl_2 = hl_list[x[0]]
+
+
+def set_jl_3(x):
+    global jl_3
+    jl_3 = hl_list[x[0]]
+
+
+entry_chose.append((31286,
+                    ['金龙手镯触发：1次',
+                     '金龙手镯触发：3次',
+                     '金龙手镯触发：5次',
+                     '金龙手镯触发：期望',
+                     ], ""))
+multi_select[31286] = False
+variable_set[31286] = set_jl_1
+
+entry_chose.append((31287,
+                    ['金龙项链触发：1次',
+                     '金龙项链触发：3次',
+                     '金龙项链触发：5次',
+                     '金龙项链触发：期望',
+                     ], ""))
+multi_select[31287] = False
+variable_set[31287] = set_jl_2
+
+entry_chose.append((31288,
+                    ['金龙戒指触发：1次',
+                     '金龙戒指触发：3次',
+                     '金龙戒指触发：5次',
+                     '金龙戒指触发：期望',
+                     ], ""))
+multi_select[31288] = False
+variable_set[31288] = set_jl_2
+
+
+def entry_1286(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
+    if text:
+        return [
+            "攻击时，有30%几率随机适用以下效果的其中一个(冷却时间3秒，最多叠加1次，特效攻击无视敌人防御，伤害为总攻击强化数值的100%)",
+            "- 向200px范围内的随机的敌人施放1次垂直光柱，攻击强化 +5471",
+            "- 向300px范围内的随机的敌人施放最多3次的垂直光柱，攻击强化 +7034",
+            "- 向500px范围内的随机的敌人施放最多5次的垂直光柱，攻击强化 +8597"
+        ]
+    if mode == 0:
+        pass
+    if mode == 1:
+        char.特效.append({
+            "power": 1,
+            "hit": 3 if jl_1 < 0 else jl_1
+        })
+        if jl_1 == 1:
+            char.攻击强化加成(5471)
+        elif jl_1 == 3:
+            char.攻击强化加成(7034)
+        elif jl_1 == 5:
+            char.攻击强化加成(8597)
+        else:
+            char.攻击强化加成(int(5471/3+7034/3+8597/3))
+        pass
+
+
+def entry_1287(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
+    if text:
+        return [
+            "攻击时，有30%几率随机适用以下效果的其中一个(冷却时间3秒，最多叠加1次，特效攻击无视敌人防御，伤害为总攻击强化数值的100%)",
+            "- 向200px范围内的随机的敌人施放1次水平光柱，攻击强化 +5471",
+            "- 向300px范围内的随机的敌人施放最多3次的水平光柱，攻击强化 +7034",
+            "- 向500px范围内的随机的敌人施放最多5次的水平光柱，攻击强化 +8597"
+        ]
+    if mode == 0:
+        pass
+    if mode == 1:
+        char.特效.append({
+            "power": 1,
+            "hit": 3 if jl_2 < 0 else jl_2
+        })
+        if jl_2 == 1:
+            char.攻击强化加成(5471)
+        elif jl_2 == 3:
+            char.攻击强化加成(7034)
+        elif jl_2 == 5:
+            char.攻击强化加成(8597)
+        else:
+            char.攻击强化加成(int(5471/3+7034/3+8597/3))
+        pass
+
+
+def entry_1288(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
+    if text:
+        return [
+            "攻击时，有30%几率随机适用以下效果的其中一个(冷却时间3秒，最多叠加1次，特效攻击无视敌人防御，伤害为总攻击强化数值的100%)",
+            "- 向200px范围内的随机的敌人施放1次正方体光块，攻击强化 +5471",
+            "- 向300px范围内的随机的敌人施放最多3次的正方体光块，攻击强化 +7034",
+            "- 向500px范围内的随机的敌人施放最多5次的正方体光块，攻击强化 +8597"
+        ]
+    if mode == 0:
+        pass
+    if mode == 1:
+        char.特效.append({
+            "power": 1,
+            "hit": 3 if jl_3 < 0 else jl_3
+        })
+        if jl_3 == 1:
+            char.攻击强化加成(5471)
+        elif jl_3 == 3:
+            char.攻击强化加成(7034)
+        elif jl_3 == 5:
+            char.攻击强化加成(8597)
+        else:
+            char.攻击强化加成(int(5471/3+7034/3+8597/3))
+        pass
+
+
+zl = 1
+zl_list = [1, 2, 3, 4, 5]
+
+
+def set_zl(x):
+    global zl
+    zl = zl_list[x[0]]
+
+
+entry_chose.append((31289,
+                    ['黑龙魔力燃烧Debuff：1层',
+                     '黑龙魔力燃烧Debuff：2层',
+                     '黑龙魔力燃烧Debuff：3层',
+                     '黑龙魔力燃烧Debuff：4层',
+                     '黑龙魔力燃烧Debuff：5层',
+                     ], ""))
+multi_select[31289] = False
+variable_set[31289] = set_zl
+
+
+def entry_1289(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
+    if text:
+        return ["施放技能时，发动魔力燃烧Debuff，每秒减少1%的MP(最多叠加5次)",
+                "- 每层魔力燃烧Debuff，攻击强化 +1876",
+                "MP低于50%以下时，每秒恢复2%的MP",
+                "- MP每减少10%，每秒的MP恢复量追加增加1%"]
+    if mode == 0:
+        pass
+    if mode == 1:
+        char.攻击强化加成(1876*zl)
+        pass
+
+
+def entry_1290(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
+    if text:
+        return ["攻击时，MP减少2000点(冷却时间1秒)",
+                "每剩余4%的MP，攻击强化 +1876(最多叠加5次)"]
+    if mode == 0:
+        pass
+    if mode == 1:
+        pass
+
+
+def entry_1291(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
+    if text:
+        return [
+            "被击时，MP减少5000点(冷却时间0.5秒，受到总HP1%以上的伤害时才会适用该效果)",
+            "每剩余4%的MP，攻击强化 +1876(最多叠加5次)",
+            "施放技能时，每消耗5000点MP，装备的MP恢复效果 +10%，效果持续10秒(最多叠加1次)"
+        ]
+    if mode == 0:
+        pass
+    if mode == 1:
+        pass
+
+
+def entry_1292(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
+    if text:
+        return [
+            "攻击时，发动冲击波，减少敌人的韧性条(冷却时间0.5秒，无视敌人的防御，伤害为总攻击强化数值的40%)",
+            "- 冲击波发动时，攻击强化 +4690，效果持续20秒(最多叠加1次)",
+            "每削减敌人10%的韧性条，攻击强化 +469(最多叠加10次)",
+            "- 敌人韧性条重新恢复后，效果仍然持续30秒"
+        ]
+    if mode == 0:
+        pass
+    if mode == 1:
+        pass
+
+
+def entry_1293(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
+    if text:
+        return [
+            "攻击时，发动冲击波(冷却时间0.1秒，无视敌人的防御，伤害为总攻击强化数值的6%)",
+            "- 冲击波冷却时间恢复后，每经过0.1秒，累积1层气息(最多叠加9次)",
+            "- 冲击波发动时，消耗所有累计的气息，每消耗1层气息，冲击波攻击力 +100%",
+            "冲击波发动时，攻击强化 +208，效果持续30秒(最多叠加30次)",
+            "- 冲击波发动时，每消耗1层气息，攻击强化效果叠加次数 +1"
+        ]
+    if mode == 0:
+        pass
+    if mode == 1:
+        pass
+
+
+def entry_1294(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
+    if text:
+        return [
+            "攻击时，发动冲击波(冷却时间0.1秒，无视敌人的防御，伤害为总攻击强化数值的30%)",
+            "- 冲击波发动时，攻击强化 +3126，效果持续20秒(最多叠加1次)",
+            "攻击受到5次冲击波效果的敌人时，使敌人进入眩晕状态，并减少韧性条(冷却时间8秒)",
+            "攻击眩晕状态的敌人3次，敌人的眩晕持续时间延长3秒(冷却时间5秒)",
+            "根据目前敌人的韧性条状态，适用以下效果",
+            "- 存在激活韧性条的敌人时，攻击强化 +1563",
+            "- 存在被破坏韧性条的敌人时，攻击强化 +4694"
+        ]
+    if mode == 0:
+        pass
+    if mode == 1:
+        pass
+
+
+def entry_1295(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
+    if text:
+        return [
+            "HP和MP总和在220000点以上时，攻击强化 +7815",
+            "HP最大值 +1200",
+            "MP最大值 +1890",
+            "被击时，HP最大值 -240，MP最大值 -378(最多叠加5次，受到HP最大值1%以上的伤害时，才会适用该效果)",
+            "- 2秒内没有受到攻击时，叠加次数 -1"
+        ]
+    if mode == 0:
+        pass
+    if mode == 1:
+        pass
+
+
+def entry_1296(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
+    if text:
+        return [
+            "物理、魔法防御力总和在120000点以上时，攻击强化 +7815",
+            "物理防御力 +14000",
+            "魔法防御力 +14000",
+            "被击时，物理，魔法防御力-2800(最多叠加5次，受到HP最大值1%以上的伤害时，才会适用该效果)",
+            "- 2秒内没有受到攻击时，叠加次数 -1"
+        ]
+    if mode == 0:
+        pass
+    if mode == 1:
+        pass
+
+
+def entry_1297(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
+    if text:
+        return [
+            "所有属性抗性总和在100以上时，攻击强化 +7815",
+            "所有属性抗性 +20",
+            "被击时，所有属性抗性 -4(最多叠加5次，受到HP最大值1%以上的伤害时，才会适用该效果)",
+            "- 2秒内没有受到攻击时，叠加次数 -1"
+        ]
+    if mode == 0:
+        pass
+    if mode == 1:
+        pass
 # endregion
 
 

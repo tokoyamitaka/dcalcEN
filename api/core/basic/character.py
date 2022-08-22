@@ -76,6 +76,7 @@ class Character(CharacterProperty):
     护石栏 = []
     符文 = []
     skills_passive: Dict = {}
+    融合列表 = []
 
     装扮栏: Dict[str, int] = {}
     装扮选项: Dict[str, str] = {}
@@ -1367,8 +1368,18 @@ class Character(CharacterProperty):
             self.辅助属性加成(buff量=buffer)
             self.打造[部位]["attack"][序号] = attack
             self.打造[部位]["buffer"][序号] = buffer
+        # 融合部分基础计算
+        if len(self.融合列表) > 0:
+            成长词条组合 = get_equ().get_fusion_by_idlist(self.融合列表)
+            # 等级 = self.词条等级[部位][序号]
+            等级 = 1
+            for 部位, 序号, atk, buff in 成长词条组合:
+                attack = 成长词条计算(atk, 等级)
+                buffer = 奶成长词条计算(buff, 等级)
+                self.攻击强化加成(attack)
+                self.辅助属性加成(buff量=buffer)
         # 词条效果相关计算
-        for func, 部位, 序号 in get_equ().get_func_list_by_idlist(self.装备栏, self.自定义词条):
+        for func, 部位, 序号 in get_equ().get_func_list_by_idlist(self.装备栏, self.自定义词条, self.融合列表):
             if 序号 >= 0:
                 等级 = self.词条等级[部位][序号]
             else:
@@ -1637,25 +1648,27 @@ class Character(CharacterProperty):
 
     def calc_init(self, info, equipList: List[int] = []):
         # 获取打造数据
-        self.__打造设置(info['forge_set'])
-        self.技能队列设置(info['skill_que'])
+        self.__打造设置(info.get('forge_set', {}))
+        self.技能队列设置(info.get('skill_que', []))
         self.__怪物信息设置(info.get("monster", 0))
         # 设置职业信息
         self.__set_char(info)
         # 自定义词条部分
-        self.自定义词条 = info['customize']
+        self.自定义词条 = info.get('customize', {})
         #  时装设置
-        self.__穿戴装扮(info['dress_set'])
+        self.__穿戴装扮(info.get('dress_set', {}))
         # 获取装备列表
         self.__穿戴装备(equipList)
         # 获取技能数据
-        self.__skill_set(info['skill_set'])
+        self.__skill_set(info.get('skill_set', {}))
         # 获取装备选项数据
-        self.__equ_chose_set(info['trigger_set'])
+        self.__equ_chose_set(info.get('trigger_set', {}))
         # 药剂设置
-        self.__药剂设置(info["consumable_list"])
+        self.__药剂设置(info.get('consumable_list', []))
 
-        self.__hotkey_set(info['hotkey_set'])
+        self.__hotkey_set(info.get('hotkey_set', []))
+
+        self.融合列表 = info.get('fusion_list', [])
 
     def jade_upgrade(self):
         temp = []

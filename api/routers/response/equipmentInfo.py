@@ -44,8 +44,8 @@ def get_equipment_info(alter: str):
         "wisdom": [],
         "pet": [],
         "title": [],
-        "consumable":[],
-        "fusion":[]
+        "consumable": [],
+        "fusion": []
     }
 
     char = createCharcter(alter)
@@ -163,10 +163,10 @@ def get_equipment_info(alter: str):
     for i in consumable_info.keys():
         temp = consumable_info[i]
         equipment_info["consumable"].append({
-                    "id": int(i),
-                    "name": temp["名称"],
-                    "icon": temp["icon"],
-                    "props": temp["props"],
+            "id": int(i),
+            "name": temp["名称"],
+            "icon": temp["icon"],
+            "props": temp["props"],
         })
     return equipment_info
 
@@ -194,16 +194,33 @@ def get_equipment_detail_info(equID):
     bufferProps = []
     # 移动、技攻
     effect = []
-    for item in cur['固有属性']:
-        if item not in [10001, 28, 1237]:
-            props = equ.get_func_by_id(item)(text=True)
-            for prop in props:
-                effect.append({
-                    "id": -1,
-                    "isRate": False,
-                    "label": prop,
-                    "num": None
-                })
+    if '融合' not in cur['类型']:
+        for item in cur['固有属性']:
+            if item not in [10001, 28, 1237]:
+                props = equ.get_func_by_id(item)(text=True)
+                for prop in props:
+                    effect.append({
+                        "id": -1,
+                        "isRate": False,
+                        "label": prop,
+                        "num": None
+                    })
+    else:
+        info = growths.get(str(cur['固有属性'][0]))
+        effect.append({
+            "id": -1,
+            "isRate": False,
+            "label": "Buff量 " + str(info["buff"]),
+            "num": None
+        })
+        props = info['props']
+        for prop in props:
+            effect.append({
+                "id": -1,
+                "isRate": False,
+                "label": prop,
+                "num": None
+            })
     effect.sort(key=lambda x: x["id"])
     # 成长属性
     growthProps = []
