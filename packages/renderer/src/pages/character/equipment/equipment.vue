@@ -101,6 +101,15 @@
         }
       })
 
+      const selected_fusion = computed({
+        get() {
+          return configStore.fusion_list
+        },
+        set(val: number[]) {
+          configStore.fusion_list = val
+        }
+      })
+
       const trigger_list = computed(() => basicStore.trigger_list ?? [])
 
       // 没有的就补，多的就删
@@ -144,7 +153,6 @@
             <EquipList class="equ-else-sort" v-model:selected={selected_pet.value} list={pets.value} title="宠物" />
           </div>
           <div class="w-390px ml-5px flex flex-col">
-            <EquipFusion class="equ-fusion-sort" v-model:selected={selected_pet.value} list={fusion.value} title="融合" />
             <EquipList class="consumable-sort" list={consumable.value} v-model:selected={selected_consumable.value} showTips={false} title="药剂" />
             <div class="equ-trigger !w-390px">
               {trigger_list.value &&
@@ -165,6 +173,9 @@
                     )}
                   </>
                 ))}
+            </div>
+            <div class="w-100% flex">
+              <EquipFusion class="equ-fusion-sort" v-model:selected={selected_fusion.value} list={fusion.value} title="伊斯大陆" />
             </div>
           </div>
         </div>
@@ -233,16 +244,13 @@
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
+    width: 110px;
 
     background-color: rgba(255, 255, 255, 0.1);
     .item {
       width: 30px;
       height: 34px;
       margin-left: 5px;
-
-      &:nth-child(3n + 3) {
-        margin-right: 270px;
-      }
     }
   }
 

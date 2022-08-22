@@ -156,10 +156,10 @@ priority = {
     1183: 998,
     988: 999,
     # 属强结算
-    1275: 998, 1034: 999, 1035: 999, 1036: 999, 1037: 999,  975: 1000, 976: 1000, 1252: 1001,1250:1002,1251:1002,
+    1275: 998, 1034: 999, 1035: 999, 1036: 999, 1037: 999,  975: 1000, 976: 1000, 1252: 1001, 1250: 1002, 1251: 1002,
     # 异常赋予结算顺序
-    598:1,873: 1, 995: 1, 996: 1, 952: 1, 940: 1, 942: 1, 943: 1, 793: 1, 794: 1, 795: 1, 796: 1, 797: 1, 1123: 1, 1071: 1, 1072: 1, 1073: 1, 1074: 1, 59: 1, 60: 1, 61: 1, 62: 1, 63: 1, 64: 1, 65: 1, 66: 1, 67: 1, 68: 1, 69: 1, 70: 1, 71: 1, 177: 1, 178: 1, 179: 1, 180: 1, 1213: 2, 1207: 2, 1011: 1, 919: 2, 920: 1, 1219: 1, 924: 1, 1053: 1, 892: 1, 1197: 1, 842: 1, 839: 1, 1210: 3, 1276: 101,
-    1273: 1002, 1269: 1002,1246:1003
+    598: 1, 873: 1, 995: 1, 996: 1, 952: 1, 940: 1, 942: 1, 943: 1, 793: 1, 794: 1, 795: 1, 796: 1, 797: 1, 1123: 1, 1071: 1, 1072: 1, 1073: 1, 1074: 1, 59: 1, 60: 1, 61: 1, 62: 1, 63: 1, 64: 1, 65: 1, 66: 1, 67: 1, 68: 1, 69: 1, 70: 1, 71: 1, 177: 1, 178: 1, 179: 1, 180: 1, 1213: 2, 1207: 2, 1011: 1, 919: 2, 920: 1, 1219: 1, 924: 1, 1053: 1, 892: 1, 1197: 1, 842: 1, 839: 1, 1210: 3, 1276: 101,
+    1273: 1002, 1269: 1002, 1246: 1003
 }
 
 
@@ -236,6 +236,21 @@ class equipment_list():
                 pass
         return damagelist
 
+    def get_fusion_by_idlist(self, idlist) -> List[tuple]:
+        damagelist = []  # (部位, 序号, 基础伤害)
+        for id in idlist:
+            i = self.get_equ_by_id(id)
+            num = 0
+            for k in i.固有属性:
+                damagelist.append((
+                    i.部位,
+                    num,
+                    self.get_entry_atk_by_id(k),
+                    self.get_entry_buff_by_id(k)))
+                num += 1
+                pass
+        return damagelist
+
     def set_func_chose(self, choseinfo) -> None:
         if version == 0:
             from core.equipment.entry import variable_set
@@ -256,7 +271,7 @@ class equipment_list():
         func_list = entry_func_list.get(id, entry_func_list[0])
         return func_list
 
-    def get_func_list_by_idlist(self, idlist, customize={}) -> List[Function]:
+    def get_func_list_by_idlist(self, idlist, customize={}, fusion=[]) -> List[Function]:
         temp = []
         for id in idlist:
             cus = customize.get(str(id), [])
@@ -266,6 +281,10 @@ class equipment_list():
                 temp.append((k, i.部位, index))  # 词条id 部位 部位序号(用于获取成长词条等级)
                 index += 1
             for k in i.固有属性 + cus:
+                temp.append((k, i.部位, -1))  # 词条id 部位 部位序号(非成长词条无序号)
+        for id in fusion:
+            i = self.get_equ_by_id(id)
+            for k in i.固有属性:
                 temp.append((k, i.部位, -1))  # 词条id 部位 部位序号(非成长词条无序号)
         # 词条优先级排序
         temp.sort(key=(lambda x: priority.get(x[0], 100)))
@@ -283,6 +302,7 @@ class equipment_list():
         if version == 1:
             from core.equipment.entry_hf import entry_chose, entry_func_list
         info = []
+        entry_chose.sort()
         # for i in entry_func_list.keys():
         #     temp = entry_func_list[i]
         # if len(temp) > 1:

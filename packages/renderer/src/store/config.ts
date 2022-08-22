@@ -24,6 +24,7 @@ export const useConfigStore = defineStore("config", {
       dress_set: {},
       single_set: [],
       equip_list: [],
+      fusion_list: [],
       wisdom_list: [],
       myths_list: [],
       lv110_list: [],
@@ -65,6 +66,7 @@ export const useConfigStore = defineStore("config", {
       return {
         single_set: state.single_set,
         equip_list: this.equ_sort,
+        fusion_list: state.fusion_list,
         carry_type: state.carry_type,
         attack_attribute: state.attack_attribute,
         skill_set: state.skill_set,

@@ -156,6 +156,8 @@ export interface ICharacterSet {
 
   lv110_list: number[]
 
+  fusion_list: number[]
+
   consumable_list: number[]
 
   title_list: number[]
