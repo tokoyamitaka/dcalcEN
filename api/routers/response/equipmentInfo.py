@@ -44,7 +44,8 @@ def get_equipment_info(alter: str):
         "wisdom": [],
         "pet": [],
         "title": [],
-        "consumable":[]
+        "consumable":[],
+        "fusion":[]
     }
 
     char = createCharcter(alter)
@@ -85,7 +86,21 @@ def get_equipment_info(alter: str):
                     'type': temp['类型']
                 }
             )
-        if temp["等级"] == 105 and temp["品质"] == '史诗' and temp["部位"] != "武器":
+        if '融合' in temp['类型']:
+            equipment_info["fusion"].append(
+                {
+                    "id": int(i),
+                    "name": temp["名称"],
+                    "icon": temp["icon"],
+                    "part": temp["部位"],
+                    "stable": temp["固有属性"],
+                    "features": temp["类型"],
+                    "alternative": temp["可选属性"],
+                    "rarity": temp["品质"],
+                    'type': temp['类型']
+                }
+            )
+        if temp["等级"] == 105 and temp["品质"] == '史诗' and temp["部位"] != "武器" and '融合' not in temp['类型']:
             equipment_info["lv110"].append(
                 {
                     "id": int(i),
@@ -100,7 +115,7 @@ def get_equipment_info(alter: str):
                     'type': temp['类型']
                 }
             )
-        if temp["等级"] == 105 and temp["品质"] == '史诗' and temp["类型"] in weapons and (转职 in temp["名称"] or not "胜负之役" in temp["名称"]):
+        if temp["等级"] == 105 and temp["品质"] == '史诗' and temp["类型"] in weapons and (转职 in temp["名称"] or not "胜负之役" in temp["名称"]) and '融合' not in temp['类型']:
             equipment_info["weapon"].append(
                 {
                     "id": int(i),

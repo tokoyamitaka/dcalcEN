@@ -45,6 +45,7 @@ export interface IEquipmentList {
   title: IEquipmentInfo[]
   pet: IEquipmentInfo[]
   consumable: IEquipmentInfo[]
+  fusion: IEquipmentInfo[]
 }
 
 export interface IEnchantingInfo {
