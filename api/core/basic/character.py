@@ -1383,7 +1383,7 @@ class Character(CharacterProperty):
             if 序号 >= 0:
                 等级 = self.词条等级[部位][序号]
             else:
-                等级 = 0
+                等级 = 1
             func(self, part=部位, lv=等级)  # 站街效果
             func(self, mode=1, part=部位, lv=等级)  # 进图效果
             # 打印相关函数和效果

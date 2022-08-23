@@ -277,10 +277,10 @@ class equipment_list():
             cus = customize.get(str(id), [])
             i = self.get_equ_by_id(id)
             index = 0
-            for k in i.成长属性:
+            for k in i.成长属性 + cus:
                 temp.append((k, i.部位, index))  # 词条id 部位 部位序号(用于获取成长词条等级)
                 index += 1
-            for k in i.固有属性 + cus:
+            for k in i.固有属性:
                 temp.append((k, i.部位, -1))  # 词条id 部位 部位序号(非成长词条无序号)
         for id in fusion:
             i = self.get_equ_by_id(id)
