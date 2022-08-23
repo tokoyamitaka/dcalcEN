@@ -3,19 +3,16 @@
 ### 2022.08.24.Beta
 
 #### NewFeatures
-* 优化自定义属性设置界面 ([daebed](https://gitee.com/dcalc/dnfcalculating_110/commit/daebedb2e89d6ae9e20e06d935f9ecd87ebe687a))
-
-#### BugFixes
-* 修正融合装备报错问题 ([019247](https://gitee.com/dcalc/dnfcalculating_110/commit/019247fff4888cf035054f2dfa45feabd8537e88))
-
-### 2022.08.23.Beta
 
 #### NewFeatures
 * 添加军团装备,仅在装备版本韩服生效 ([fc6d71](https://gitee.com/dcalc/dnfcalculating_110/commit/fc6d713784bdc4ed78bbf22d8e331ed324283f01))
 * 添加指令使用效果加成词条对CD影响的计算 ([4e19f6](https://gitee.com/dcalc/dnfcalculating_110/commit/4e19f6de91b3cb0011c619a54b70e31dc9d66f36))
+* 优化自定义属性设置界面 ([daebed](https://gitee.com/dcalc/dnfcalculating_110/commit/daebedb2e89d6ae9e20e06d935f9ecd87ebe687a))
 
 #### BugFixes
 * 修正自定义词条等级获取错误 ([12ac2f](https://gitee.com/dcalc/dnfcalculating_110/commit/12ac2f65d8da6836eaa31e09be802557536886c8))
+* 修正融合装备报错问题 ([019247](https://gitee.com/dcalc/dnfcalculating_110/commit/019247fff4888cf035054f2dfa45feabd8537e88))
+
 
 ### 2022.08.21.Beta
 
