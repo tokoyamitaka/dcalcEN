@@ -1,5 +1,14 @@
 ## Newest
 
+### 2022.08.23.Beta
+
+#### NewFeatures
+* 添加军团装备,仅在装备版本韩服生效 ([fc6d71](https://gitee.com/dcalc/dnfcalculating_110/commit/fc6d713784bdc4ed78bbf22d8e331ed324283f01))
+* 添加指令使用效果加成词条对CD影响的计算 ([4e19f6](https://gitee.com/dcalc/dnfcalculating_110/commit/4e19f6de91b3cb0011c619a54b70e31dc9d66f36))
+
+#### BugFixes
+* 修正自定义词条等级获取错误 ([12ac2f](https://gitee.com/dcalc/dnfcalculating_110/commit/12ac2f65d8da6836eaa31e09be802557536886c8))
+
 ### 2022.08.21.Beta
 
 #### NewFeatures
@@ -81,6 +90,7 @@
 - 修正自定义词条错误 ([32c7d9](https://gitee.com/dcalc/dnfcalculating_110/commit/32c7d9a86bdcf5e9c184dff59bcb9c7a7051904f))
 - 男大枪：FM92SW 刺弹炮护石无效的情况 ([650ad9](https://gitee.com/dcalc/dnfcalculating_110/commit/650ad960d049ef857001c3913b376f7f12dfbfb2))
 - 药剂结算先后问题 ([418c56](https://gitee.com/dcalc/dnfcalculating_110/commit/418c56b12ec1f54cfd637999b0ff8a01cb3eebca))
+
 
 
 
