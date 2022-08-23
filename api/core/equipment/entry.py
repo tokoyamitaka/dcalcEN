@@ -6546,7 +6546,7 @@ def entry_188(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_193(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['中毒抗性 +20%', '攻击速度 -15%', '施放速度-22.5%']
+        return ['中毒抗性 +20%', '攻击速度 -15%', '施放速度 -22.5%']
     if mode == 0:
         char.攻击速度增加(-0.15)
         char.施放速度增加(-0.225)
@@ -6556,7 +6556,7 @@ def entry_193(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_199(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['冰冻抗性 +20%', '攻击速度 -15%', '施放速度-22.5%']
+        return ['冰冻抗性 +20%', '攻击速度 -15%', '施放速度 -22.5%']
     if mode == 0:
         char.攻击速度增加(-0.15)
         char.施放速度增加(-0.225)
@@ -6566,7 +6566,7 @@ def entry_199(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_204(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['减速抗性 +20%', '攻击速度 -15%', '施放速度-22.5%']
+        return ['减速抗性 +20%', '攻击速度 -15%', '施放速度 -22.5%']
     if mode == 0:
         char.攻击速度增加(-0.15)
         char.施放速度增加(-0.225)
@@ -6576,7 +6576,7 @@ def entry_204(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_229(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['诅咒抗性 +20%', '攻击速度 -15%', '施放速度-22.5%']
+        return ['诅咒抗性 +20%', '攻击速度 -15%', '施放速度 -22.5%']
     if mode == 0:
         char.攻击速度增加(-0.15)
         char.施放速度增加(-0.225)
@@ -6586,7 +6586,7 @@ def entry_229(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_285(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['出血抗性 +20%', '攻击速度 -15%', '施放速度-22.5%']
+        return ['出血抗性 +20%', '攻击速度 -15%', '施放速度 -22.5%']
     if mode == 0:
         char.攻击速度增加(-0.15)
         char.施放速度增加(-0.225)
@@ -6596,7 +6596,7 @@ def entry_285(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_293(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['灼伤抗性 +20%', '攻击速度 -15%', '施放速度-22.5%']
+        return ['灼伤抗性 +20%', '攻击速度 -15%', '施放速度 -22.5%']
     if mode == 0:
         char.攻击速度增加(-0.15)
         char.施放速度增加(-0.225)
@@ -6606,7 +6606,7 @@ def entry_293(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_305(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['失明抗性 +20%', '攻击速度 -15%', '施放速度-22.5%']
+        return ['失明抗性 +20%', '攻击速度 -15%', '施放速度 -22.5%']
     if mode == 0:
         char.攻击速度增加(-0.15)
         char.施放速度增加(-0.225)
@@ -6616,7 +6616,7 @@ def entry_305(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_309(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['混乱抗性 +20%', '攻击速度 -15%', '施放速度-22.5%']
+        return ['混乱抗性 +20%', '攻击速度 -15%', '施放速度 -22.5%']
     if mode == 0:
         char.攻击速度增加(-0.15)
         char.施放速度增加(-0.225)
@@ -6626,7 +6626,7 @@ def entry_309(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_323(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['束缚抗性 +20%', '攻击速度 -15%', '施放速度-22.5%']
+        return ['束缚抗性 +20%', '攻击速度 -15%', '施放速度 -22.5%']
     if mode == 0:
         char.攻击速度增加(-0.15)
         char.施放速度增加(-0.225)
@@ -7913,7 +7913,7 @@ def entry_1138(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
     if mode == 1:
         for skill in char.技能栏:
-            if skill.是否有伤害 == 1 and skill.无色消耗 >0 and skill.手搓 and skill.所在等级 not in [50,85,100]:
+            if skill.是否有伤害 == 1 and skill.无色消耗 > 0 and skill.手搓 and skill.所在等级 not in [50, 85, 100]:
                 skill.手搓收益 += 4
         pass
 
@@ -7934,7 +7934,7 @@ def entry_248(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
     if mode == 1:
         for skill in char.技能栏:
-            if skill.是否有伤害 == 1 and skill.手搓 and skill.所在等级 not in [50,85,100]:
+            if skill.是否有伤害 == 1 and skill.手搓 and skill.所在等级 not in [50, 85, 100]:
                 skill.手搓收益 += 1
         pass
 

@@ -8,13 +8,15 @@ variable_set = {}  # id : setfunc  参数返回设置函数
 
 # region 贴膜
 
-hl = 0
+hl = []
 hl_list = [0, 1, 2]
 
 
 def set_hl(x):
     global hl
-    hl = hl_list[x[0]]
+    hl = []
+    for i in x:
+        hl.append(hl_list[i])
 
 
 entry_chose.append((31283,
@@ -76,17 +78,17 @@ jl_list = [1, 3, 5, -1]
 
 def set_jl_1(x):
     global jl_1
-    jl_1 = hl_list[x[0]]
+    jl_1 = jl_list[x[0]]
 
 
 def set_jl_2(x):
     global jl_2
-    jl_2 = hl_list[x[0]]
+    jl_2 = jl_list[x[0]]
 
 
 def set_jl_3(x):
     global jl_3
-    jl_3 = hl_list[x[0]]
+    jl_3 = jl_list[x[0]]
 
 
 entry_chose.append((31286,
@@ -195,13 +197,13 @@ def entry_1288(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
 
 
-hl = 1
-hl_list = [1, 2, 3, 4, 5]
+bl = 1
+bl_list = [1, 2, 3, 4, 5]
 
 
-def set_hl(x):
-    global hl
-    hl = hl_list[x[0]]
+def set_bl(x):
+    global bl
+    bl = bl_list[x[0]]
 
 
 entry_chose.append((31289,
@@ -212,7 +214,7 @@ entry_chose.append((31289,
                      '黑龙魔力燃烧Debuff：5层',
                      ], ""))
 multi_select[31289] = False
-variable_set[31289] = set_hl
+variable_set[31289] = set_bl
 
 
 def entry_1289(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -224,7 +226,7 @@ def entry_1289(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.攻击强化加成(1876*hl)
+        char.攻击强化加成(1876*bl)
         pass
 
 
@@ -235,7 +237,7 @@ def entry_1290(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.攻击强化加成(min(5,int(mp_rate_num/4))*1876)
+        char.攻击强化加成(min(5, int(mp_rate_num/4))*1876)
         pass
 
 
@@ -249,11 +251,12 @@ def entry_1291(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.攻击强化加成(min(5,int(mp_rate_num/4))*1876)
+        char.攻击强化加成(min(5, int(mp_rate_num/4))*1876)
         pass
 
+
 zl = 1
-zl_list = [i for i in range(0,31)]
+zl_list = [i for i in range(0, 31)]
 
 
 def set_zl(x):
@@ -262,7 +265,7 @@ def set_zl(x):
 
 
 entry_chose.append((31292,
-                    ['真龙气息消耗：{}层'.format(str(i)) for i in range(0,31)], ""))
+                    ['真龙气息消耗：{}层'.format(str(i)) for i in range(0, 31)], ""))
 multi_select[31292] = False
 variable_set[31292] = set_zl
 
@@ -284,7 +287,6 @@ def entry_1292(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         })
         char.攻击强化加成(toughness_num*469)
         pass
-
 
 
 def entry_1293(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -7092,7 +7094,7 @@ def entry_188(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_193(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['中毒抗性 +20%', '攻击速度 -15%', '施放速度-22.5%']
+        return ['中毒抗性 +20%', '攻击速度 -15%', '施放速度 -22.5%']
     if mode == 0:
         char.攻击速度增加(-0.15)
         char.施放速度增加(-0.225)
@@ -7102,7 +7104,7 @@ def entry_193(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_199(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['冰冻抗性 +20%', '攻击速度 -15%', '施放速度-22.5%']
+        return ['冰冻抗性 +20%', '攻击速度 -15%', '施放速度 -22.5%']
     if mode == 0:
         char.攻击速度增加(-0.15)
         char.施放速度增加(-0.225)
@@ -7112,7 +7114,7 @@ def entry_199(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_204(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['减速抗性 +20%', '攻击速度 -15%', '施放速度-22.5%']
+        return ['减速抗性 +20%', '攻击速度 -15%', '施放速度 -22.5%']
     if mode == 0:
         char.攻击速度增加(-0.15)
         char.施放速度增加(-0.225)
@@ -7122,7 +7124,7 @@ def entry_204(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_229(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['诅咒抗性 +20%', '攻击速度 -15%', '施放速度-22.5%']
+        return ['诅咒抗性 +20%', '攻击速度 -15%', '施放速度 -22.5%']
     if mode == 0:
         char.攻击速度增加(-0.15)
         char.施放速度增加(-0.225)
@@ -7132,7 +7134,7 @@ def entry_229(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_285(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['出血抗性 +20%', '攻击速度 -15%', '施放速度-22.5%']
+        return ['出血抗性 +20%', '攻击速度 -15%', '施放速度 -22.5%']
     if mode == 0:
         char.攻击速度增加(-0.15)
         char.施放速度增加(-0.225)
@@ -7142,7 +7144,7 @@ def entry_285(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_293(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['灼伤抗性 +20%', '攻击速度 -15%', '施放速度-22.5%']
+        return ['灼伤抗性 +20%', '攻击速度 -15%', '施放速度 -22.5%']
     if mode == 0:
         char.攻击速度增加(-0.15)
         char.施放速度增加(-0.225)
@@ -7152,7 +7154,7 @@ def entry_293(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_305(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['失明抗性 +20%', '攻击速度 -15%', '施放速度-22.5%']
+        return ['失明抗性 +20%', '攻击速度 -15%', '施放速度 -22.5%']
     if mode == 0:
         char.攻击速度增加(-0.15)
         char.施放速度增加(-0.225)
@@ -7162,7 +7164,7 @@ def entry_305(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_309(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['混乱抗性 +20%', '攻击速度 -15%', '施放速度-22.5%']
+        return ['混乱抗性 +20%', '攻击速度 -15%', '施放速度 -22.5%']
     if mode == 0:
         char.攻击速度增加(-0.15)
         char.施放速度增加(-0.225)
@@ -7172,7 +7174,7 @@ def entry_309(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_323(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['束缚抗性 +20%', '攻击速度 -15%', '施放速度-22.5%']
+        return ['束缚抗性 +20%', '攻击速度 -15%', '施放速度 -22.5%']
     if mode == 0:
         char.攻击速度增加(-0.15)
         char.施放速度增加(-0.225)
@@ -8459,7 +8461,7 @@ def entry_1138(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
     if mode == 1:
         for skill in char.技能栏:
-            if skill.是否有伤害 == 1 and skill.无色消耗 >0 and skill.手搓 and skill.所在等级 not in [50,85,100]:
+            if skill.是否有伤害 == 1 and skill.无色消耗 > 0 and skill.手搓 and skill.所在等级 not in [50, 85, 100]:
                 skill.手搓收益 += 4
         pass
 
@@ -8480,7 +8482,7 @@ def entry_248(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
     if mode == 1:
         for skill in char.技能栏:
-            if skill.是否有伤害 == 1 and skill.手搓 and skill.所在等级 not in [50,85,100]:
+            if skill.是否有伤害 == 1 and skill.手搓 and skill.所在等级 not in [50, 85, 100]:
                 skill.手搓收益 += 1
         pass
 
