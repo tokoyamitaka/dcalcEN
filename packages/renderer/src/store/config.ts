@@ -134,7 +134,6 @@ export const useConfigStore = defineStore("config", {
       this[name] = item
     },
     async calc(single: boolean = false): Promise<IResultInfo> {
-      this.customizeInit()
       if (single && this.data.single_set.length < 1) {
         return { id: undefined, role: "delear", equips: [], name: "", alter: "", skills: {}, total_data: [], info: undefined, skills_passive: undefined, jade: undefined, equips_forget: {} }
       }
@@ -209,29 +208,6 @@ export const useConfigStore = defineStore("config", {
     },
     addSkillQueue(skill: ISkillInfo) {
       this.skill_que.push({ name: skill.name, mode: skill.mode?.[0] ?? "", modes: skill.mode })
-    },
-
-    customizeInit() {
-      const infoStore = useBasicInfoStore()
-      const temp =
-        infoStore.equipment_list.filter(
-          item =>
-            [...this.wisdom_list, ...this.myths_list, ...this.weapons_list, ...this.lv110_list, ...this.single_set].findIndex(e => Number(e) == Number(item.id)) >= 0 && item.alternative?.length > 0
-        ) ?? []
-      const list = temp.map(item => item.id)
-      const keys = Object.keys(this.customize)
-
-      for (let key of keys) {
-        if (list.indexOf(Number(key)) < 0) {
-          delete this.customize[key]
-        }
-      }
-
-      for (let item of list) {
-        if (item && keys.indexOf(item.toString()) < 0) {
-          this.customize[item] = [0, 0, 0, 0]
-        }
-      }
     }
   }
 })
