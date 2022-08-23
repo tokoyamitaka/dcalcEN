@@ -27,6 +27,7 @@
       if (characterStore.is_buffer) return `[${info?.buff}] ${info?.props.join(",")}`
       return `[${info?.attack}] ${info?.props.join(",")}`
     }
+
     return () => (
       <div class="flex flex-wrap mt-5px">
         {equs.value.length > 0 &&

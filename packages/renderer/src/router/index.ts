@@ -55,6 +55,14 @@ const routes: RouteRecordRaw[] = [
         }
       },
       {
+        path: "/character/customize2",
+        name: "customize2",
+        component: () => import("@/pages/character/customize/customize2.vue"),
+        meta: {
+          keepAlive: true
+        }
+      },
+      {
         path: "/character/singleset",
         name: "singleset",
         component: () => import("@/pages/character/singleset/singleset.vue"),

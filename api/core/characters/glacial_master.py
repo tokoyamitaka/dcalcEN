@@ -547,7 +547,7 @@ class classChange(Character):
                             i.不加成冰枪技能倍率 *= (1 + x * self.技能伤害增加增幅)
                         else:
                             i.倍率 *= (1 + x * self.技能伤害增加增幅)
-                if i.名称 == "冰之技艺" and i.所在等级 >= min and i.所在等级 <= max and type == "all":
+                if i.名称 == "冰之技艺" and min == max == 75 and type == "all":
                     i.额外冰枪倍率 *= (1 + x * self.技能伤害增加增幅)
 
     def 伤害指数计算(self):

@@ -9,6 +9,10 @@
       ...switchProps,
       label: {
         type: String
+      },
+      disabled: {
+        type: Boolean,
+        default: false
       }
     },
 
@@ -16,7 +20,7 @@
       const { toggle, switchClass } = useSwitch(
         () => ({
           ...props,
-          class: "i-checkbox flex items-center text-xs h-6 cursor-pointer",
+          class: "i-checkbox text-xs h-auto cursor-pointer",
           checkedClass: "checked"
         }),
         context
@@ -25,9 +29,14 @@
       const { slots } = context
 
       return () => (
-        <div onClick={() => toggle()} class={switchClass.value}>
-          <span class="i-checkbox-icon"></span>
-          <span class="i-checkbox-label">{props.label ?? renderSlot(slots, "default")}</span>
+        <div
+          onClick={() => {
+            if (!props.disabled) return toggle()
+          }}
+          class={["flex", switchClass.value]}
+        >
+          <span class={!props.disabled ? "i-checkbox-icon" : "i-checkbox-icon-disable"}></span>
+          <div class={["i-checkbox-label h-auto"]}>{props.label ?? renderSlot(slots, "default")}</div>
         </div>
       )
     }
@@ -35,6 +44,8 @@
 </script>
 <style lang="scss">
   .i-checkbox {
+    display: flex;
+    align-items: center;
     &.checked {
       .i-checkbox-icon {
         background-image: url("./img/checkbox_checked.png");
@@ -43,9 +54,18 @@
 
     .i-checkbox-icon {
       width: 12px;
+      min-width: 12px;
       height: 12px;
       margin-right: 4px;
       background-image: url("./img/checkbox_uncheck.png");
+    }
+
+    .i-checkbox-icon-disable {
+      width: 12px;
+      min-width: 12px;
+      height: 12px;
+      margin-right: 4px;
+      background-image: url("./img/checkbox_disable.png");
     }
 
     &:hover:not(.checked) {
@@ -55,7 +75,6 @@
     }
 
     .i-checkbox-label {
-      height: 24px;
       line-height: 24px;
       color: #937639;
     }

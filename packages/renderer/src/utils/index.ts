@@ -100,6 +100,13 @@ export function debounce_last(func: Function, wait: number) {
   }
 }
 
+export function padding(num: number | string, length: number): string {
+  if ((num + "").length >= length) {
+    return num + ""
+  }
+  return padding("0" + num, length)
+}
+
 export function format_float(f: number, digit: number = 2) {
   let m = Math.pow(10, digit)
   //@ts-ignore
