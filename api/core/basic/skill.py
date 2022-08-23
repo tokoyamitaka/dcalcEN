@@ -37,6 +37,7 @@ class 技能:
 
     MP = [0, 0]
     手搓 = False
+    手搓收益 = 1.0
     手搓指令数 = 0
     无色消耗 = 0
     技能栏位置 = -1
@@ -214,20 +215,20 @@ class 主动技能(技能):
         武器类型 = argv.get('武器类型', '')
         输出类型 = argv.get('输出类型', '')
         额外CDR = argv.get('额外CDR', 1.0)
-        手搓收益 = argv.get('手搓收益', 1.0)
+        # 手搓收益 = argv.get('手搓收益', 1.0)
         恢复 = argv.get('恢复', True)
 
         cdr = 1
         if self.手搓:
             if self.所在等级 >= 15 and self.所在等级 <= 30:
-                cdr = 0.99
+                cdr = 1 - 0.01 * self.手搓收益
             if self.所在等级 >= 35 and self.所在等级 <= 70:
-                cdr = 0.98
+                cdr = 1 - 0.02 * self.手搓收益
             if self.所在等级 >= 75 and self.所在等级 <= 100:
-                cdr = 0.95
-            if self.所在等级 in [50, 100]:
-                cdr = 0.95
-        return round(max(self.CD * cdr * 手搓收益 * self.CDR * 额外CDR / (self.恢复 if 恢复 else 1) * self.武器CD系数(武器类型, 输出类型), self.CD * 0.3, 1), 1)
+                cdr = 1 - 0.05 * self.手搓收益
+            if self.所在等级 in [50, 85 , 100]:
+                cdr = 1 - 0.05 * self.手搓收益
+        return round(max(self.CD * cdr * self.CDR * 额外CDR / (self.恢复 if 恢复 else 1) * self.武器CD系数(武器类型, 输出类型), self.CD * 0.3, 1), 1)
 
     def MP消耗(self, **argv):
         # 武器类型 输出类型 额外CDR 手搓收益 恢复=True

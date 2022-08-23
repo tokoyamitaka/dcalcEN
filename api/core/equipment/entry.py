@@ -7912,7 +7912,9 @@ def entry_1138(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        # 暂未实现
+        for skill in char.技能栏:
+            if skill.是否有伤害 == 1 and skill.无色消耗 >0 and skill.手搓 and skill.所在等级 not in [50,85,100]:
+                skill.手搓收益 += 4
         pass
 
 
@@ -7931,8 +7933,9 @@ def entry_248(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        # 暂未实现
-        # char.指令效果加成('所有', 1.0)
+        for skill in char.技能栏:
+            if skill.是否有伤害 == 1 and skill.手搓 and skill.所在等级 not in [50,85,100]:
+                skill.手搓收益 += 1
         pass
 
 
