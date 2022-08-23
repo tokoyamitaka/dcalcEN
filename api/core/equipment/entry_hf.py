@@ -195,13 +195,13 @@ def entry_1288(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
 
 
-zl = 1
-zl_list = [1, 2, 3, 4, 5]
+hl = 1
+hl_list = [1, 2, 3, 4, 5]
 
 
-def set_zl(x):
-    global zl
-    zl = zl_list[x[0]]
+def set_hl(x):
+    global hl
+    hl = hl_list[x[0]]
 
 
 entry_chose.append((31289,
@@ -212,7 +212,7 @@ entry_chose.append((31289,
                      '黑龙魔力燃烧Debuff：5层',
                      ], ""))
 multi_select[31289] = False
-variable_set[31289] = set_zl
+variable_set[31289] = set_hl
 
 
 def entry_1289(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -224,7 +224,7 @@ def entry_1289(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.攻击强化加成(1876*zl)
+        char.攻击强化加成(1876*hl)
         pass
 
 
@@ -235,6 +235,7 @@ def entry_1290(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.攻击强化加成(min(5,int(mp_rate_num/4))*1876)
         pass
 
 
@@ -248,7 +249,22 @@ def entry_1291(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.攻击强化加成(min(5,int(mp_rate_num/4))*1876)
         pass
+
+zl = 1
+zl_list = [i for i in range(0,31)]
+
+
+def set_zl(x):
+    global zl
+    zl = zl_list[x[0]]
+
+
+entry_chose.append((31292,
+                    ['真龙气息消耗：{}层'.format(str(i)) for i in range(0,31)], ""))
+multi_select[31292] = False
+variable_set[31292] = set_zl
 
 
 def entry_1292(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -262,7 +278,13 @@ def entry_1292(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.特效.append({
+            "power": 0.4,
+            "hit": 1
+        })
+        char.攻击强化加成(toughness_num*469)
         pass
+
 
 
 def entry_1293(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -277,6 +299,11 @@ def entry_1293(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.特效.append({
+            "power": 0.6,
+            "hit": 1
+        })
+        char.攻击强化加成(zl*208)
         pass
 
 
@@ -294,6 +321,16 @@ def entry_1294(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.特效.append({
+            "power": 0.3,
+            "hit": 1
+        })
+        if '眩晕' not in state_type:
+            state_type.append('眩晕')
+        if toughness_num == 10:
+            char.攻击强化加成(4694)
+        else:
+            char.攻击强化加成(1563)
         pass
 
 
@@ -309,6 +346,7 @@ def entry_1295(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.攻击强化加成(7815)
         pass
 
 
@@ -324,6 +362,7 @@ def entry_1296(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.攻击强化加成(7815)
         pass
 
 
@@ -338,6 +377,11 @@ def entry_1297(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.攻击强化加成(7815)
+        char.火属性抗性加成(20)
+        char.冰属性抗性加成(20)
+        char.光属性抗性加成(20)
+        char.暗属性抗性加成(20)
         pass
 # endregion
 
