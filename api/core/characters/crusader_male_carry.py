@@ -266,7 +266,7 @@ class 技能11(主动技能):
 
     def 装备护石(self):
         self.hit0 = 8
-        self.power1 *= 2.16
+        self.power1 = 2.16
 
 
 class 技能12(被动技能):
@@ -327,7 +327,7 @@ class 技能14(主动技能):
     无色消耗 = 1
 
     def 装备护石(self):
-        self.power1 *= 1.49
+        self.power1 = 1.49
         self.CDR *= 0.9
 
 
@@ -402,7 +402,7 @@ class 技能17(主动技能):
 
     def 装备护石(self, x):
         self.hit0 = 0
-        self.power1 *= 1.78
+        self.power1 = 1.78
 
 
 # 神罚之锤下的空斩打和落凤锤问题比较多，暂时放置了
