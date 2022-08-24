@@ -516,7 +516,7 @@
                       <div class="yellow">
                         属性 {i + 1} - Lv{transform.growthLvs[i]}
                       </div>
-                      <span>请切换 [自选属性] 页面选择属性</span>
+                      <span>请切换到 [传送属性] 页面选择属性</span>
                     </div>
                   )
                 )

@@ -99,7 +99,7 @@
                 <calc-tab value={"/character/equips"}>装备</calc-tab>
                 <calc-tab value={"/character/skills"}>技能</calc-tab>
                 <calc-tab value={"/character/profile"}>打造</calc-tab>
-                <calc-tab value={"/character/customize"}>自定义设置</calc-tab>
+                <calc-tab value={"/character/customize"}>传送属性</calc-tab>
                 <calc-tab value={"/character/singleset"}>单套选择</calc-tab>
               </calc-tabs>
             </div>
