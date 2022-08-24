@@ -1,5 +1,13 @@
 ## Newest
 
+### 2022.08.24.Beta
+
+#### NewFeatures
+* 优化自定义属性设置界面 ([daebed](https://gitee.com/dcalc/dnfcalculating_110/commit/daebedb2e89d6ae9e20e06d935f9ecd87ebe687a))
+
+#### BugFixes
+* 修正融合装备报错问题 ([019247](https://gitee.com/dcalc/dnfcalculating_110/commit/019247fff4888cf035054f2dfa45feabd8537e88))
+
 ### 2022.08.23.Beta
 
 #### NewFeatures
@@ -90,6 +98,7 @@
 - 修正自定义词条错误 ([32c7d9](https://gitee.com/dcalc/dnfcalculating_110/commit/32c7d9a86bdcf5e9c184dff59bcb9c7a7051904f))
 - 男大枪：FM92SW 刺弹炮护石无效的情况 ([650ad9](https://gitee.com/dcalc/dnfcalculating_110/commit/650ad960d049ef857001c3913b376f7f12dfbfb2))
 - 药剂结算先后问题 ([418c56](https://gitee.com/dcalc/dnfcalculating_110/commit/418c56b12ec1f54cfd637999b0ff8a01cb3eebca))
+
 
 
 
