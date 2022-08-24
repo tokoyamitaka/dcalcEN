@@ -48,6 +48,8 @@
         return list
       })
 
+      const cur_equ = computed(() => basicStore.equipment_list.filter(a => a.id == selectEquip.value)[0])
+
       const show_list = computed(() => {
         const start = (pagination.page - 1) * pagination.pageSize
         const end = start + pagination.pageSize
@@ -166,8 +168,15 @@
                 <div class="h-full bg-hex-0d0d0d w-75% s-left">
                   {selectEquip.value && (
                     <>
-                      <div class="h-10% w-full overflow-y-hidden !max-w-100%">
-                        <EquipInfo eid={selectEquip.value} />
+                      <div class="h-35px flex flex-col p-10px">
+                        <div class="h-30px flex">
+                          <EquipIcon eq={cur_equ.value}></EquipIcon>
+                          <div class="ml-8px flex flex-col w-100%">
+                            <div class={["text-xs", rarityClass(cur_equ.value.rarity ?? "")]}>{cur_equ.value.name}</div>
+                            <div class="text-xs text-hex-8a6f36 text-right">{`${cur_equ.value.type}(${cur_equ.value.part})`}</div>
+                          </div>
+                        </div>
+                        <div style="border-bottom:1px solid #303030;margin:8px 0;"></div>
                       </div>
                       <div class="flex h-89%">
                         <div class="flex flex-col h-full w-60% overflow-y-auto !max-w-60%" style="border-right:1px solid #303030">
