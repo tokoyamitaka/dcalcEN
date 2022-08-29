@@ -234,7 +234,8 @@
       },
       {
         "name": "witch",
-        "title": "知源·魔道学者"
+        "title": "知源·魔道学者",
+        "open": true
       },
       {
         "name": "enchantress",

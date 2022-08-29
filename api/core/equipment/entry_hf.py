@@ -312,7 +312,7 @@ def entry_1293(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 def entry_1294(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
         return [
-            "攻击时，发动冲击波(冷却时间0.1秒，无视敌人的防御，伤害为总攻击强化数值的30%)",
+            "攻击时，发动冲击波(冷却时间0.5秒，无视敌人的防御，伤害为总攻击强化数值的30%)",
             "- 冲击波发动时，攻击强化 +3126，效果持续20秒(最多叠加1次)",
             "攻击受到5次冲击波效果的敌人时，使敌人进入眩晕状态，并减少韧性条(冷却时间8秒)",
             "攻击眩晕状态的敌人3次，敌人的眩晕持续时间延长3秒(冷却时间5秒)",
@@ -11068,30 +11068,83 @@ def entry_662(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
 
 
+cp_witch_1 = 0
+cp_witch_list_1 = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+
+def set_cp_witch_1(x):
+    global cp_witch_1
+    cp_witch_1 = cp_witch_list_1[x[0]]
+
+entry_chose.append((30663, ['CP武器-生成普通糖果:{}个'.format(i) for i in cp_witch_list_1] , "witch"))
+multi_select[30663] = False
+variable_set[30663] = set_cp_witch_1
+
+cp_witch_2 = 0
+cp_witch_list_2 = [0,1,2,3,4,5]
+
+def set_cp_witch_2(x):
+    global cp_witch_2
+    cp_witch_2 = cp_witch_list_2[x[0]]
+
+entry_chose.append((30664, ['CP武器-生成稀有糖果:{}个'.format(i) for i in cp_witch_list_2] , "witch"))
+multi_select[30664] = False
+variable_set[30664] = set_cp_witch_2
+
+cp_witch_3 = 0
+cp_witch_list_3 = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+
+def set_cp_witch_3(x):
+    global cp_witch_3
+    cp_witch_3 = cp_witch_list_3[x[0]]
+
+entry_chose.append((30665, ['CP武器-存储普通糖果:{}个'.format(i) for i in cp_witch_list_3] , "witch"))
+multi_select[30665] = False
+variable_set[30665] = set_cp_witch_3
+
+cp_witch_4 = 0
+cp_witch_list_4 = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+
+def set_cp_witch_4(x):
+    global cp_witch_4
+    cp_witch_4 = cp_witch_list_4[x[0]]
+
+entry_chose.append((30666, ['CP武器-存储稀有糖果:{}个'.format(i) for i in cp_witch_list_4] , "witch"))
+multi_select[30666] = False
+variable_set[30666] = set_cp_witch_4
+
 def entry_663(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['超级棒棒糖每个生成的糖果人偶可以使超级棒棒糖技能冷却时间-3%']
+        return ['[超级棒棒糖]每生成1个糖果人偶， [超级棒棒糖]技能的剩余冷却时间减少3%。']
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name('超级棒棒糖').CDR *= 1 - (0.03*cp_witch_1 + 0.09* cp_witch_2)
         pass
 
 
 def entry_664(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['可以吸收没有爆炸的糖果人偶（最大15个）', '—超级棒棒糖使用时,追加生成和吸收数量相等的糖果人偶', '—追加生成的糖果人偶不会即时吸收,不会算进超级棒棒糖最大的糖果人偶数量中']
+        return ['未爆炸的糖果人偶会被吸收。(最多15个)', '- 施放[超级棒棒糖]时， 根据吸收的糖果人偶数， 额外生成人偶。', '- 额外生成的糖果人偶不会被吸收； 不包含在超级棒棒糖生成个数上限中。']
     if mode == 0:
         pass
     if mode == 1:
+        超级棒棒糖 = char.get_skill_by_name('超级棒棒糖')
+        if cp_witch_4 + cp_witch_3 >=15:
+            cp_witch_3 = 15 - cp_witch_4
+        超级棒棒糖.hit1 += cp_witch_3
+        超级棒棒糖.hit2 += cp_witch_4
         pass
 
 
 def entry_665(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['每个被超级棒棒糖击中的敌人生成的糖果人偶个数+2', '糖果人偶攻击力-20%']
+        return ['[超级棒棒糖]每命中1名敌人， 使人偶生成数增加2个。', '糖果人偶攻击力 -20%']
     if mode == 0:
         pass
     if mode == 1:
+        超级棒棒糖 = char.get_skill_by_name('超级棒棒糖')
+        超级棒棒糖.power1 = 0.8
+        超级棒棒糖.power2 = 0.8
         pass
 
 

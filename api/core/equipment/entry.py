@@ -10263,6 +10263,49 @@ def entry_662(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         char.get_skill_by_name("乖离：沉沦").CDR *= 0.9
         pass
 
+cp_witch_1 = 0
+cp_witch_list_1 = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+
+def set_cp_witch_1(x):
+    global cp_witch_1
+    cp_witch_1 = cp_witch_list_1[x[0]]
+
+entry_chose.append((30663, ['CP武器-生成普通糖果:{}个'.format(i) for i in cp_witch_list_1] , "witch"))
+multi_select[30663] = False
+variable_set[30663] = set_cp_witch_1
+
+cp_witch_2 = 0
+cp_witch_list_2 = [0,1,2,3,4,5]
+
+def set_cp_witch_2(x):
+    global cp_witch_2
+    cp_witch_2 = cp_witch_list_2[x[0]]
+
+entry_chose.append((30664, ['CP武器-生成稀有糖果:{}个'.format(i) for i in cp_witch_list_2] , "witch"))
+multi_select[30664] = False
+variable_set[30664] = set_cp_witch_2
+
+cp_witch_3 = 0
+cp_witch_list_3 = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+
+def set_cp_witch_3(x):
+    global cp_witch_3
+    cp_witch_3 = cp_witch_list_3[x[0]]
+
+entry_chose.append((30665, ['CP武器-存储普通糖果:{}个'.format(i) for i in cp_witch_list_3] , "witch"))
+multi_select[30665] = False
+variable_set[30665] = set_cp_witch_3
+
+cp_witch_4 = 0
+cp_witch_list_4 = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+
+def set_cp_witch_4(x):
+    global cp_witch_4
+    cp_witch_4 = cp_witch_list_4[x[0]]
+
+entry_chose.append((30666, ['CP武器-存储稀有糖果:{}个'.format(i) for i in cp_witch_list_4] , "witch"))
+multi_select[30666] = False
+variable_set[30666] = set_cp_witch_4
 
 def entry_663(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
@@ -10270,6 +10313,7 @@ def entry_663(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name('超级棒棒糖').CDR *= 1 - (0.03*cp_witch_1 + 0.09* cp_witch_2)
         pass
 
 
@@ -10279,6 +10323,11 @@ def entry_664(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        超级棒棒糖 = char.get_skill_by_name('超级棒棒糖')
+        if cp_witch_4 + cp_witch_3 >=15:
+            cp_witch_3 = 15 - cp_witch_4
+        超级棒棒糖.hit1 += cp_witch_3
+        超级棒棒糖.hit2 += cp_witch_4
         pass
 
 
@@ -10288,6 +10337,9 @@ def entry_665(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        超级棒棒糖 = char.get_skill_by_name('超级棒棒糖')
+        超级棒棒糖.power1 = 0.8
+        超级棒棒糖.power2 = 0.8
         pass
 
 
