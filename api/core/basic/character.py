@@ -81,6 +81,9 @@ class Character(CharacterProperty):
     装扮栏: Dict[str, int] = {}
     装扮选项: Dict[str, str] = {}
 
+    # 职业技能特殊选项
+    individuation :Dict[str,int]={}
+
     打造: Dict = {}
 
     def __init__(self) -> None:
@@ -227,7 +230,7 @@ class Character(CharacterProperty):
         info["armor_mastery"] = self.防具精通属性
         info["buff_ratio"] = self.buff
         self.set_skill_info(info)
-        self.__set_individuation(info)
+        self.set_individuation(info)
         dress_list = {}
         i = 0
         for dress in 装扮集合:
@@ -338,7 +341,7 @@ class Character(CharacterProperty):
         info['clothes_coat'] = clothes_coat
         info['clothes_pants'] = clothes_pants
 
-    def __set_individuation(self, info) -> None:
+    def set_individuation(self,info) -> None:
         pass
 
     # endregion
@@ -1433,58 +1436,6 @@ class Character(CharacterProperty):
                         for k in 非关联技能:
                             self.技能栏[self.技能序号[k]].被动倍率 /= 加成倍率
 
-            # if i.关联技能 != ['无']:
-            #     if i.关联技能 == ['所有']:
-            #         for j in self.技能栏:
-            #             if j.是否有伤害 == 1:
-            #                 j.被动倍率 *= i.加成倍率(self.武器类型)
-            #     else:
-            #         for k in i.关联技能:
-            #             self.技能栏[self.技能序号[k]].被动倍率 *= i.加成倍率(self.武器类型)
-            # if i.非关联技能 != ['无']:
-            #     if i.非关联技能 == ['所有']:
-            #         for j in self.技能栏:
-            #             if j.是否有伤害 == 1:
-            #                 j.被动倍率 /= i.加成倍率(self.武器类型)
-            #     else:
-            #         for k in i.非关联技能:
-            #             self.技能栏[self.技能序号[k]].被动倍率 /= i.加成倍率(self.武器类型)
-
-            # if i.关联技能2 != ['无']:
-            #     if i.关联技能2 == ['所有']:
-            #         for j in self.技能栏:
-            #             if j.是否有伤害 == 1:
-            #                 j.被动倍率 *= i.加成倍率2(self.武器类型)
-            #     else:
-            #         for k in i.关联技能2:
-            #             self.技能栏[self.技能序号[k]].被动倍率 *= i.加成倍率2(self.武器类型)
-
-            # if i.非关联技能2 != ['无']:
-            #     if i.非关联技能2 == ['所有']:
-            #         for j in self.技能栏:
-            #             if j.是否有伤害 == 1:
-            #                 j.被动倍率 /= i.加成倍率2(self.武器类型)
-            #     else:
-            #         for k in i.非关联技能2:
-            #             self.技能栏[self.技能序号[k]].被动倍率 /= i.加成倍率2(self.武器类型)
-
-            # if i.关联技能3 != ['无']:
-            #     if i.关联技能3 == ['所有']:
-            #         for j in self.技能栏:
-            #             if j.是否有伤害 == 1:
-            #                 j.被动倍率 *= i.加成倍率3(self.武器类型)
-            #     else:
-            #         for k in i.关联技能3:
-            #             self.技能栏[self.技能序号[k]].被动倍率 *= i.加成倍率3(self.武器类型)
-
-            # if i.非关联技能3 != ['无']:
-            #     if i.非关联技能3 == ['所有']:
-            #         for j in self.技能栏:
-            #             if j.是否有伤害 == 1:
-            #                 j.被动倍率 /= i.加成倍率3(self.武器类型)
-            #     else:
-            #         for k in i.非关联技能3:
-            #             self.技能栏[self.技能序号[k]].被动倍率 /= i.加成倍率3(self.武器类型)
 
     def __加算冷却计算(self):
         for i in self.技能栏:
@@ -1527,54 +1478,7 @@ class Character(CharacterProperty):
                     else:
                         for k in 非关联技能:
                             self.技能栏[self.技能序号[k]].CDR /= 加成倍率
-            # if i.冷却关联技能 != ['无']:
-            #     if i.冷却关联技能 == ['所有']:
-            #         for j in self.技能栏:
-            #             if j.是否有伤害 == 1:
-            #                 j.CDR *= i.CD缩减倍率(self.武器类型)
-            #     else:
-            #         for k in i.冷却关联技能:
-            #             self.技能栏[self.技能序号[k]].CDR *= i.CD缩减倍率(self.武器类型)
-            # if i.非冷却关联技能 != ['无']:
-            #     if i.非冷却关联技能 == ['所有']:
-            #         for j in self.技能栏:
-            #             if j.是否有伤害 == 1:
-            #                 j.CDR /= i.CD缩减倍率(self.武器类型)
-            #     else:
-            #         for k in i.非冷却关联技能:
-            #             self.技能栏[self.技能序号[k]].CDR /= i.CD缩减倍率(self.武器类型)
-            # if i.冷却关联技能2 != ['无']:
-            #     if i.冷却关联技能2 == ['所有']:
-            #         for j in self.技能栏:
-            #             if j.是否有伤害 == 1:
-            #                 j.CDR *= i.CD缩减倍率2(self.武器类型)
-            #     else:
-            #         for k in i.冷却关联技能2:
-            #             self.技能栏[self.技能序号[k]].CDR *= i.CD缩减倍率2(self.武器类型)
-            # if i.非冷却关联技能2 != ['无']:
-            #     if i.非冷却关联技能2 == ['所有']:
-            #         for j in self.技能栏:
-            #             if j.是否有伤害 == 1:
-            #                 j.CDR /= i.CD缩减倍率2(self.武器类型)
-            #     else:
-            #         for k in i.非冷却关联技能2:
-            #             self.技能栏[self.技能序号[k]].CDR /= i.CD缩减倍率2(self.武器类型)
-            # if i.冷却关联技能3 != ['无']:
-            #     if i.冷却关联技能3 == ['所有']:
-            #         for j in self.技能栏:
-            #             if j.是否有伤害 == 1:
-            #                 j.CDR *= i.CD缩减倍率3(self.武器类型)
-            #     else:
-            #         for k in i.冷却关联技能3:
-            #             self.技能栏[self.技能序号[k]].CDR *= i.CD缩减倍率3(self.武器类型)
-            # if i.非冷却关联技能3 != ['无']:
-            #     if i.非冷却关联技能3 == ['所有']:
-            #         for j in self.技能栏:
-            #             if j.是否有伤害 == 1:
-            #                 j.CDR /= i.CD缩减倍率3(self.武器类型)
-            #     else:
-            #         for k in i.非冷却关联技能3:
-            #             self.技能栏[self.技能序号[k]].CDR /= i.CD缩减倍率3(self.武器类型)
+
 
     def __属性倍率计算(self):
         # 火、冰、光、暗
@@ -1646,6 +1550,12 @@ class Character(CharacterProperty):
         self.伤害指数 /= 1000
     # endregion
 
+    def get_individuation(self,index):
+        if index > len(self.individuation):
+            return 0
+        else:
+            return self.individuation[index]
+
     def calc_init(self, info, equipList: List[int] = []):
         # 获取打造数据
         self.__打造设置(info.get('forge_set', {}))
@@ -1669,6 +1579,8 @@ class Character(CharacterProperty):
         self.__hotkey_set(info.get('hotkey_set', []))
 
         self.融合列表 = info.get('fusion_list', [])
+
+        self.individuation = info.get('individuation',[])
 
     def jade_upgrade(self):
         temp = []

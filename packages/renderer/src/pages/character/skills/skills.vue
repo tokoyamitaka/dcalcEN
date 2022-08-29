@@ -5,6 +5,7 @@
   import { onKeyStroke, useDebounceFn } from "@vueuse/core"
   import { defineComponent, renderList } from "vue"
   import Cp from "./sub/cp.vue"
+  import Options from "./sub/options.vue"
   import SkillList from "./sub/list.vue"
   import { skill_icon } from "./sub/utils"
 
@@ -100,7 +101,10 @@
 
           {characterStore.is_delear && (
             <div class="w-70">
-              <div class="subitem">
+              <div class="h-220px subitem">
+                <Cp></Cp>
+              </div>
+              <div class="mt-1 subitem">
                 <div class="head-sec">快捷键</div>
                 <div class="py-2 px-1 body-sec ">
                   <div class="flex flex-wrap flex-1 w-full justify-center">
@@ -125,8 +129,8 @@
                   </div>
                 </div>
               </div>
-              <div class="mt-4 w-full">
-                <div class="h-80 skill-slots subitem  overflow-y-auto">
+              <div class="mt-1 w-full">
+                <div class="h-70 skill-slots subitem  overflow-y-auto">
                   <div class="flex px-1 head-sec items-center justify-between">
                     <div class="w-5"></div>
                     <div>技能队列</div>
@@ -143,10 +147,8 @@
               </div>
             </div>
           )}
-          <div class="w-64">
-            <div class="h-220px subitem">
-              <Cp></Cp>
-            </div>
+          <div class="w-80">
+            <Options></Options>
           </div>
         </div>
       )

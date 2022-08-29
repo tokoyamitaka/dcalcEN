@@ -570,3 +570,20 @@ class classChange(Character):
     def set_skill_info(self, info, rune_except=[], clothes_pants=[]):
         super().set_skill_info(info, rune_except=[
             '爆裂弹'], clothes_pants=['远古记忆'])
+
+    # def set_individuation(self,info):
+        # 设置选项example
+        # name为名称，option内为选项
+        # info['char_optiopns'] = [
+        #     {
+        #         "name":"冰针是否独立显示",
+        #         "option":["是","否"]
+        #     },
+        #     {
+        #         "name":"XX技能特殊设置",
+        #         "option":["选项1","选项2"]
+        #     }
+        # ]
+        # 其他地方调用的时候，调用self.individuation
+        # 比如取第二个选项的选择结果,函数传入第几个-1,返回选择的index,比如选择了选项2,返回1
+        # self.get_individuation(1)

@@ -190,6 +190,8 @@ export interface ICharacterSet {
   hotkey_set: string[]
 
   monster: number
+
+  individuation: number[]
 }
 
 export interface IRecommendRequest {

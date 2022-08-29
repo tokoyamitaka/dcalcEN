@@ -19,6 +19,10 @@ export interface ICharacterInfo extends IDetailsInfo {
   clothes_pants: string[]
   platinum: string[]
   version: string
+  char_optiopns: {
+    name: string
+    option: string[]
+  }[]
 }
 
 export interface ISkillInfo {

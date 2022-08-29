@@ -35,7 +35,8 @@ export const useCharacterStore = defineStore("CharacterInfo", {
       emblem: [],
       dress: {},
       jade: [],
-      sundries: []
+      sundries: [],
+      char_optiopns: []
     }
   },
   getters: {
