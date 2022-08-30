@@ -11555,16 +11555,17 @@ def entry_706(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_707(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['火焰精华更变为使用次数5次的堆栈技能', '- 充能时间: 8秒']
+        return ['[火焰精华]变更为填充5次的技能。', '填充冷却时间 : 8秒']
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name('火焰精华').CD = 8
         pass
 
 
 def entry_708(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['每触发焚烧状态一次，火焰精华的剩余充能时间-1秒']
+        return ['发动焚烧时， [火焰精华]技能填充时间 -1秒。']
     if mode == 0:
         pass
     if mode == 1:
@@ -11573,19 +11574,11 @@ def entry_708(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_709(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['[净化之焰]攻击力 -20%', '[净化之焰]施放时，有50%的几率初始化该技能的冷却时间', '10秒内再次施放初始化的[净化之焰]时，初始化概率 -10%(最多降低到10%)']
+        return ['施放[净化之焰]时， 有50%的几率， 初始化冷却时间。', '- 10秒内再次施放初始化后的[净化之焰]技能时， 初始化几率减少10%。 (最多减少10%)', '[净化之焰]攻击力 -20%']
     if mode == 0:
         pass
     if mode == 1:
-        pass
-
-
-def entry_710(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
-    if text:
-        return ['[净化之焰]爆发范围+30%']
-    if mode == 0:
-        pass
-    if mode == 1:
+        char.get_skill_by_name('净化之焰').倍率 *= 0.8
         pass
 
 

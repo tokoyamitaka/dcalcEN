@@ -145,8 +145,11 @@ def get(alter: str, setName: str):
         with open('./sets/{}/{}/store.json'.format(alter, setName), "r", encoding='utf-8') as fp:
             set_info = json.load(fp)
         fp.close()
+        cur_skills_set = []
+        for skill in set_info['skill_set']:
+            cur_skills_set.append(skill['name'])
         for skill in skillInfo:
-            if set_info['skill_set'].get(skill["name"],None) == None:
+            if skill['name'] not in cur_skills_set:
                 set_info['skill_set'][skill["name"]] = skill_set[skill["name"]]
         for key in trigger.keys():
             if set_info['trigger_set'].get(str(key),None) == None:

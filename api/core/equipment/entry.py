@@ -10754,6 +10754,7 @@ def entry_707(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name('火焰精华').CD = 8
         pass
 
 
@@ -10772,6 +10773,7 @@ def entry_709(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name('净化之焰').倍率 *= 0.8
         pass
 
 

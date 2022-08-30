@@ -108,7 +108,7 @@ class 技能6(主动技能):
     等级精通 = 10
     关联技能 = ['所有']
     MP = [30, 252]
-    data0 = [0, 3153]
+    data0 = [0] + [3153]*20
     hit0 = 1
     CD = 10
 
@@ -200,16 +200,16 @@ class 技能9(主动技能):
         if 形态 == '' and len(self.形态) > 0:
             形态 = self.形态[0]
         if 形态 == "焚烧":
-            self.hit0 = 1
+            # self.hit0 = 1
             self.hit1 = 0
             self.hit1 = 1
         if 形态 == "常规":
-            self.hit0 = 1
+            # self.hit0 = 1
             self.hit1 = 1
             self.hit1 = 0
 
     def 装备护石(self):
-        self.hit0 = 0
+        self.hit0 = self.power0 =  0
         self.倍率 *= 1.38
         self.CDR *= 0.85
 
@@ -259,14 +259,15 @@ class 技能11(主动技能):
     MP = [250, 2500]
     无色消耗 = 2
 
-    def 护石提升(self, **argv):
+
+    def 等效百分比(self, **argv):
         char: Character = argv.get('char', {})
-        护石提升 = (1+2*char.get_skill_by_name("神焰").加成倍率('')) / \
-            (1+char.get_skill_by_name("神焰").加成倍率(''))
-        return super().护石提升(**argv)
+        if '行刑' in char.护石栏:
+            神焰倍率 = char.get_skill_by_name("神焰").加成倍率('')
+            self.power0 = (1+2*神焰倍率) / (1+神焰倍率)
+        return super().等效百分比(**argv)
 
     def 装备护石(self):
-        self.倍率 *= self.护石提升
         self.CDR *= 0.9
 
 
@@ -335,8 +336,8 @@ class 技能14(主动技能):
 
     def 装备护石(self):
         self.hit0 = 13
-        self.power0 *= 1.01
-        self.power1 *= 1.14
+        self.power0 = 1.01
+        self.power1 = 1.14
 
 
 class 技能15(主动技能):
@@ -382,8 +383,8 @@ class 技能16(主动技能):
 
     def 装备护石(self):
         self.hit0 = 2
-        self.power0 *= 1.37
-        self.power1 *= 1.26
+        self.power0 = 1.37
+        self.power1 = 1.26
         self.CDR *= 0.92
 
 
