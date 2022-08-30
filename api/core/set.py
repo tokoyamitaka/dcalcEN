@@ -145,13 +145,15 @@ def get(alter: str, setName: str):
         with open('./sets/{}/{}/store.json'.format(alter, setName), "r", encoding='utf-8') as fp:
             set_info = json.load(fp)
         fp.close()
-        # 先简化处理，后续优化
-        # todo:比较skill的技能名称
-        # todo:比较trigger的id
-        if not len(skillInfo) == len(set_info['skill_set']):
-            set_info['skill_set'] = skill_set
-        if not len(trigger) == len(set_info['trigger_set']):
-            set_info['trigger_set'] = trigger
+        for skill in skillInfo:
+            if set_info['skill_set'].get(skill["name"],None) == None:
+                set_info['skill_set'][skill["name"]] = skill_set[skill["name"]]
+        for key in trigger.keys():
+            if set_info['trigger_set'].get(str(key),None) == None:
+                set_info['trigger_set'][str(key)] = trigger[key]
+        # print(trigger)
+        # if not len(trigger) == len(set_info['trigger_set']):
+        #     set_info['trigger_set'] = trigger
 
     return set_info
 

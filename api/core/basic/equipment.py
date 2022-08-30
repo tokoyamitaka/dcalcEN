@@ -258,7 +258,7 @@ class equipment_list():
             from core.equipment.entry_hf import variable_set
         for i in choseinfo.keys():
             id = int(i)
-            if id >= 20000:  # 额外选项，参数设置
+            if id >= 20000 and id in variable_set.keys():  # 额外选项，参数设置
                 variable_set[id](choseinfo[i])
             # else:
             #    id 错误
