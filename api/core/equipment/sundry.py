@@ -674,7 +674,7 @@ def sundries_27062(char: CharacterProperty = {}, mode=0, text=False):
         return "(0, '名称装扮卡', '四维(3)|攻击速度(1%)|施放速度(1%)|移动速度(1%)')"
     if mode == 0:
         char.基础属性加成(四维=3)
-        char.基础属性加成(三速=0.01)
+        # char.基础属性加成(三速=0.01)
         pass
     if mode == 1:
         pass
