@@ -13745,7 +13745,37 @@ def enchanting_21493(char: CharacterProperty = {}, mode=0, text=False, rate=1.0)
     if mode == 1:
         pass
 
+def enchanting_21494(char: CharacterProperty = {}, mode=0, text=False, rate=1.0):
+    if text:
+        return (147, '武器,上衣,下装', '独立(90)|力智(60)')
+    if mode == 0:
+        char.基础属性加成(力智=60 * rate,独立攻击力=90 * rate)
+    if mode == 1:
+        pass
 
+def enchanting_21495(char: CharacterProperty = {}, mode=0, text=False, rate=1.0):
+    if text:
+        return (147, '武器,上衣,下装', '物攻(90)|力量(60)')
+    if mode == 0:
+        char.基础属性加成(力量=60 * rate,物理攻击力=90 * rate)
+    if mode == 1:
+        pass
+
+def enchanting_21496(char: CharacterProperty = {}, mode=0, text=False, rate=1.0):
+    if text:
+        return (147, '武器,上衣,下装', '魔攻(90)|智力(60)')
+    if mode == 0:
+        char.基础属性加成(智力=60 * rate,魔法攻击力=90 * rate)
+    if mode == 1:
+        pass
+
+def enchanting_21497(char: CharacterProperty = {}, mode=0, text=False, rate=1.0):
+    if text:
+        return (147, '项链,手镯,戒指', '四维(90)')
+    if mode == 0:
+        char.基础属性加成(四维=90*rate)
+    if mode == 1:
+        pass
 #  国服特色
 
 
