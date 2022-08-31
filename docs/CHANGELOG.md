@@ -1,5 +1,24 @@
 ## Newest
 
+### 2022.08.31.Beta
+
+#### NewFeatures
+* 优化条件选择及技能的存档 ([b56826](https://gitee.com/dcalc/dnfcalculating_110/commit/b5682690a3e2a87706f20700fcec72a98edfb009))
+* 修改技能次数为输入 ([9aea60](https://gitee.com/dcalc/dnfcalculating_110/commit/9aea6059ae3e15a25ba59c521c5d0ee071cf506f))
+* 同步攻速鞋不计入辟邪玉、名称装扮卡 ([b3b854](https://gitee.com/dcalc/dnfcalculating_110/commit/b3b85447af5cc4c7b39ac1befd714c8fff06d596))
+* 实现睡眠手镯 ([e016bc](https://gitee.com/dcalc/dnfcalculating_110/commit/e016bc486d94f8da0d3bba9b44d6ced1d22caae1))
+* 新增军团相关附魔 ([7841d9](https://gitee.com/dcalc/dnfcalculating_110/commit/7841d92b65a9896922ac090887aced44ad0cf480))
+* 添加知源·魔道学者 ([d534fc](https://gitee.com/dcalc/dnfcalculating_110/commit/d534fcfe56a77596a271ef6b3cff2e4669fd1a52))
+* 添加神启·异端审判者 ([cff6a5](https://gitee.com/dcalc/dnfcalculating_110/commit/cff6a53f7f29cb60b929be068b0974f60076b728))
+* 添加神启·诱魔者 ([ea1efb](https://gitee.com/dcalc/dnfcalculating_110/commit/ea1efb20e723fe15047b32c230b4f1bdc996ecbb))
+* 添加隐夜·刺客 ([8b5cf8](https://gitee.com/dcalc/dnfcalculating_110/commit/8b5cf8e8b99bf3b94e576f16ca2ebf0af7166441))
+
+#### BugFixes
+* 修复审判部分数据错误 ([0771fe](https://gitee.com/dcalc/dnfcalculating_110/commit/0771fe76d1f97b9168ddf1cebb6c43c7681d14b5))
+* 修正词条错误 ([df51bf](https://gitee.com/dcalc/dnfcalculating_110/commit/df51bfc0017664ee83bdea7451814fad006bb05f))
+* 知源·元素爆破师：修复数据问题 ([17bb5c](https://gitee.com/dcalc/dnfcalculating_110/commit/17bb5cef01f765c648459b3c96294c8b5ef6638f))
+* 隐夜·死灵术士：修复CP武器异常 ([bbe12c](https://gitee.com/dcalc/dnfcalculating_110/commit/bbe12c6b236aaa3bd154df781143d3788fb1d2e6))
+
 ### 2022.08.24.Beta
 
 #### NewFeatures
@@ -97,6 +116,7 @@
 - 修正自定义词条错误 ([32c7d9](https://gitee.com/dcalc/dnfcalculating_110/commit/32c7d9a86bdcf5e9c184dff59bcb9c7a7051904f))
 - 男大枪：FM92SW 刺弹炮护石无效的情况 ([650ad9](https://gitee.com/dcalc/dnfcalculating_110/commit/650ad960d049ef857001c3913b376f7f12dfbfb2))
 - 药剂结算先后问题 ([418c56](https://gitee.com/dcalc/dnfcalculating_110/commit/418c56b12ec1f54cfd637999b0ff8a01cb3eebca))
+
 
 ## History
 
