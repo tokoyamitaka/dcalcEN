@@ -10732,10 +10732,11 @@ def entry_704(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_705(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['[暴食之噬]以自身为中心吸收并引发爆炸。', '[暴食之噬]攻击力 +30%']
+        return ['[暴食之噬]技能更变为以自身为中心吸收后爆发的技能', '[暴食之噬]攻击力+30%']
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name('暴食之噬').倍率 *= 1.3
         pass
 
 

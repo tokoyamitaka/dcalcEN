@@ -11547,6 +11547,7 @@ def entry_705(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name('暴食之噬').倍率 *= 1.3
         pass
 
 

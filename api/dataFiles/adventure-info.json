@@ -303,7 +303,8 @@
       },
       {
         "name": "mistress",
-        "title": "神启·诱魔者"
+        "title": "神启·诱魔者",
+        "open": true
       },
       {
         "name": "empty",
