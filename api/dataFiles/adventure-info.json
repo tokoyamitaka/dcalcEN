@@ -293,7 +293,8 @@
       },
       {
         "name": "inquistor",
-        "title": "神启·异端审判者"
+        "title": "神启·异端审判者",
+        "open": true
       },
       {
         "name": "sorceress",
