@@ -11107,6 +11107,7 @@ entry_chose.append((30665, ['CP武器-存储普通糖果:{}个'.format(i) for i 
 multi_select[30665] = False
 variable_set[30665] = set_cp_witch_3
 
+
 cp_witch_4 = 0
 cp_witch_list_4 = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 
@@ -11125,6 +11126,8 @@ def entry_663(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
     if mode == 1:
         char.get_skill_by_name('超级棒棒糖').CDR *= 1 - (0.03*cp_witch_1 + 0.09* cp_witch_2)
+        print(cp_witch_4)
+        print(cp_witch_3)
         pass
 
 
@@ -11134,6 +11137,7 @@ def entry_664(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        global cp_witch_3
         超级棒棒糖 = char.get_skill_by_name('超级棒棒糖')
         if cp_witch_4 + cp_witch_3 >=15:
             cp_witch_3 = 15 - cp_witch_4

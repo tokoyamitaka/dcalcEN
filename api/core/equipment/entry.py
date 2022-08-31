@@ -10323,6 +10323,7 @@ def entry_664(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        global cp_witch_3
         超级棒棒糖 = char.get_skill_by_name('超级棒棒糖')
         if cp_witch_4 + cp_witch_3 >=15:
             cp_witch_3 = 15 - cp_witch_4
