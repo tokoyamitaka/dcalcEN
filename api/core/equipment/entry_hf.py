@@ -446,8 +446,8 @@ def entry_1227(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
     if mode == 1:
         if '睡眠' in own_state_type:
-            char.所有属性强化加成(20, mode=1)
-            char.技能攻击力加成(0.1)
+            char.所有属性强化加成(20*char.睡眠效果(), mode=1)
+            char.技能攻击力加成(0.1*char.睡眠效果())
         pass
 
 
@@ -1259,7 +1259,7 @@ def entry_993(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         pass
     if mode == 1:
         if "睡眠" in own_state_type:
-            char.技能恢复加成(1, 100, 0.5, [50, 85, 100])
+            char.技能恢复加成(1, 100, 0.5*char.睡眠效果(), [50, 85, 100])
         pass
 
 
@@ -1547,6 +1547,9 @@ def entry_934(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        if '睡眠' not in own_state_type:
+            own_state_type.append('睡眠')
+        char.技能冷却缩减(1,100,0.1*char.睡眠效果(),[50,85,100])
         pass
 
 
@@ -2979,7 +2982,7 @@ def entry_1229(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
         char.异常抗性加成('睡眠', -0.2)
     if mode == 1:
         if '睡眠' in own_state_type:
-            char.攻击强化加成(成长词条计算(3705, lv))
+            char.攻击强化加成(成长词条计算(3705*char.睡眠效果(), lv))
         pass
 
 
@@ -3569,7 +3572,7 @@ def entry_1139(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
         return ['睡眠抗性 -50%', '所有异常状态抗性 +20%']
     if mode == 0:
-        char.所有属性抗性加成(0.2)
+        char.所有异常抗性加成(0.2)
         char.异常抗性加成('睡眠', -0.5)
     if mode == 1:
         pass
@@ -9716,7 +9719,8 @@ def entry_1271(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        # 暂未实现
+        if char.异常抗性获取('睡眠') < 0 :
+            char.技能攻击力加成(min(0-char.异常抗性获取('睡眠') * 0.4,0.28))
         pass
 
 
@@ -9726,7 +9730,9 @@ def entry_1272(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        # 暂未实现
+        char.异常抗性加成('睡眠', -0.1)
+        if '睡眠' not in own_state_type:
+            own_state_type.append('睡眠')
         pass
 
 

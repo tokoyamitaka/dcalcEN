@@ -159,6 +159,9 @@ class CharacterProperty:
     def 异常抗性加成(self, 类型: str, x: float) -> None:
         pass
 
+    def 异常抗性获取(self, 类型: str) -> float:
+        pass
+
     def 属性攻击(self, 类型: str) -> None:
         pass
 

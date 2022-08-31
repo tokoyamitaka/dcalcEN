@@ -369,11 +369,14 @@ class Character(CharacterProperty):
         # 中毒 灼烧 感电 出血 冰冻 减速 眩晕 诅咒 失明 石化 睡眠 混乱 束缚
         self.__异常抗性[类型] = self.__异常抗性.get(类型, 0.0) + x
 
+    def 异常抗性获取(self, 类型: str) -> float:
+        return self.__异常抗性.get(类型, 0.0)
+
     def 属性攻击(self, 类型: str) -> None:
         pass
 
     def 所有异常抗性加成(self, x: float) -> None:
-        for 类型 in ['中毒', '灼烧', ' 感电 ', '出血 ', '冰冻 ', '减速 ', '眩晕 ', '诅咒 ', '失明 ', '石化 ', '睡眠 ', '混乱 ', '束缚']:
+        for 类型 in ['中毒', '灼烧', ' 感电', '出血', '冰冻', '减速', '眩晕', '诅咒', '失明', '石化', '睡眠', '混乱', '束缚']:
             self.__异常抗性[类型] = self.__异常抗性.get(类型, 0.0) + x
 
     def 条件技攻加成(self, 类型: str, x: float) -> None:
@@ -1391,6 +1394,9 @@ class Character(CharacterProperty):
             func(self, mode=1, part=部位, lv=等级)  # 进图效果
             # 打印相关函数和效果
             # print('{}(lv.{}): {} {}'.format(部位, 等级, func, func(self, text=TRUE)))
+
+    def 睡眠效果(self):
+        return 0.5 if 1537 in self.装备栏 else 1
 
     def __被动倍率计算(self):
         if self.__基础精通倍率 != 1:
