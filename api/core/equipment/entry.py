@@ -10840,7 +10840,7 @@ def entry_715(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 1:
         莱迪娅 = char.get_skill_by_name("降临：僵尸莱迪娅")
         莱迪娅.基础施放次数 = 3
-        莱迪娅.power0 = 0.45
+        莱迪娅.power0 *= 0.45
         莱迪娅.CD = 15
         pass
 
