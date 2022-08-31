@@ -48,14 +48,14 @@
         {}
       )
 
-      onKeyStroke(
-        "Backspace",
-        event => {
-          event.preventDefault()
-          resetQueue()
-        },
-        {}
-      )
+      // onKeyStroke(
+      //   "Backspace",
+      //   event => {
+      //     event.preventDefault()
+      //     resetQueue()
+      //   },
+      //   {}
+      // )
 
       const colors = ["#fee86b", "#75ae1b", "#1bae83", "#1b63ae", "#b920c3", "c3207c"]
 

@@ -66,7 +66,8 @@
       }
 
       const skillQueChange = (skill: ISkillInfo) => {
-        return (count: number) => {
+        return (event: any) => {
+          let count = Number(event.target.value)
           let indexs = configStore.skill_que
             .map((s, i) => (s.name == skill.name ? i : -1))
             .filter(i => i > -1)
@@ -138,13 +139,14 @@
                         <div class="!h-20px !ml-5px !w-50px"></div>
                       )}
                       {
-                        <calc-select modelValue={getCount(skill.name)} onChange={skillQueChange(skill)} class="!h-20px !ml-5px !min-w-45px !w-45px">
-                          {renderList(100, item => (
-                            <calc-option value={item - 1}>
-                              <span>{item - 1}</span>
-                            </calc-option>
-                          ))}
-                        </calc-select>
+                        // <calc-select modelValue={getCount(skill.name)} onChange={skillQueChange(skill)} class="!h-20px !ml-5px !min-w-45px !w-45px">
+                        //   {renderList(100, item => (
+                        //     <calc-option value={item - 1}>
+                        //       <span>{item - 1}</span>
+                        //     </calc-option>
+                        //   ))}
+                        // </calc-select>
+                        <calc-autocomplete onChange={skillQueChange(skill)} class="!h-20px !ml-5px !min-w-45px !w-45px" modelValue={getCount(skill.name)}></calc-autocomplete>
                       }
                       <div class="w-20px justify-center !ml-5px">
                         <calc-checkbox v-model={configStore.skill_set[index].direct}></calc-checkbox>
