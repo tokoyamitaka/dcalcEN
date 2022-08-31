@@ -7734,7 +7734,8 @@ def entry_189(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.技能攻击力加成(0.15)
+        if '[贵族机要]' in dungeons_type:
+            char.技能攻击力加成(0.15)
 
 
 def entry_207(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -7743,7 +7744,8 @@ def entry_207(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.技能攻击力加成(0.15)
+        if '[毁坏的寂静城(高级)]' in dungeons_type:
+            char.技能攻击力加成(0.15)
 
 
 def entry_225(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
@@ -7752,7 +7754,8 @@ def entry_225(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
-        char.技能攻击力加成(0.15)
+        if '[机械战神试验场]' in dungeons_type:
+            char.技能攻击力加成(0.15)
 
 
 # endregion
