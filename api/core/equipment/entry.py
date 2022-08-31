@@ -10910,6 +10910,7 @@ def entry_722(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name('死亡风暴').CP武器 = True
         pass
 
 

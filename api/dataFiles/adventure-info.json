@@ -317,7 +317,8 @@
     "children": [
       {
         "name": "rogue",
-        "title": "隐夜·刺客"
+        "title": "隐夜·刺客",
+        "open": true
       },
       {
         "name": "necro",
