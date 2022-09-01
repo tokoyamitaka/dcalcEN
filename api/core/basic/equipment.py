@@ -335,6 +335,13 @@ class equipment_list():
                     })
         return setinfo
 
+def get_gloabl_data(name=""):
+    if version == 0:
+        import core.equipment.entry as entry
+    if version == 1:
+            import core.equipment.entry_hf as entry
+    return getattr(entry,name) if hasattr(entry,name) else None
+
     # def set_equ_customize(self, customize):
     #     for key in customize.keys():
     #         self.get_equ_by_id(key).成长属性 = customize[key]

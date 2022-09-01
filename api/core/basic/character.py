@@ -4,7 +4,7 @@ from pyclbr import Function
 from typing import Dict, List, Union
 from uuid import uuid1
 
-from core.basic.equipment import equipment, get_equ
+from core.basic.equipment import equipment, get_equ ,get_gloabl_data
 from core.basic.property import CharacterProperty
 from core.basic.skill import 主动技能, 技能, 被动技能
 from core.equipment.avatar import 装扮套装, 装扮套装集合, 装扮集合
@@ -182,6 +182,7 @@ class Character(CharacterProperty):
         self.__MP消耗量: float = 1.0
 
         self.skills_passive = {}
+        self.冰冻结算灼烧加成 = 1.05
 
         self.打造 = {}
         for item in 部位列表 + ('称号', '宠物'):
@@ -1021,6 +1022,7 @@ class Character(CharacterProperty):
 
         skill_dict = {}
         无色消耗 = 0
+
         for i in self.技能队列:
             k = self.get_skill_by_name(i['名称'])
             if k.是否有伤害 == 1:
@@ -1050,6 +1052,10 @@ class Character(CharacterProperty):
                     # 出血 叠层 1层1%出血伤害 满10%
                     if item == '出血':
                         系数 *= 1.1
+                    if item =='灼烧':
+                        zs_bd_rate = get_gloabl_data("zs_bd_rate")
+                        print(zs_bd_rate)
+                        系数 = 系数 + 系数 * zs_bd_rate * (self.冰冻结算灼烧加成-1)
                     # 直伤转换的异常处理：直伤伤害*异常比例*异常系数
                     damage += 直伤 * self.伤害指数 * k.被动倍率 * \
                         (self.伤害比例.get(item, 0.0) * 系数) / 100
@@ -1086,7 +1092,6 @@ class Character(CharacterProperty):
         self.__装备词条计算()
         if self.类型 != '辅助' and self.__消耗品效果 != 0:
             self.__药剂计算(rate=self.__消耗品效果)
-        print(self.技攻列表)
 
     def __时装基础(self):
         时装品级列表 = {}

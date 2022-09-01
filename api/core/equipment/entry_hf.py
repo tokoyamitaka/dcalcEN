@@ -6,6 +6,16 @@ entry_chose = []  # (20000 + id, [chose1, 2, 3...]) 额外选项设置，参考2
 multi_select = {}  # id : True/False 设置选项是否支持多选
 variable_set = {}  # id : setfunc  参数返回设置函数
 
+zs_bd_rate = 0
+
+def set_zs_bd_rate(x):
+    global zs_bd_rate
+    zs_bd_rate = x[0]/100
+
+entry_chose.append((20000,["冰冻结算灼烧比例：{}".format(str(i)) for i in range(0,101)], ""))
+multi_select[20000] = False
+variable_set[20000] = set_zs_bd_rate
+
 # region 贴膜
 
 hl = []
@@ -2971,6 +2981,7 @@ def entry_1225(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if mode == 0:
         pass
     if mode == 1:
+        char.冰冻结算灼烧加成 *= 1.35
         # char.异常增伤('灼烧', 0.3)
         pass
 
