@@ -492,11 +492,11 @@ class 技能20(主动技能):
         if 形态 == "焚烧":
             self.hit0 = 1
             self.hit1 = 1
-            self.hit1 = 20+20
+            self.hit2 = 20+20
         if 形态 == "常规":
             self.hit0 = 1
             self.hit1 = 1
-            self.hit1 = 20
+            self.hit2 = 20
 
 
 class 技能21(被动技能):

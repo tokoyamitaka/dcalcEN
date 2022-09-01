@@ -84,6 +84,8 @@ class Character(CharacterProperty):
     # 职业技能特殊选项
     individuation :Dict[str,int]={}
 
+    技攻列表 :Dict[str,List[float]]= {}
+
     打造: Dict = {}
 
     def __init__(self) -> None:
@@ -445,7 +447,8 @@ class Character(CharacterProperty):
     def 属性附加加成(self, x: float) -> None:
         self.__属性附加 += self.属性附加伤害增加增幅 * x
 
-    def 技能攻击力加成(self, x: float, 辟邪玉加成=1, 适用累加=1) -> None:
+    def 技能攻击力加成(self, x: float, 辟邪玉加成=1, 适用累加=1,part='') -> None:
+        # self.技攻列表[part] = self.技攻列表.get(part,[]) + [x]
         if 辟邪玉加成 == 1:
             if 适用累加 == 0:
                 self.__技能攻击力 *= 1 + self.技能伤害增加增幅 * x
@@ -461,7 +464,7 @@ class Character(CharacterProperty):
                 self.__技能攻击力累加 += x  # 累计计算
         else:
             self.__技能攻击力 *= 1 + x
-        super().技能攻击力加成(x)
+        super().技能攻击力加成(x=x)
 
     def 暴击伤害加成(self, x: float, 辟邪玉加成=1) -> None:
         self.__暴击伤害 += self.暴击伤害增加增幅 * x if 辟邪玉加成 == 1 else x
@@ -759,6 +762,13 @@ class Character(CharacterProperty):
 
     # region 其它函数
     #     def get_skill_by_name(self, name) -> 技能 | 主动技能 | 被动技能:
+
+    def 部位是否穿戴(self,part):
+        if self.部位装备.get(part,None) == None:
+            return False
+        else:
+            return True
+
     def get_skill_by_name(self, name) -> Union[技能, 主动技能, 被动技能]:
         return self.技能栏[self.技能序号.get(name, 0)]
 
@@ -1076,6 +1086,7 @@ class Character(CharacterProperty):
         self.__装备词条计算()
         if self.类型 != '辅助' and self.__消耗品效果 != 0:
             self.__药剂计算(rate=self.__消耗品效果)
+        print(self.技攻列表)
 
     def __时装基础(self):
         时装品级列表 = {}
@@ -1194,7 +1205,7 @@ class Character(CharacterProperty):
     def __徽章计算(self):
         idlist = []
         for i in 部位列表 + ('皮肤', '光环', '武器装扮'):  # ('皮肤', '光环', '武器装扮', )
-            if i in self.打造详情.keys():
+            if i in self.打造详情.keys() and self.部位是否穿戴(i):
                 temp = self.打造详情[i]
                 for j in ['socket_left', 'socket_right']:
                     id = temp.get(j, 0)
@@ -1216,9 +1227,10 @@ class Character(CharacterProperty):
 
     def __附魔计算(self):
         for i in self.部位附魔.keys():
-            func = self.部位附魔[i]
-            func(self)
-            func(self, mode=1)
+            if self.部位是否穿戴(i):
+                func = self.部位附魔[i]
+                func(self,part= i)
+                func(self, mode=1,part= i)
             # 打印相关函数和效果
             # print('{}: {}: {}'.format(i, func, func(self, text=TRUE)))
 
