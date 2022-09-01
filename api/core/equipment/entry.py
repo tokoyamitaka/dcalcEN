@@ -4179,7 +4179,7 @@ def entry_538(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_791(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['格斗家Lv1~100所有技能攻击力 +10%']
+        return ['所有职业Lv1~100所有技能攻击力 +10%']
     if mode == 0:
         char.技能倍率加成(1, 100, 0.1)
     if mode == 1:
@@ -4188,7 +4188,7 @@ def entry_791(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_792(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['格斗家Lv1~100所有技能Lv +1 (觉醒技能除外)']
+        return ['所有职业Lv1~100所有技能Lv +1 (觉醒技能除外)']
     if mode == 0:
         char.技能等级加成('所有', 1, 100, 1, [50, 85, 100])
     if mode == 1:
