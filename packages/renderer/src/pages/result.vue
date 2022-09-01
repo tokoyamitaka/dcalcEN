@@ -195,7 +195,9 @@
             </td>
             <td width="18%" class="h-7 text-center leading-7 flex w-100%">
               <div class="w-60%">{skill.cd}s</div>{" "}
-              <div class={"text-hex-" + (skill.cd < skill.cd_o ? "3ea74e" : "ff0000") + " w-40%"}>{skill.cd == skill.cd_o ? "" : `${((1 - skill.cd / skill.cd_o) * 100).toFixed(1)}%`}</div>
+              <div class={"text-hex-" + ((skill.cd ?? 0) < (skill.cd_o ?? 0) ? "3ea74e" : "FF0000") + " w-40%"}>
+                {skill.cd == skill.cd_o ? "" : `${((1 - (skill.cd ?? 0) / (skill.cd_o ?? 0)) * 100).toFixed(1)}%`}
+              </div>
             </td>
             <td width="12%" class="h-7 text-center leading-7">
               {skill.count}

@@ -621,7 +621,7 @@ class classChange(Character):
         鬼连斩极 = self.get_skill_by_name("鬼连斩：极")
         鬼连斩 = self.get_skill_by_name("鬼连斩")
         damage = 0
-        if 鬼连斩极.等级 > 0 and 鬼连斩.等级 > 0:
+        if '鬼连斩' in skill_dict and 鬼连斩极.等级 > 0 and 鬼连斩.等级 > 0:
             倍率 = 鬼连斩极.获取百分比(鬼连斩.等级) * (1 + 鬼连斩.TP等级 *
                                        鬼连斩.TP成长) * 鬼连斩.被动倍率 * 鬼连斩极.额外加成
             count = skill_dict['鬼连斩']['count']
