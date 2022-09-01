@@ -14,7 +14,7 @@ def set_zs_bd_rate(x):
     global zs_bd_rate
     zs_bd_rate = x[0]/100
 
-entry_chose.append((20000,["冰冻结算灼烧比例：{}".format(str(i)) for i in range(0,101)], ""))
+entry_chose.append((20000,["冰冻结算灼烧比例：{}%".format(str(i)) for i in range(0,101)], ""))
 multi_select[20000] = False
 variable_set[20000] = set_zs_bd_rate
 
