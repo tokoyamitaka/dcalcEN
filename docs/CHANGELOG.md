@@ -1,5 +1,20 @@
 ## Newest
 
+### 2022.09.01.Beta
+
+#### NewFeatures
+* 添加冰冻结算灼烧适用 ([fa286b](https://gitee.com/dcalc/dnfcalculating_110/commit/fa286bfdb94e841ad6df48766831b92f5a941603))
+
+#### BugFixes
+* 修正词条描述 ([805258](https://gitee.com/dcalc/dnfcalculating_110/commit/805258655c27ea3c5ad9ec87af074d653be5627f))
+* 修正词条问题 ([426ce4](https://gitee.com/dcalc/dnfcalculating_110/commit/426ce409b73b5d12671e567a0fee48f1799e4e9f))
+* 极诣·驭剑士：修正三绝斩冰的数据问题 ([d511ba](https://gitee.com/dcalc/dnfcalculating_110/commit/d511bad3140b004f210b090fd3b8cc59395fadda))
+* 知源·魔道学者：修正CP武器报错 ([d64981](https://gitee.com/dcalc/dnfcalculating_110/commit/d64981be8940c98c4602f87bd57d1a22737b8f39))
+* 神启·诱魔者：修正数据问题 ([43662d](https://gitee.com/dcalc/dnfcalculating_110/commit/43662d1cc46c820a1fa85646c4832b75903498fc))
+
+
+## History
+
 ### 2022.08.31.Beta
 
 #### NewFeatures
@@ -117,8 +132,6 @@
 - 男大枪：FM92SW 刺弹炮护石无效的情况 ([650ad9](https://gitee.com/dcalc/dnfcalculating_110/commit/650ad960d049ef857001c3913b376f7f12dfbfb2))
 - 药剂结算先后问题 ([418c56](https://gitee.com/dcalc/dnfcalculating_110/commit/418c56b12ec1f54cfd637999b0ff8a01cb3eebca))
 
-
-## History
 
 ### 2022.07.25.Beta
 
