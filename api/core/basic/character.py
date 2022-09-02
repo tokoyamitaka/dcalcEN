@@ -4,7 +4,7 @@ from pyclbr import Function
 from typing import Dict, List, Union
 from uuid import uuid1
 
-from core.basic.equipment import equipment, get_equ ,get_gloabl_data
+from core.basic.equipment import equipment, get_equ, get_gloabl_data
 from core.basic.property import CharacterProperty
 from core.basic.skill import 主动技能, 技能, 被动技能
 from core.equipment.avatar import 装扮套装, 装扮套装集合, 装扮集合
@@ -82,9 +82,9 @@ class Character(CharacterProperty):
     装扮选项: Dict[str, str] = {}
 
     # 职业技能特殊选项
-    individuation :Dict[str,int]={}
+    individuation: Dict[str, int] = {}
 
-    技攻列表 :Dict[str,List[float]]= {}
+    技攻列表: Dict[str, List[float]] = {}
 
     打造: Dict = {}
 
@@ -344,7 +344,7 @@ class Character(CharacterProperty):
         info['clothes_coat'] = clothes_coat
         info['clothes_pants'] = clothes_pants
 
-    def set_individuation(self,info) -> None:
+    def set_individuation(self, info) -> None:
         pass
 
     # endregion
@@ -448,7 +448,7 @@ class Character(CharacterProperty):
     def 属性附加加成(self, x: float) -> None:
         self.__属性附加 += self.属性附加伤害增加增幅 * x
 
-    def 技能攻击力加成(self, x: float, 辟邪玉加成=1, 适用累加=1,part='') -> None:
+    def 技能攻击力加成(self, x: float, 辟邪玉加成=1, 适用累加=1, part='') -> None:
         # self.技攻列表[part] = self.技攻列表.get(part,[]) + [x]
         if 辟邪玉加成 == 1:
             if 适用累加 == 0:
@@ -764,8 +764,8 @@ class Character(CharacterProperty):
     # region 其它函数
     #     def get_skill_by_name(self, name) -> 技能 | 主动技能 | 被动技能:
 
-    def 部位是否穿戴(self,part):
-        if self.部位装备.get(part,None) == None:
+    def 部位是否穿戴(self, part):
+        if self.部位装备.get(part, None) == None and part not in ['光环', '武器装扮', '皮肤', '宠物装备-红', '宠物装备-绿', '宠物装备-蓝', '快捷装备']:
             return False
         else:
             return True
@@ -1052,9 +1052,8 @@ class Character(CharacterProperty):
                     # 出血 叠层 1层1%出血伤害 满10%
                     if item == '出血':
                         系数 *= 1.1
-                    if item =='灼烧':
+                    if item == '灼烧':
                         zs_bd_rate = get_gloabl_data("zs_bd_rate")
-                        print(zs_bd_rate)
                         系数 = 系数 + 系数 * zs_bd_rate * (self.冰冻结算灼烧加成-1)
                     # 直伤转换的异常处理：直伤伤害*异常比例*异常系数
                     damage += 直伤 * self.伤害指数 * k.被动倍率 * \
@@ -1234,8 +1233,8 @@ class Character(CharacterProperty):
         for i in self.部位附魔.keys():
             if self.部位是否穿戴(i):
                 func = self.部位附魔[i]
-                func(self,part= i)
-                func(self, mode=1,part= i)
+                func(self, part=i)
+                func(self, mode=1, part=i)
             # 打印相关函数和效果
             # print('{}: {}: {}'.format(i, func, func(self, text=TRUE)))
 
@@ -1459,7 +1458,6 @@ class Character(CharacterProperty):
                         for k in 非关联技能:
                             self.技能栏[self.技能序号[k]].被动倍率 /= 加成倍率
 
-
     def __加算冷却计算(self):
         for i in self.技能栏:
             if i.是否有伤害 == 1:
@@ -1501,7 +1499,6 @@ class Character(CharacterProperty):
                     else:
                         for k in 非关联技能:
                             self.技能栏[self.技能序号[k]].CDR /= 加成倍率
-
 
     def __属性倍率计算(self):
         # 火、冰、光、暗
@@ -1573,7 +1570,7 @@ class Character(CharacterProperty):
         self.伤害指数 /= 1000
     # endregion
 
-    def get_individuation(self,index):
+    def get_individuation(self, index):
         if index > len(self.individuation):
             return 0
         else:
@@ -1603,7 +1600,7 @@ class Character(CharacterProperty):
 
         self.融合列表 = info.get('fusion_list', [])
 
-        self.individuation = info.get('individuation',[])
+        self.individuation = info.get('individuation', [])
 
     def jade_upgrade(self):
         temp = []
