@@ -48,6 +48,7 @@ def get(alter: str, setName: str):
     set_info = {}
     character = createCharcter(alter)
     info = character.getinfo()
+    alter = alter.split(".")[-1]
     skillInfo = info['skills']
     buff = info['buff_ratio']
     skill_set = []
@@ -121,7 +122,6 @@ def get(alter: str, setName: str):
                 'growth_fourth': 0 if 部位 in ['称号', '宠物'] else 40,
             }
             pass
-        # print(forge_set)
         set_info = {
             "skill_set": skill_set,
             "skill_que": [],
@@ -145,14 +145,24 @@ def get(alter: str, setName: str):
         with open('./sets/{}/{}/store.json'.format(alter, setName), "r", encoding='utf-8') as fp:
             set_info = json.load(fp)
         fp.close()
-        cur_skills_set = []
-        for skill in set_info['skill_set']:
-            cur_skills_set.append(skill['name'])
-        for skill in skillInfo:
-            if skill['name'] not in cur_skills_set:
-                set_info['skill_set'][skill["name"]] = skill_set[skill["name"]]
+        cur_skills_set = list(map(lambda x: x['name'], set_info['skill_set']))
+        ac_skills = list(map(lambda x: x['name'], skillInfo))
+        # for skill in set_info['skill_set']:
+        #     cur_skills_set.append(skill['name'])
+        for skill in ac_skills:
+            if skill not in cur_skills_set:
+                set_info['skill_set'].append(list(
+                    filter(lambda x: x['name'] == skill, skill_set))[0])
+        set_info['skill_que'] = list(
+            filter(lambda x: x['name'] in ac_skills, set_info['skill_que']))
+        # for index in range(0, len(set_info['skill_que'])):
+        #     skill = set_info['skill_que'][index]
+        #     if skill['name'] not in ac_skills:
+        #         set_info['skill_set'].remove(index)
+        # for item in set_info['skill_que']:
+
         for key in trigger.keys():
-            if set_info['trigger_set'].get(str(key),None) == None:
+            if set_info['trigger_set'].get(str(key), None) == None:
                 set_info['trigger_set'][str(key)] = trigger[key]
         # print(trigger)
         # if not len(trigger) == len(set_info['trigger_set']):
