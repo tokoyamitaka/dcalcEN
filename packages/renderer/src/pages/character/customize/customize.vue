@@ -76,10 +76,14 @@
       /**
        *  显示列表发生变化时，自动选中第一项，并清空属性选择
        */
-      watch(show_list, () => {
-        selectEquip.value = show_list.value[0]?.id
-        selectEquipProps.value = [0, 0, 0, 0]
-      })
+      watch(
+        show_list,
+        () => {
+          selectEquip.value = show_list.value[0]?.id
+          selectEquipProps.value = [0, 0, 0, 0]
+        },
+        { immediate: true }
+      )
 
       function chooseEqu(equ: IEquipmentInfo) {
         return (event: Event) => {
