@@ -26,17 +26,17 @@ async def calc(setInfo=Body(None), setName=Body(None), state: AlterState = Depen
     return response(data=calc_multi(state, setInfo))
 
 
-@ calcRouter.get(path="/calc/result/{id}")
+@calcRouter.get(path="/calc/result/{id}")
 def get_result(id):
     return response(data=store.get("/calc/results/"+id))
 
 
-@ calcRouter.get(path="/calc/rank/{id}")
+@calcRouter.get(path="/calc/rank/{id}")
 def get_rank(id):
     return response(data=store.get("/calc/ranks/"+id))
 
 
-@ calcRouter.post(path="/calc/single")
+@calcRouter.post(path="/calc/single")
 async def calc_single(setInfo=Body(None), setName=Body(None), state: AlterState = Depends(authorize)):
     alter = None
     if(state is None or state.alter is None):
