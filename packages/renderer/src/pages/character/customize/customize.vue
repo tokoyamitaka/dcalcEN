@@ -1,7 +1,7 @@
 <script lang="tsx">
   import { IEquipmentInfo } from "@/api/info/type"
   import EquipIcon from "@/components/internal/equip/eq-icon.vue"
-  import { useBasicInfoStore, useCharacterStore, useConfigStore, useDetailsStore } from "@/store"
+  import { useBasicInfoStore, useConfigStore } from "@/store"
   import { padding, rarityClass } from "@/utils"
   import { computed, defineComponent, reactive, ref, renderList, watch } from "vue"
 
@@ -19,8 +19,6 @@
     async setup() {
       const configStore = useConfigStore()
       const basicStore = useBasicInfoStore()
-      const detailsStore = useDetailsStore()
-      const characterStore = useCharacterStore()
 
       const filter = ref<FilterFunction | null>()
 
@@ -35,6 +33,11 @@
       const props_specials = [37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73]
 
       const colspans = ref([false, true, true])
+
+      const keyword = reactive({
+        value: "",
+        cache: ""
+      })
 
       const equips = computed(() => {
         let list = basicStore.equipment_list.filter(item => item.alternative.length > 0) ?? [] ?? []
@@ -76,11 +79,6 @@
       watch(show_list, () => {
         selectEquip.value = show_list.value[0]?.id
         selectEquipProps.value = [0, 0, 0, 0]
-      })
-
-      const keyword = reactive({
-        value: "",
-        cache: ""
       })
 
       function chooseEqu(equ: IEquipmentInfo) {
