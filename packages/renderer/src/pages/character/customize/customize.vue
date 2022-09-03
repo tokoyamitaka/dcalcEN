@@ -1,10 +1,9 @@
 <script lang="tsx">
   import { IEquipmentInfo } from "@/api/info/type"
-  import { useBasicInfoStore, useCharacterStore, useConfigStore, useDetailsStore } from "@/store"
   import EquipIcon from "@/components/internal/equip/eq-icon.vue"
-  import EquipInfo from "@/components/internal/equip/eq-info.vue"
+  import { useBasicInfoStore, useCharacterStore, useConfigStore, useDetailsStore } from "@/store"
   import { padding, rarityClass } from "@/utils"
-  import { computed, defineComponent, onMounted, onUnmounted, reactive, ref, renderList, watch } from "vue"
+  import { computed, defineComponent, reactive, ref, renderList, watch } from "vue"
 
   export interface IJadeUpgrade {
     id: number
@@ -50,6 +49,11 @@
 
       const cur_equ = computed(() => basicStore.equipment_list.filter(a => a.id == selectEquip.value)[0])
 
+      const pagination = reactive({
+        page: 1,
+        pageSize: 14
+      })
+
       const show_list = computed(() => {
         const start = (pagination.page - 1) * pagination.pageSize
         const end = start + pagination.pageSize
@@ -66,6 +70,14 @@
       const selectEquipProps = ref<number[]>([0, 0, 0, 0])
       const selectPropsCheckedList = ref<Record<string, boolean>>({})
 
+      /**
+       *  显示列表发生变化时，自动选中第一项，并清空属性选择
+       */
+      watch(show_list, () => {
+        selectEquip.value = show_list.value[0]?.id
+        selectEquipProps.value = [0, 0, 0, 0]
+      })
+
       const keyword = reactive({
         value: "",
         cache: ""
@@ -80,11 +92,6 @@
           alternative_list(equ.id).forEach(a => (selectPropsCheckedList.value[a] = selectEquipProps.value.indexOf(a) >= 0))
         }
       }
-
-      const pagination = reactive({
-        page: 1,
-        pageSize: 14
-      })
 
       const total = computed(() => equips.value.length)
       const total_page = computed(() => Math.ceil(total.value / pagination.pageSize))
@@ -119,9 +126,14 @@
         return (event: Event) => {
           event.stopPropagation()
           let index = selectEquipProps.value.indexOf(id)
-          if (index < 0) index = selectEquipProps.value.indexOf(0)
-          else id = 0
-          if (index >= 0) selectEquipProps.value[index] = id
+          if (index < 0) {
+            index = selectEquipProps.value.indexOf(0)
+          } else {
+            id = 0
+          }
+          if (index >= 0) {
+            selectEquipProps.value[index] = id
+          }
           configStore.customize[selectEquip.value as number] = selectEquipProps.value
         }
       }
@@ -168,12 +180,12 @@
                 <div class="h-full bg-hex-0d0d0d w-75% s-left">
                   {selectEquip.value && (
                     <>
-                      <div class="h-35px flex flex-col p-10px">
-                        <div class="h-30px flex">
+                      <div class="flex flex-col h-35px p-10px">
+                        <div class="flex h-30px">
                           <EquipIcon eq={cur_equ.value}></EquipIcon>
-                          <div class="ml-8px flex flex-col w-100%">
+                          <div class="flex flex-col ml-8px w-100%">
                             <div class={["text-xs", rarityClass(cur_equ.value.rarity ?? "")]}>{cur_equ.value.name}</div>
-                            <div class="text-xs text-hex-8a6f36 text-right">{`${cur_equ.value.type}(${cur_equ.value.part})`}</div>
+                            <div class="text-xs text-right text-hex-8a6f36">{`${cur_equ.value.type}(${cur_equ.value.part})`}</div>
                           </div>
                         </div>
                         <div style="border-bottom:1px solid #303030;margin:8px 0;"></div>
@@ -186,26 +198,26 @@
                               if (alternative.length > 0)
                                 return (
                                   <>
-                                    <div onClick={() => (colspans.value[index] = !colspans.value[index])} class="text-hex-3e8848 m-10px">{` < 随机属性池 - ${type}属性 > - 共计${padding(
+                                    <div onClick={() => (colspans.value[index] = !colspans.value[index])} class="m-10px text-hex-3e8848">{` < 随机属性池 - ${type}属性 > - 共计${padding(
                                       alternative.length,
                                       2
                                     )}条 点击${colspans.value[index] ? "展开" : "折叠"}`}</div>
                                     <div class={["transition-all", "ease-out-in", "h-auto", "overflow-hidden"].concat(!colspans.value[index] ? [""] : ["max-h-0"])}>
                                       {renderList(alternative, item => {
                                         const entry_info = entry(item)
-                                        const disabled = computed(() => selectEquipProps.value.indexOf(item) < 0 && selectEquipProps.value.filter(a => a == 0)?.length == 0)
+                                        const disabled = selectEquipProps.value.indexOf(item) < 0 && selectEquipProps.value.filter(a => a == 0)?.length == 0
                                         return (
-                                          <div class="m-5px ml-10px mr-10px h-auto">
-                                            <div class="flex items-center w-100%">
-                                              <calc-checkbox v-model={selectPropsCheckedList.value[item]} class="!h-auto" disabled={disabled.value} onClick={chooseProp(item)}>
+                                          <div class="h-auto m-5px mr-10px ml-10px">
+                                            <div class="flex w-100% items-center">
+                                              <calc-checkbox v-model={selectPropsCheckedList.value[item]} class="!h-auto" disabled={disabled} onClick={chooseProp(item)}>
                                                 {() => (
                                                   <>
-                                                    <div class={["flex ml-10px", disabled.value ? "text-hex-5b5b5b" : "text-hex-8a6f36"]}>
+                                                    <div class={["flex ml-10px", disabled ? "text-hex-5b5b5b" : "text-hex-8a6f36"]}>
                                                       <div>攻击强化:{entry_info?.attack}</div>
                                                       <div class="ml-25px">Buff量:{entry_info?.buff}</div>
                                                     </div>
                                                     {renderList(entry_info?.props, prop => (
-                                                      <div class={["ml-10px", disabled.value ? "text-hex-5b5b5b" : "text-hex-b1a785"]}>{prop}</div>
+                                                      <div class={["ml-10px", disabled ? "text-hex-5b5b5b" : "text-hex-b1a785"]}>{prop}</div>
                                                     ))}
                                                   </>
                                                 )}
@@ -230,7 +242,7 @@
                                   <>
                                     <div class="flex items-center">
                                       <div class="prop-icon"></div>
-                                      <div class="text-hex-b59834 ml-8px">{`属性 ${index + 1} - Lv1`}</div>
+                                      <div class="ml-8px text-hex-b59834">{`属性 ${index + 1} - Lv1`}</div>
                                     </div>
                                     <div class="ml-20px text-hex-5b5b5b">随机属性，请在左侧进行选择</div>
                                   </>
@@ -241,9 +253,9 @@
                                   <>
                                     <div class="flex items-center">
                                       <div class="prop-icon"></div>
-                                      <div class="text-hex-b59834 ml-8px">{`属性 ${index + 1} - Lv1`}</div>
+                                      <div class="ml-8px text-hex-b59834">{`属性 ${index + 1} - Lv1`}</div>
                                     </div>
-                                    <div class="text-hex-8a6f36 ml-20px">
+                                    <div class="ml-20px text-hex-8a6f36">
                                       <div>攻击强化 {entry_info?.attack}</div>
                                       <div>Buff量 {entry_info?.buff}</div>
                                     </div>
@@ -285,12 +297,15 @@
   .i-checkbox {
     display: flex;
     align-items: flex-start;
+
     .i-checkbox-icon {
       margin-top: 5px;
     }
+
     .i-checkbox-icon-disable {
       margin-top: 5px;
     }
+
     .i-checkbox-label {
       line-height: 22px;
     }
@@ -305,11 +320,13 @@
     height: 12px;
     background-image: url(@/assets/img/icon/switch.png);
   }
+
   .equip-line {
     border: 1px solid transparent;
     background-image: url("@/assets/img/dictionary_line.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
+
     &:hover {
       .mask {
         background-image: url("@/assets/img/hover_mask.png");
@@ -329,6 +346,7 @@
       flex-wrap: wrap;
       padding: 5px;
       background-color: rgba(0, 0, 0, 0.45);
+
       .equ-item {
         width: 30px;
         height: 30px;
