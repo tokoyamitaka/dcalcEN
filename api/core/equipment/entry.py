@@ -5899,12 +5899,12 @@ def entry_322(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
 
 def entry_329(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
     if text:
-        return ['每消灭一个敌人，获得1层强化(最多10层)，攻击领主敌人时消耗所有层数，每消耗1层，技能攻击力 +2%(觉醒技能除外)，效果持续60秒']
+        return ['每消灭一个敌人，获得1层强化(最多10层)，攻击领主敌人时消耗所有层数，每消耗1层，技能攻击力 +2%，效果持续60秒']
     if mode == 0:
         pass
     if mode == 1:
         if '领主敌人' in attack_type:
-            char.技能倍率加成(1, 100, 0.02 * kill_num, [50, 85, 100])
+            char.技能倍率加成(1, 100, 0.02 * kill_num)
 
 
 def entry_360(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0):
