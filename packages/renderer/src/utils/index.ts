@@ -161,6 +161,20 @@ Number.prototype.round = function (digit?: number) {
   return Math.round(Number(this) * m) / m
 }
 
+export function formatStr(template: string, ...params: any) {
+  let str = template;
+	
+	if(params.length == 1 && params[0].length > 0) {
+		params = params[0]
+	}
+	
+	for(var i = 0; i < params.length; i++) {
+		str = str.replace('{' + i + '}', params[i]);
+	}
+	
+	return str;
+}
+
 export function toObj(data: Object) {
   let temp = {}
   for (let key in data) {

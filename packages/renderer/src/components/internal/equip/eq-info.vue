@@ -1,6 +1,6 @@
 <script lang="tsx">
   import { useBasicInfoStore, useCharacterStore } from "@/store"
-  import { rarityClass } from "@/utils"
+  import { rarityClass, formatStr } from "@/utils"
   import { asyncComputed } from "@vueuse/core"
   import { computed, defineComponent, PropType, reactive, renderList, watch } from "vue"
 
@@ -53,7 +53,7 @@
         default: false
       },
       isShow: {
-        type: Boolean,
+        type: [Boolean, Object],
         default: false
       }
     },
@@ -298,7 +298,6 @@
         //{ type: 4,  props: [ "智力 +15", ] }, { type: 0,  props: [  "四维+8 [冰之领悟]技能Lv+1", ] }, ], // 徽章
       })
       function loadTransform(eq: any) {
-        // console.log("loadTransform", eq)
         if (props.forget) {
           if (props.forget.info) {
             transform.growthLvs = props.forget.info["成长词条等级"] ?? [1, 1, 1, 1]
@@ -364,6 +363,29 @@
               }
             }
           }
+        }
+      }
+
+      function formatProp(strs: string[], template: string, i: number, withleft: boolean) {
+        if (props.forget && props.forget.data && props.forget.data.params && props.forget.data.params.length > i && props.forget.data.params[i] && template) {
+          let params = props.forget.data.params[i]
+          let nums = []
+          for (var x of params) {
+            nums.push("<span class='" + classForNum(i) + "'>+" + x + "</span>")
+          }
+          let str = formatStr(template, nums)
+          strs = str.split("<br>")
+          return renderList(strs, s => (
+            <div class={["strong"].concat([withleft ? "paddleft" : ""])}>
+              <span v-html={s}></span>
+            </div>
+          ))
+        } else {
+          return renderList(strs, s => (
+            <div class={["strong"].concat([withleft ? "paddleft" : ""])}>
+              <span>{s}</span>
+            </div>
+          ))
         }
       }
 
@@ -507,9 +529,7 @@
                         属性 {i + 1} - Lv{transform.growthLvs[i]}
                       </div>
                       {renderLevel(i, false)}
-                      {renderList(x.props, p => (
-                        <div class="strong">{p}</div>
-                      ))}
+                      {formatProp(x.props, x.template, i)}
                     </div>
                   ) : (
                     <div class="suiji-props gey">
@@ -530,11 +550,7 @@
                           </span>
                         </div>
                         {renderLevel(i, true)}
-                        {renderList(p.props, s => (
-                          <div class="strong paddleft">
-                            <span>{s}</span>
-                          </div>
-                        ))}
+                        {formatProp(p.props, p.template, i, true)}
                       </>
                     ) : (
                       <div class="paddleft suiji-props gey">
@@ -543,27 +559,6 @@
                     )}
                   </div>
                 ))}
-            {
-              // 随机属性装备
-            }
-            {
-              // <div class="bottom">
-              //   {slots.default ? (
-              //     slots.default()
-              //   ) : (
-              //     <>
-              //       <div class="hr"></div>
-              //       <div
-              //         class="red"
-              //         style="text-align: center; padding-right: 15px"
-              //       >
-              //         {" "}
-              //         合成[x]{" "}
-              //       </div>
-              //     </>
-              //   )}
-              // </div>
-            }
           </div>
         )
       }
