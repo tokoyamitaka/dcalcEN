@@ -232,7 +232,10 @@ def get_equipment_detail_info(equID):
                 "index": index,
                 "buffer": growth['buff'],
                 "attack": growth['attack'],
-                "props": growth['props']})
+                "props": growth['props'],
+                "template": growth.get('template',None),
+                "params": growth.get('params',None),
+                })
             pass
     equipment_detail_info["prop"] = {
         "base": base,

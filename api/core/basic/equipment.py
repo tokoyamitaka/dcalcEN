@@ -222,6 +222,9 @@ class equipment_list():
     def get_entry_buff_by_id(self, id) -> int:
         return self.entry_info.get(str(id), {}).get('buff', 0)
 
+    def get_entry_params_by_id(self, id) -> int:
+        return self.entry_info.get(str(id), {}).get('params', [])
+
     def get_damagelist_by_idlist(self, idlist, customize: Dict[str, List[int]] = {}) -> List[tuple]:
         damagelist = []  # (部位, 序号, 基础伤害)
         for id in idlist:
@@ -233,7 +236,9 @@ class equipment_list():
                     i.部位,
                     num,
                     self.get_entry_atk_by_id(k),
-                    self.get_entry_buff_by_id(k)))
+                    self.get_entry_buff_by_id(k),
+                    self.get_entry_params_by_id(k)
+                    )),
                 num += 1
                 pass
         return damagelist

@@ -198,7 +198,8 @@ class Character(CharacterProperty):
                 # 攻击力
                 "强化攻击力": [0]*3,
                 # 独立,四维
-                "锻造加成": [0]*2
+                "锻造加成": [0]*2,
+                "params":[[None]]*4
             }
 
         if self.转职 == '':
@@ -1382,7 +1383,7 @@ class Character(CharacterProperty):
             self.词条等级[i] = temp
         成长词条组合 = get_equ().get_damagelist_by_idlist(self.装备栏, self.自定义词条)
 
-        for 部位, 序号, atk, buff in 成长词条组合:
+        for 部位, 序号, atk, buff,params in 成长词条组合:
             等级 = self.词条等级[部位][序号]
             attack = 成长词条计算(atk, 等级)
             buffer = 奶成长词条计算(buff, 等级)
@@ -1390,6 +1391,11 @@ class Character(CharacterProperty):
             self.辅助属性加成(buff量=buffer)
             self.打造[部位]["attack"][序号] = attack
             self.打造[部位]["buffer"][序号] = buffer
+            self.打造[部位]["params"][序号] = []
+            params = [] if params == None else params
+            for param in params:
+                param = 成长词条计算(param, 等级)
+                self.打造[部位]["params"][序号].append(param)
         # 融合部分基础计算
         if len(self.融合列表) > 0:
             成长词条组合 = get_equ().get_fusion_by_idlist(self.融合列表)
@@ -1404,10 +1410,11 @@ class Character(CharacterProperty):
         for func, 部位, 序号 in get_equ().get_func_list_by_idlist(self.装备栏, self.自定义词条, self.融合列表):
             if 序号 >= 0:
                 等级 = self.词条等级[部位][序号]
+                params = self.打造[部位]["params"][序号]
             else:
                 等级 = 1
-            func(self, part=部位, lv=等级)  # 站街效果
-            func(self, mode=1, part=部位, lv=等级)  # 进图效果
+            func(self, part=部位, lv=等级,params=params)  # 站街效果
+            func(self, mode=1, part=部位, lv=等级,params=params)  # 进图效果
             # 打印相关函数和效果
             # print('{}(lv.{}): {} {}'.format(部位, 等级, func, func(self, text=TRUE)))
 
