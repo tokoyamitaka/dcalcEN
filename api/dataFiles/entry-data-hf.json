@@ -4996,7 +4996,7 @@
     "params": null
   },
   "826": {
-    "attack": 1212,
+    "attack": 1078,
     "buff": 504,
     "props": ["HP在90%以下时，进行攻击可恢复2%的HP(冷却时间5秒)"],
     "template": null,

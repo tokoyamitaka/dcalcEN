@@ -129,7 +129,7 @@ entry_chose.append((31288,
                      '金龙戒指触发：期望',
                      ], ""))
 multi_select[31288] = False
-variable_set[31288] = set_jl_2
+variable_set[31288] = set_jl_3
 
 
 def entry_1286(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,params=[]):
