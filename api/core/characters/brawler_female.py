@@ -5,10 +5,11 @@ from core.basic.skill import 主动技能, 技能, 被动技能
 class 主动技能(主动技能):
     涂毒倍率 = 1.0
 
-    def 基础基础百分比(self, 类型, 等级):
+    def 基础百分比(self, 类型, 等级):
         temp = super().基础百分比(类型, 等级)
         if 类型 == '中毒':
             temp += super().基础百分比('涂毒', 等级) * self.涂毒倍率
+        print(self.涂毒倍率)
         return temp
 
 

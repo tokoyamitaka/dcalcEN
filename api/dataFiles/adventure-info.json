@@ -18,7 +18,18 @@
       {
         "name": "asura",
         "title": "极诣·阿修罗",
-        "open": true
+        "open": true,
+        "options": [
+          {
+            "name": "default",
+            "title": "国服"
+          },
+          {
+            "name": "default",
+            "title": "前瞻",
+            "class": "TYF.asura"
+          }
+        ]
       },
       {
         "name": "ghostblade",
@@ -102,7 +113,18 @@
       {
         "name": "brawler_female",
         "title": "归元·街霸",
-        "open": true
+        "open": true,
+        "options": [
+          {
+            "name": "default",
+            "title": "国服"
+          },
+          {
+            "name": "default",
+            "title": "前瞻",
+            "class": "TYF.brawler_female"
+          }
+        ]
       },
       {
         "name": "grappler_female",
