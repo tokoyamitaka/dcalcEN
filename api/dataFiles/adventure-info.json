@@ -143,7 +143,8 @@
     "children": [
       {
         "name": "ranger_male",
-        "title": "重霄·漫游枪手"
+        "title": "重霄·漫游枪手",
+        "open": true
       },
       {
         "name": "launcher_male",

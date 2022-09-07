@@ -91,9 +91,10 @@ class 技能5(主动技能):
 
     def 等效百分比(self, **argv):
         char: Character = argv.get('char', {})
-        self.data1 = [0, char.get_skill_by_name("致命射击").data0()]
-        self.hit1 = [0, char.get_skill_by_name("致命射击").hit0()]
-        self.power1 = [0, 1+char.get_skill_by_name("致命射击").TP等级()*char.get_skill_by_name("致命射击").TP成长()]
+        致命射击 = char.get_skill_by_name('致命射击')
+        self.data1 = [0, 致命射击.data0[致命射击.等级]]
+        self.hit1 = char.get_skill_by_name("致命射击").hit0
+        self.power1 = 1+致命射击.TP等级*致命射击.TP成长
         return super().等效百分比(**argv)
 
 
@@ -130,9 +131,10 @@ class 技能7(主动技能):
 
     def 等效百分比(self, **argv):
         char: Character = argv.get('char', {})
-        self.data1 = [0, char.get_skill_by_name("致命射击").data0()]
-        self.hit1 = [0, char.get_skill_by_name("致命射击").hit0()]
-        self.power1 = [0, 1+char.get_skill_by_name("致命射击").TP等级()*char.get_skill_by_name("致命射击").TP成长()]
+        致命射击 = char.get_skill_by_name('致命射击')
+        self.data1 = [0, 致命射击.data0[致命射击.等级]]
+        self.hit1 = char.get_skill_by_name("致命射击").hit0
+        self.power1 = 1+致命射击.TP等级*致命射击.TP成长
         return super().等效百分比(**argv)
 
 
@@ -236,7 +238,7 @@ class 技能12(主动技能):
     MP = [360, 3024]
     无色消耗 = 2
 
-    形态 = ["满", "常规(原地)"]
+    形态 = ["满", "常规"]
 
     def 形态变更(self, 形态, char:Character):
         if 形态 == '' and len(self.形态) > 0:
@@ -250,8 +252,8 @@ class 技能12(主动技能):
                     self.hit1 = 28 #护石+10
                     self.power1 = 1.08
                     self.hit2 = 46 #护石+17
-                    self.power2 = 1.15                 
-            if 形态 == "常规(原地)":
+                    self.power2 = 1.15
+            if 形态 == "常规":
                 self.hit0 = 16
                 self.hit1 = 18
                 self.hit2 = 22
@@ -260,20 +262,20 @@ class 技能12(主动技能):
                     self.hit1 = 28 #护石+10
                     self.power1 = 1.08
                     self.hit2 = 37 #护石+15
-                    self.power2 = 1.15  
+                    self.power2 = 1.15
 
-    def 等效百分比(self, 武器类型):
-        
+    def 等效百分比(self, **argv):
+
         self.hit0 += int(((4 / 5) * self.TP等级) / self.攻击间隔)
         self.hit1 += int(((6 / 5) * self.TP等级) / self.攻击间隔)
         self.hit2 += int(((8 / 5) * self.TP等级) / self.攻击间隔)
 
-        return super().等效百分比(武器类型)
+        return super().等效百分比(**argv)
 
     def 装备护石(self):
         self.hit0 = 0
         self.power1 = 1.08
-        self.power2 = 1.15  
+        self.power2 = 1.15
 
 
 class 技能13(被动技能):
