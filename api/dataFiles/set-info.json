@@ -12,8 +12,8 @@
     "id": 2,
     "name": "装备版本",
     "items": [
-      { "value": 0, "label": "国服" },
-      { "value": 1, "label": "韩服" }
+      { "value": 0, "label": "国服-正式服" },
+      { "value": 1, "label": "国服-9.22" }
     ],
     "remark": "切换装备版本进行计算"
   }
