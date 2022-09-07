@@ -10997,6 +10997,7 @@ def entry_728(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,pa
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name('剜心').倍率 *= 1.5
         pass
 
 
@@ -11015,6 +11016,7 @@ def entry_730(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,pa
     if mode == 0:
         pass
     if mode == 1:
+        char.技能恢复加成(1,100,0.12,[50,85,100])
         pass
 
 # endregion

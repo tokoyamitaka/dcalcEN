@@ -353,7 +353,8 @@
       },
       {
         "name": "shadow_dancer",
-        "title": "隐夜·影舞者"
+        "title": "隐夜·影舞者",
+        "open": true
       },
       {
         "name": "empty",

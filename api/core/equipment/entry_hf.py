@@ -11780,7 +11780,7 @@ def entry_726(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,pa
 
 def entry_727(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,params=[]):
     if text:
-        return ['背击时获得2影之碎片(最大50)', '正面攻击减少3影之碎片']
+        return ['背击时， 获得2个暗影之痕。(最多叠加50次)', '正面攻击时， 减少3个暗影之痕。']
     if mode == 0:
         pass
     if mode == 1:
@@ -11789,16 +11789,17 @@ def entry_727(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,pa
 
 def entry_728(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,params=[]):
     if text:
-        return ['剜心背击成功时消耗影之碎片,每消耗1的影之碎片强化1%的剜心攻击力(最大50%)']
+        return ['[剜心]背后抽取命中时， 消耗所有暗影之痕； 每消耗1个， [剜心]技能攻击力增加1%。 (最多增加50%)']
     if mode == 0:
         pass
     if mode == 1:
+        char.get_skill_by_name('剜心').倍率 *= 1.5
         pass
 
 
 def entry_729(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,params=[]):
     if text:
-        return ['剜心使用后15秒内进入伪装状态']
+        return ['施放[剜心]时， 获得伪装Buff， 效果持续15秒。']
     if mode == 0:
         pass
     if mode == 1:
@@ -11807,11 +11808,13 @@ def entry_729(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,pa
 
 def entry_730(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,params=[]):
     if text:
-        return ['维持这个装备的伪装状态时，技能冷却时间恢复速度+12%(最大重叠1次,觉醒技能除外)']
+        return ['该装备的伪装状态下， 技能冷却时间恢复速度增加12%。 (最多叠加1次，觉醒技能除外)']
     if mode == 0:
         pass
     if mode == 1:
+        char.技能恢复加成(1,100,0.12,[50,85,100])
         pass
+
 
 # endregion
 
