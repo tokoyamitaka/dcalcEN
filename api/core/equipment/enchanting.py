@@ -13928,6 +13928,7 @@ def enchanting_24005(char: CharacterProperty = {}, mode=0, text=False, rate=1.0,
     if mode == 0:
         char.技能等级加成('所有', 1, 95, 1)
         char.百分比攻击强化加成(0.07)
+        char.辅助属性加成(百分比buff量=0.05)
         pass
     if mode == 1:
         pass
