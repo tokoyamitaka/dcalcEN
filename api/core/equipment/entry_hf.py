@@ -12736,6 +12736,7 @@ def entry_12003(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,
         char.百分比攻击强化加成(0.17)
     if mode == 1:
         char.所有速度增加(0.03)
+        char.所有属性强化加成(10,mode=1)
         pass
 
 def entry_12004(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,params=[]):
@@ -12747,6 +12748,7 @@ def entry_12004(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,
         char.百分比攻击强化加成(0.17)
     if mode == 1:
         char.所有速度增加(0.03)
+        char.所有属性强化加成(10,mode=1)
         pass
 
 def entry_12005(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,params=[]):
@@ -12758,6 +12760,7 @@ def entry_12005(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,
         char.百分比攻击强化加成(0.17)
     if mode == 1:
         char.所有速度增加(0.03)
+        char.所有属性强化加成(10,mode=1)
         pass
 
 def entry_12006(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,params=[]):
@@ -12769,6 +12772,7 @@ def entry_12006(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,
         char.百分比攻击强化加成(0.17)
     if mode == 1:
         char.所有速度增加(0.03)
+        char.所有属性强化加成(10,mode=1)
         pass
 
 def entry_13001(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,params=[]):
