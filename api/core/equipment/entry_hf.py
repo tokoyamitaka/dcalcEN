@@ -3168,7 +3168,7 @@ def entry_1255(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,p
     if mode == 0:
         pass
     if mode == 1:
-        char.攻击强化加成(params[0])
+        char.攻击强化加成(params[2])
 
 
 def entry_1256(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,params=[]):
