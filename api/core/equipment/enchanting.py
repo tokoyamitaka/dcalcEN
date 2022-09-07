@@ -13878,7 +13878,7 @@ def enchanting_23009(char: CharacterProperty = {}, mode=0, text=False, rate=1.0,
 
 def enchanting_24001(char: CharacterProperty = {}, mode=0, text=False, rate=1.0,part=''):
     if text:
-        return (0, '光环', 'Lv1~80+1|三攻(5%)')
+        return (0, '光环', '1~80+1|三攻(5%)')
     if mode == 0:
         char.技能等级加成('所有', 1, 80, 1)
         char.百分比三攻加成(0.05)
@@ -13890,7 +13890,7 @@ def enchanting_24001(char: CharacterProperty = {}, mode=0, text=False, rate=1.0,
 
 def enchanting_24002(char: CharacterProperty = {}, mode=0, text=False, rate=1.0,part=''):
     if text:
-        return (0, '光环', 'Lv1~80+1|黄字(5%)')
+        return (0, '光环', '1~80+1|黄字(5%)')
     if mode == 0:
         char.技能等级加成('所有', 1, 80, 1)
         char.伤害增加加成(0.05)
@@ -13902,7 +13902,7 @@ def enchanting_24002(char: CharacterProperty = {}, mode=0, text=False, rate=1.0,
 
 def enchanting_24003(char: CharacterProperty = {}, mode=0, text=False, rate=1.0,part=''):
     if text:
-        return (0, '光环', 'Lv1~80+1|暴伤(5%)')
+        return (0, '光环', '1~80+1|暴伤(5%)')
     if mode == 0:
         char.技能等级加成('所有', 1, 80, 1)
         char.暴击伤害加成(0.05)
@@ -13914,7 +13914,7 @@ def enchanting_24003(char: CharacterProperty = {}, mode=0, text=False, rate=1.0,
 
 def enchanting_24004(char: CharacterProperty = {}, mode=0, text=False, rate=1.0,part=''):
     if text:
-        return (0, '光环', 'Lv1~80+1|buff(3%)')
+        return (0, '光环', '1~80+1|buff(3%)')
     if mode == 0:
         char.技能等级加成('所有', 1, 80, 1)
         char.辅助属性加成(buff百分比力智=0.03, 百分比buff量=0.015)
@@ -13922,6 +13922,15 @@ def enchanting_24004(char: CharacterProperty = {}, mode=0, text=False, rate=1.0,
     if mode == 1:
         pass
 
+def enchanting_24005(char: CharacterProperty = {}, mode=0, text=False, rate=1.0,part=''):
+    if text:
+        return (670, '光环', '1~95+1|攻击强化(7%)|buff(5%)')
+    if mode == 0:
+        char.技能等级加成('所有', 1, 95, 1)
+        char.百分比攻击强化加成(0.07)
+        pass
+    if mode == 1:
+        pass
 # endregion
 
 # region 武器装扮 24101~24199

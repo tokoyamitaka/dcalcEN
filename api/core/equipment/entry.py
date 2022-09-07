@@ -11929,6 +11929,49 @@ def entry_12002(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,
         char.暴击率增加(0.05)
         pass
 
+def entry_12003(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,params=[]):
+    if text:
+        return ['攻击速度 +3%', '移动速度 +3%', '施放速度 +3%', '火属性强化 +15', '攻击强化 +17%', '攻击时，有3%的几率获得所有属性强化+10并增加3%的攻击、移动和施放速度，效果持续30秒(冷却时间40秒)']
+    if mode == 0:
+        char.火属性强化加成(15)
+        char.所有速度增加(0.03)
+        char.百分比攻击强化加成(0.17)
+    if mode == 1:
+        char.所有速度增加(0.03)
+        pass
+
+def entry_12004(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,params=[]):
+    if text:
+        return ['攻击速度 +3%', '移动速度 +3%', '施放速度 +3%', '冰属性强化 +15', '攻击强化 +17%', '攻击时，有3%的几率获得所有属性强化+10并增加3%的攻击、移动和施放速度，效果持续30秒(冷却时间40秒)']
+    if mode == 0:
+        char.冰属性强化加成(15)
+        char.所有速度增加(0.03)
+        char.百分比攻击强化加成(0.17)
+    if mode == 1:
+        char.所有速度增加(0.03)
+        pass
+
+def entry_12005(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,params=[]):
+    if text:
+        return ['攻击速度 +3%', '移动速度 +3%', '施放速度 +3%', '光属性强化 +15', '攻击强化 +17%', '攻击时，有3%的几率获得所有属性强化+10并增加3%的攻击、移动和施放速度，效果持续30秒(冷却时间40秒)']
+    if mode == 0:
+        char.光属性强化加成(15)
+        char.所有速度增加(0.03)
+        char.百分比攻击强化加成(0.17)
+    if mode == 1:
+        char.所有速度增加(0.03)
+        pass
+
+def entry_12006(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,params=[]):
+    if text:
+        return ['攻击速度 +3%', '移动速度 +3%', '施放速度 +3%', '暗属性强化 +15', '攻击强化 +17%', '攻击时，有3%的几率获得所有属性强化+10并增加3%的攻击、移动和施放速度，效果持续30秒(冷却时间40秒)']
+    if mode == 0:
+        char.暗属性强化加成(15)
+        char.所有速度增加(0.03)
+        char.百分比攻击强化加成(0.17)
+    if mode == 1:
+        char.所有速度增加(0.03)
+        pass
 
 def entry_13001(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,params=[]):
     if text:

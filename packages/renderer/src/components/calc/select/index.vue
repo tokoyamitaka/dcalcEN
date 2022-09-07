@@ -248,6 +248,8 @@
       appearance: none;
       display: block;
       overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
 
       &.active {
         background-color: $activeColor;
