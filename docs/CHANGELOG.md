@@ -1,5 +1,24 @@
 ## Newest
 
+### 2022.09.07.Beta
+
+#### NewFeatures
+* 添加2022国庆礼包相关 ([c03606](https://gitee.com/dcalc/dnfcalculating_110/commit/c03606cf0d6bd18131b4dc1c869c10c1633f349c))
+* 添加重霄·漫游枪手 ([f2026c](https://gitee.com/dcalc/dnfcalculating_110/commit/f2026c579791f37b39aea4fe28a30417098d2c42))
+* 添加阿修罗、女毒王前瞻 ([bc12d7](https://gitee.com/dcalc/dnfcalculating_110/commit/bc12d7f464e9b14b0847c51a1b8572994d1106b9))
+* 添加隐夜·影舞者 ([ace960](https://gitee.com/dcalc/dnfcalculating_110/commit/ace960f28a931083db8624bdfbf20adcf046b72c))
+
+#### BugFixes
+* 修复全局属性选择的问题.<br>
+* fix:修复全局属性选择的问题. ([5a3cd5](https://gitee.com/dcalc/dnfcalculating_110/commit/5a3cd5c0ee89b23572bc6ef14cb6712d39d1397c))
+* 修正存档问题 ([12d247](https://gitee.com/dcalc/dnfcalculating_110/commit/12d2472ef40de9872dc29070c482427a6202cdd4))
+* 修正手镯、上衣、耳环判定问题 ([d822ef](https://gitee.com/dcalc/dnfcalculating_110/commit/d822ef7ee7e3c8cf594afb324a7c24ff805d9f0b))
+* 修正穿戴判断错误 ([aa6a65](https://gitee.com/dcalc/dnfcalculating_110/commit/aa6a6530bda12c507561f86bea8be94b5d1c3a36))
+* 修正自定义词条问题 ([1c5560](https://gitee.com/dcalc/dnfcalculating_110/commit/1c5560601c2c3306d87a5b645b0ee2faef008af6))
+* 修正词条数值 ([bd263f](https://gitee.com/dcalc/dnfcalculating_110/commit/bd263f061eac10d7c0c3afea3b048ac1c4ae72b0))
+* 极诣·驭剑士：修正数据问题 ([6a4fdc](https://gitee.com/dcalc/dnfcalculating_110/commit/6a4fdc934849663394a6a2b933b31963e540bac8))
+* 知源·元素爆破师：修正数据问题 ([3eee44](https://gitee.com/dcalc/dnfcalculating_110/commit/3eee44b8e099e6f046be665c24225d52d0f69d86))
+
 ### 2022.09.01.Beta
 
 #### NewFeatures
@@ -11,6 +30,7 @@
 * 极诣·驭剑士：修正三绝斩冰的数据问题 ([d511ba](https://gitee.com/dcalc/dnfcalculating_110/commit/d511bad3140b004f210b090fd3b8cc59395fadda))
 * 知源·魔道学者：修正CP武器报错 ([d64981](https://gitee.com/dcalc/dnfcalculating_110/commit/d64981be8940c98c4602f87bd57d1a22737b8f39))
 * 神启·诱魔者：修正数据问题 ([43662d](https://gitee.com/dcalc/dnfcalculating_110/commit/43662d1cc46c820a1fa85646c4832b75903498fc))
+
 
 
 ## History
