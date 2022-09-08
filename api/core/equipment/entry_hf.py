@@ -9775,7 +9775,7 @@ def entry_1275(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,p
     if mode == 0:
         pass
     if mode == 1:
-        char.属性强化加成(8*min(len*(own_state_type), 3))
+        char.属性强化加成(8*min(len(own_state_type), 3))
         pass
 
 
