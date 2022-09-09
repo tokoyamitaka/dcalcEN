@@ -1460,6 +1460,7 @@ def entry_945(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,pa
     if mode == 0:
         pass
     if mode == 1:
+        char.技能攻击力加成(part=part, x=0.02)
         char.光属性抗性加成(20)
         char.特效.append({"power": 3.7, "hit": 1})
         pass
@@ -1483,6 +1484,7 @@ def entry_947(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,pa
     if mode == 0:
         pass
     if mode == 1:
+        char.技能攻击力加成(part=part, x=0.02)
         char.暗属性抗性加成(20)
         char.特效.append({"power": 3.7, "hit": 1})
         pass
