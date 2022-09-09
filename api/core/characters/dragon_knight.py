@@ -337,7 +337,8 @@ class 技能13(主动技能):
         武器类型 = argv.get('武器类型', '')
         输出类型 = argv.get('输出类型', '')
         额外CDR = argv.get('额外CDR', 1.0)
-        恢复 = argv.get('恢复', True)
+        # 手搓收益 = argv.get('手搓收益', 1.0)
+        面板显示 = argv.get('面板显示', False)
 
         cdr = 1
         if self.手搓:
@@ -347,9 +348,9 @@ class 技能13(主动技能):
                 cdr = 1 - 0.02 * self.手搓收益
             if self.所在等级 >= 75 and self.所在等级 <= 100:
                 cdr = 1 - 0.05 * self.手搓收益
-            if self.所在等级 in [50, 85 , 100]:
+            if self.所在等级 in [50, 85, 100]:
                 cdr = 1 - 0.05 * self.手搓收益
-        return round(max(self.CD * cdr  * self.CDR * 额外CDR / (self.恢复 if 恢复 else 1) * self.武器CD系数(武器类型, 输出类型) - self.护石CD缩减, self.CD * 0.3, 1), 1)
+        return round(max(self.CD * (cdr if not 面板显示 else 1) * self.CDR * 额外CDR / (self.恢复 if not 面板显示 else 1) * self.武器CD系数(武器类型, 输出类型) - self.护石CD缩减, self.CD * 0.3, 1), 1)
 
     def 装备护石(self):
         self.power0 *= 1.30

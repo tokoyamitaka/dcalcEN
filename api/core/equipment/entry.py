@@ -3885,7 +3885,7 @@ def entry_991(char: CharacterProperty = {}, mode=0, text=False, part='', lv=0,pa
         pass
     if mode == 1:
         for skill in char.技能队列:
-            if char.get_skill_by_name(skill['名称']).等效CD(武器类型=char.武器类型, 输出类型=char.类型, 额外CDR=skill['CDR'], 恢复=False) >= 15:
+            if char.get_skill_by_name(skill['名称']).等效CD(武器类型=char.武器类型, 输出类型=char.类型, 额外CDR=skill['CDR'], 面板显示=True) >= 12:
                 skill['倍率'] *= 1.1
             else:
                 skill['倍率'] *= 0.85
