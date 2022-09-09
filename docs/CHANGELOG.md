@@ -1,5 +1,17 @@
 ## Newest
 
+### 2022.09.09.Beta
+
+#### NewFeatures
+* 同步体验服部分装备奶量更新 ([ce0f6b](https://gitee.com/dcalc/dnfcalculating_110/commit/ce0f6b515e134a4ad0b41049577fc5e4291109e1))
+
+#### BugFixes
+* 修正光环词条 ([c431b4](https://gitee.com/dcalc/dnfcalculating_110/commit/c431b43380bfa858b0141e5f4d46af8139b8f4ab))
+* 修正称号词条 ([fc23e2](https://gitee.com/dcalc/dnfcalculating_110/commit/fc23e2c4406ff6c462b9e4a7b220c4a4cf8b34fc))
+* 修正词条问题 ([19cb8b](https://gitee.com/dcalc/dnfcalculating_110/commit/19cb8b05372836366a86fc4d34260bc57c0c1ad2))
+* 修正词条问题 ([836a4f](https://gitee.com/dcalc/dnfcalculating_110/commit/836a4fd518d1a2ff9eb50f5ac8ef3fc6006ad894))
+* 修正隐匿之叹息耳环CD判定 ([827910](https://gitee.com/dcalc/dnfcalculating_110/commit/827910c10b99e2e7ae63e0094358d09883dd33b3))
+
 ### 2022.09.07.Beta
 
 #### NewFeatures
@@ -30,6 +42,7 @@
 * 极诣·驭剑士：修正三绝斩冰的数据问题 ([d511ba](https://gitee.com/dcalc/dnfcalculating_110/commit/d511bad3140b004f210b090fd3b8cc59395fadda))
 * 知源·魔道学者：修正CP武器报错 ([d64981](https://gitee.com/dcalc/dnfcalculating_110/commit/d64981be8940c98c4602f87bd57d1a22737b8f39))
 * 神启·诱魔者：修正数据问题 ([43662d](https://gitee.com/dcalc/dnfcalculating_110/commit/43662d1cc46c820a1fa85646c4832b75903498fc))
+
 
 
 
